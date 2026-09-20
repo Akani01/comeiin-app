@@ -36,7 +36,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = [
     'comeiin.co.za',
     'www.comeiin.co.za',
-    'www.comeiinworks.co.za'
+    'www.comeiinworks.co.za',
     'a3r7ck9i.up.railway.app',
     '.railway.app',
     '127.0.0.1',
