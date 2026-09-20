@@ -19,7 +19,8 @@ urlpatterns = [
     path('api/hero-slides/', views.HeroSlideListView.as_view(), name='api-hero-slides'),
     path('engineering/', views.engineering_view, name='engineering'),
     # PWA
-    path('contact/', views.contact_redirect, name='contact'),
+    path('contact/', views.contact_view, name='contact'),          # ← page
+    path('api/contact/', views.api_contact, name='api-contact'),  
 
     path('manifest.json', views.pwa_manifest, name='pwa-manifest'),
     path('serviceworker.js', views.pwa_sw, name='pwa-sw'),
