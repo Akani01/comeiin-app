@@ -11,10 +11,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Favicon
-    path('favicon.ico', RedirectView.as_view(
-        url=f'{settings.STATIC_URL}assets/favicon.png',
-        permanent=True,
-    )),
+    path('favicon.ico', favicon_view, name='favicon'),
+
 
     # allauth — sign in, signup, Google OAuth
     path('accounts/', include('allauth.urls')),

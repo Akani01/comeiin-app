@@ -1,11 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% comment %}
-  FIX 1: the title block was never closed in the original, which swallowed the
-  wallpaper <script> into <title> (so it never ran). It is closed here, and the
-  script now lives in the content block AFTER the <canvas> it draws on.
-{% endcomment %}
 {% block title %}Comeiin Works — Laboratory Equipment & Consumables{% endblock %}
 
 {% block content %}
