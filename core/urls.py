@@ -9,7 +9,7 @@ urlpatterns = [
     path('', views.home_view, name='home'),
     path('about/', views.about_view, name='about'),
     path('privacy/', views.privacy_view, name='privacy'),
-    path('favicon.ico', favicon_view, name='favicon'),
+    path('favicon.ico', views.favicon_view, name='favicon'),
     path('terms/', views.terms_view, name='terms'),
     path('laboratory/', views.laboratory_view, name='laboratory'),   # ← ADD THIS
     # API
