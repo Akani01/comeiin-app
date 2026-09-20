@@ -262,7 +262,7 @@ def engineering_view(request):
     return render(request, 'engineering.html', context)
 
 def contact_redirect(request):
-    return redirect('/#contact')
+    return render(request, 'contact.html')
 
 def favicon_view(request):
     """

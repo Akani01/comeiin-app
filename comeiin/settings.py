@@ -66,7 +66,7 @@ CSRF_TRUSTED_ORIGINS = [
 CORS_ALLOWED_ORIGINS = [
     'https://comeiin.co.za',
     'https://www.comeiin.co.za',
-    'https://comeiinworks.co.za'
+    'https://comeiinworks.co.za',
     'http://127.0.0.1:8000',
     'http://localhost:8000',
 ]
