@@ -6,7 +6,6 @@
 {% block body_attrs %}data-product="{{ product.sku|default:product.slug }}"{% endblock %}
 
 {% block content %}
-
 <section id="product-view" class="section" hidden></section>
 
 <section class="hero">
@@ -18,7 +17,7 @@
     <p class="intro">{{ product.short_description }}</p>
     <div class="hero-actions">
       <button class="quote-open button orange" data-product-id="{{ product.id }}">
-        Add to quote <span>↗</span>
+        Add to quote <span>↗︎</span>
       </button>
       <a class="hero-secondary" href="{% url 'products:catalogue' %}">
         Back to catalogue <span>→</span>

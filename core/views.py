@@ -1,13 +1,8 @@
 # core/views.py
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.core.mail import send_mail
 from django.conf import settings
 import os
-from django.views.decorators.http import require_POST
-from django.views.decorators.csrf import csrf_protect
-from django.shortcuts import render
-from django.core.validators import validate_email
-from django.core.exceptions import ValidationError
 from django.http import JsonResponse, HttpResponse
 from django.conf import settings
 from django.views.decorators.cache import cache_control
@@ -21,7 +16,6 @@ from .serializers import (
     HighlightSerializer,
     HeroSlideSerializer,
 )
-
 
 
 # ============================================================
@@ -46,6 +40,16 @@ def home_view(request):
 
 def about_view(request):
     return render(request, 'about.html')
+
+
+def laboratory_view(request):
+    """Guide science and engineering projects to the right Comeiin support."""
+    return render(request, 'laboratory.html')
+
+
+def engineering_redirect(request):
+    """Keep old Engineering links useful after consolidating project support."""
+    return redirect('/laboratory/?discipline=engineering')
 
 
 def contact_view(request):
@@ -188,7 +192,7 @@ def pwa_manifest(request):
                 "name": "Contact",
                 "short_name": "Contact",
                 "description": "Contact the Comeiin team",
-                "url": "/#contact",
+                "url": "/contact/",
                 "icons": [{"src": "/static/assets/pwa/shortcut-contact.png", "sizes": "96x96", "type": "image/png"}],
             },
         ],
@@ -218,148 +222,3 @@ def pwa_sw(request):
     except FileNotFoundError:
         print(f"[PWA] ❌ SW not found at: {sw_path}")
         return HttpResponse('// service worker not found', status=404, content_type='application/javascript')
-
-# core/views.py
-
-# ============================================================
-# LABORATORY PAGE
-# ============================================================
-
-def laboratory_view(request):
-    """Laboratory capabilities page."""
-    from products.models import Category, Product
-
-    context = {
-        'product_count': Product.objects.filter(is_active=True).count(),
-        'categories': Category.objects.filter(is_active=True),
-    }
-    return render(request, 'laboratory.html', context)
-
-
-def terms_view(request):
-    """Laboratory capabilities page."""
-    from products.models import Category, Product
-
-    context = {
-        'product_count': Product.objects.filter(is_active=True).count(),
-        'categories': Category.objects.filter(is_active=True),
-    }
-    return render(request, 'terms.html', context)
-
-
-# ============================================================
-# ENGINEERING PAGE
-# ============================================================
-def engineering_view(request):
-    from products.models import Category, Product
-    products = (
-        Product.objects
-               .filter(is_active=True)
-               .select_related('category')
-               .order_by('category__name', 'name')
-    )
-    context = {
-        'categories': Category.objects.filter(is_active=True),
-        'product_count': products.count(),
-        'category_count': Category.objects.filter(is_active=True).count(),
-        'products': products,
-    }
-    return render(request, 'engineering.html', context)
-
-def favicon_view(request):
-    """
-    Dynamically serve the favicon from static files.
-    Google looks for /favicon.ico at the domain root.
-    """
-    # Point to the largest square icon you have
-    favicon_path = os.path.join(settings.STATIC_ROOT or settings.BASE_DIR / 'static',
-                                'assets', 'pwa', 'icon-192.png')
-    
-    # Fallback chain
-    if not os.path.exists(favicon_path):
-        favicon_path = os.path.join(settings.BASE_DIR, 'static', 'assets', 'pwa', 'favicon-32.png')
-    
-    if os.path.exists(favicon_path):
-        with open(favicon_path, 'rb') as f:
-            return HttpResponse(f.read(), content_type='image/png')
-    
-    # Last resort: redirect to static URL
-    from django.shortcuts import redirect
-    return redirect(static('assets/pwa/icon-192.png'))
-
-
-
-def contact_view(request):
-    return render(request, 'contact.html')
-
-@csrf_protect
-@require_POST
-def api_contact(request):
-    """
-    API endpoint the contact form JS posts to.
-    Accepts JSON or form-encoded data.
-    Returns JSON {ok: true, id: <pk>} on success.
-    """
-    # --- Parse the incoming data (JSON or form) ---
-    if request.content_type == 'application/json':
-        try:
-            data = json.loads(request.body or '{}')
-        except json.JSONDecodeError:
-            return JsonResponse({'detail': 'Invalid JSON.'}, status=400)
-    else:
-        data = request.POST
-
-    # --- Pull fields ---
-    name    = (data.get('name') or '').strip()
-    email   = (data.get('email') or '').strip()
-    phone   = (data.get('phone') or '').strip()
-    company = (data.get('company') or '').strip()
-    subject = (data.get('subject') or '').strip()
-    message = (data.get('message') or '').strip()
-
-    # --- Validate ---
-    errors = {}
-
-    if not name:
-        errors['name'] = 'Name is required.'
-    elif len(name) > 150:
-        errors['name'] = 'Name is too long (max 150 characters).'
-
-    if not email:
-        errors['email'] = 'Email is required.'
-    else:
-        try:
-            validate_email(email)
-        except ValidationError:
-            errors['email'] = 'Please enter a valid email address.'
-
-    if not message:
-        errors['message'] = 'Message is required.'
-
-    if phone and len(phone) > 30:
-        errors['phone'] = 'Phone number is too long.'
-
-    if company and len(company) > 150:
-        errors['company'] = 'Company name is too long.'
-
-    if subject and len(subject) > 200:
-        errors['subject'] = 'Subject is too long.'
-
-    if errors:
-        return JsonResponse({'detail': 'Validation failed.', 'errors': errors}, status=400)
-
-    # --- Save ---
-    contact = ContactMessage.objects.create(
-        name=name,
-        email=email,
-        phone=phone,
-        company=company,
-        subject=subject,
-        message=message,
-    )
-
-    return JsonResponse({
-        'ok': True,
-        'id': contact.id,
-        'detail': 'Thank you! Your message has been received.',
-    }, status=201)

@@ -1,7 +1,6 @@
 <!-- ============================================================
      FIRE-NET ANIMATED WALLPAPER  (Vanta NET style, on fire)
-     Reusable partial. Include near the top of {% block content %}:
-         {% include 'includes/fire_wallpaper.html' %}
+     Reusable partial included globally by the base template.
 
      Then make sure your page's main sections have:
          position: relative;
@@ -19,7 +18,7 @@
     inset: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 0;
+    z-index: -1;
     pointer-events: none;
     display: block;
     background: #edf3fc;
