@@ -294,8 +294,8 @@
          {% if request.resolver_match.url_name == 'about' %}aria-current="page"{% endif %}>
         About
       </a>
-      <a href="{% url 'core:laboratory' %}"
-         {% if request.resolver_match.url_name == 'laboratory' %}aria-current="page"{% endif %}>
+      <a href="{% url 'core:industries' %}"
+         {% if request.resolver_match.url_name == 'industries' %}aria-current="page"{% endif %}>
         Industries
       </a>
       <a href="{% url 'core:contact' %}"
@@ -358,10 +358,10 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
             Catalogue
           </a>
-          <a href="{% url 'core:laboratory' %}"
+          <a href="{% url 'core:industries' %}"
              {% if request.resolver_match.url_name == 'laboratory' %}aria-current="page"{% endif %}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M10 2v7.5a2 2 0 0 1-.2.9L4.7 20.5a1 1 0 0 0 .9 1.5h12.8a1 1 0 0 0 .9-1.5l-5.1-10.1a2 2 0 0 1-.2-.9V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg>
-            Our Laboratory
+            Industries
           </a>
           <a href="{% url 'core:about' %}"
              {% if request.resolver_match.url_name == 'about' %}aria-current="page"{% endif %}>
