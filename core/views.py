@@ -2,12 +2,10 @@
 from django.shortcuts import redirect, render
 from django.core.mail import send_mail
 from django.conf import settings
-import os
 from django.http import JsonResponse, HttpResponse
-from django.conf import settings
 from django.views.decorators.cache import cache_control
-from rest_framework import generics, status
-from rest_framework.response import Response
+from rest_framework import generics
+import os
 
 from .models import ContactMessage, Testimonial, Highlight, HeroSlide
 from .serializers import (
@@ -80,7 +78,6 @@ class ContactMessageCreateView(generics.CreateAPIView):
     def perform_create(self, serializer):
         instance = serializer.save()
 
-        # Send notification email (fails silently if email not configured)
         try:
             send_mail(
                 subject=f"New Contact: {instance.subject or 'Website enquiry'}",
@@ -113,6 +110,7 @@ class HeroSlideListView(generics.ListAPIView):
     queryset = HeroSlide.objects.filter(is_active=True)
     serializer_class = HeroSlideSerializer
 
+
 # ============================================================
 # PWA — MANIFEST
 # ============================================================
@@ -131,12 +129,11 @@ def pwa_manifest(request):
         "display_override": ["window-controls-overlay", "standalone"],
         "orientation": "portrait",
         "background_color": "#ffffff",
-        "theme_color": "#0f172a",         # navy
+        "theme_color": "#0f172a",
         "lang": "en-ZA",
         "dir": "ltr",
         "categories": ["business", "shopping", "science"],
         "prefer_related_applications": False,
-
         "icons": [
             {"src": "/static/assets/pwa/icon-72.png",  "sizes": "72x72",   "type": "image/png", "purpose": "any"},
             {"src": "/static/assets/pwa/icon-72-maskable.png",  "sizes": "72x72",   "type": "image/png", "purpose": "maskable"},
@@ -155,7 +152,6 @@ def pwa_manifest(request):
             {"src": "/static/assets/pwa/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
             {"src": "/static/assets/pwa/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
         ],
-
         "screenshots": [
             {
                 "src": "/static/assets/pwa/screenshot-desktop.png",
@@ -172,7 +168,6 @@ def pwa_manifest(request):
                 "label": "Search laboratory supplies on mobile",
             },
         ],
-
         "shortcuts": [
             {
                 "name": "Catalogue",
