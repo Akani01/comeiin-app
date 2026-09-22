@@ -17,6 +17,7 @@ urlpatterns = [
     path('privacy/',     views.privacy_view,     name='privacy'),
     path('terms/',       views.terms_view,       name='terms'),
     path('cookies/',     views.cookies_view,     name='cookies'),
+    path('industries/', views.industries_view, name='industries'),
 
     # ============================================================
     # LEGACY .html REDIRECTS (301 permanent — keeps old links alive)

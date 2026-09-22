@@ -59,13 +59,12 @@ textarea:focus-visible {
   font-size: 14px;
 }
 header {
-  min-height: 100px; /* was: height: 100px (caused clipping) */
-  padding: 12px 5%; /* was: 0 5% */
+  height: 100px;
+  padding: 0 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap; /* content wraps instead of overflowing */
-  gap: 12px 30px;
+  gap: 30px;
   background: white;
   position: sticky;
   top: 0;
@@ -541,11 +540,6 @@ textarea {
   }
 }
 @media (max-width: 1000px) {
-  /* NEW: let the nav wrap in the mid-width range instead of squeezing */
-  nav {
-    gap: 12px 22px;
-    flex-wrap: wrap;
-  }
   .hero h1 {
     font-size: 48px;
     white-space: normal;
@@ -587,7 +581,7 @@ textarea {
     display: none;
   }
   header {
-    min-height: 80px; /* was: height: 80px */
+    height: 80px;
     gap: 10px;
     flex-wrap: wrap;
   }
@@ -599,11 +593,13 @@ textarea {
     order: 3;
     width: 100%;
     justify-content: center;
-    gap: 10px 30px;
-    padding: 10px 0 4px;
-    border-top: 1px solid var(--line);
-    border-bottom: 0;
-    position: static; /* was: absolute; top: 80px; left: 0 */
+    gap: 30px;
+    padding: 10px;
+    background: white;
+    border-bottom: 1px solid var(--line);
+    position: absolute;
+    top: 80px;
+    left: 0;
     font-size: 13px;
   }
   .outline {
@@ -611,7 +607,7 @@ textarea {
     font-size: 12px;
   }
   .hero {
-    margin-top: 0; /* was: 37px hack */
+    margin-top: 37px;
     grid-template-columns: 1fr;
   }
   .hero-copy {
@@ -702,7 +698,7 @@ textarea {
     width: 100%;
   }
   html {
-    scroll-padding-top: 170px; /* header is taller now */
+    scroll-padding-top: 140px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1082,7 +1078,7 @@ textarea {
     font-size: 13px;
   }
   .category-menu {
-    top: 100%; /* was: calc(100% + 36px), only needed for the old absolute nav */
+    top: calc(100% + 36px);
     left: 0;
     right: 0;
     padding: 24px;
@@ -1164,3 +1160,4 @@ textarea {
     transform: translateY(0);
   }
 }
+

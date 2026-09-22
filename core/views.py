@@ -198,6 +198,11 @@ def pwa_manifest(request):
     return response
 
 
+
+def industries_view(request):
+    """Show the sectors Comeiin Works supports and their typical requirements."""
+    return render(request, 'industries.html')
+
 # ============================================================
 # PWA — SERVICE WORKER
 # ============================================================
