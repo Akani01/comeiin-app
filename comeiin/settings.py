@@ -6,10 +6,7 @@ from dotenv import load_dotenv
 import dj_database_url
 from decouple import config
 
-BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Load .env from the project root — explicit path, not CWD-dependent
-load_dotenv(BASE_DIR / '.env')
 # ============================================================
 # LOAD ENVIRONMENT
 # ============================================================
