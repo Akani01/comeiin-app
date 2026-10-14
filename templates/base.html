@@ -1,0 +1,431 @@
+{% load static %}
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <base href="/" />
+  <title>{% block title %}Comeiin Works — Laboratory Equipment & Consumables{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}Explore laboratory glassware, consumables and equipment from Comeiin Works. Build your enquiry and request a quotation.{% endblock %}" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://comeiin.co.za{{ request.path }}" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="{% static 'assets/favicon.png' %}" />
+  <link rel="shortcut icon" href="{% static 'assets/favicon.png' %}" type="image/png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/apple-touch-icon.png' %}" />
+
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Comeiin">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/future.css' %}?v=23" />
+
+  <!-- Comeiin footer styles (light blue) -->
+  <style>
+    .cw-footer {
+      /* ↓ Change --cw-bg to your exact Comeiin light blue if it differs */
+      --cw-bg: #e6f0fb;
+      --cw-text: #475569;
+      --cw-head: #0f172a;
+      --cw-accent: var(--orange, #f97316);
+      --cw-line: rgba(15, 23, 42, .12);
+      position: relative;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      background: var(--cw-bg);
+      color: var(--cw-text);
+      padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 64px) 24px;
+      margin: 40px 0 0;
+      border-top: 1px solid var(--cw-line);
+    }
+    .cw-footer *, .cw-footer *::before, .cw-footer *::after { box-sizing: border-box; }
+    .cw-footer a { color: inherit; text-decoration: none; transition: color .2s, transform .2s, background .2s; }
+    .cw-footer a:hover, .cw-footer a:focus-visible { color: var(--cw-accent); }
+
+    .cw-footer-cta {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;
+      padding-bottom: clamp(28px, 4vw, 48px); margin-bottom: clamp(28px, 4vw, 48px);
+      border-bottom: 1px solid var(--cw-line);
+    }
+    .cw-eyebrow { margin: 0 0 12px; font-size: .72rem; letter-spacing: .22em; color: var(--cw-accent); }
+    .cw-footer-cta h2 { margin: 0; color: var(--cw-head); font-size: clamp(1.6rem, 3.4vw, 2.6rem); line-height: 1.1; }
+    .cw-footer-cta em { color: var(--cw-accent); font-style: italic; }
+
+    .cw-footer-grid {
+      display: grid; gap: clamp(24px, 4vw, 56px);
+      grid-template-columns: 1.4fr 1fr 1.2fr 1.3fr;
+    }
+    .cw-footer-col h4 {
+      margin: 0 0 18px; color: var(--cw-head);
+      font-size: .74rem; letter-spacing: .2em; text-transform: uppercase;
+    }
+    .cw-footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .cw-footer-col li { font-size: .92rem; line-height: 1.5; }
+    .cw-footer-col li a:hover { transform: translateX(3px); display: inline-block; }
+    .cw-footer-brand p { margin: 16px 0 20px; font-size: .92rem; line-height: 1.7; max-width: 34ch; }
+    .cw-footer-logo img { height: 48px; width: auto; border-radius: 8px; display: block; }
+
+    /* Social icons — plain divs (not <nav>) so no global nav/mobile-bar styles can apply */
+    .cw-footer .cw-footer-socials {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      background: none; border: 0; box-shadow: none; padding: 0; margin: 0;
+      position: static; width: auto; height: auto; transform: none;
+    }
+    .cw-footer .cw-footer-socials a {
+      flex: 0 0 40px; width: 40px; height: 40px; min-width: 0; padding: 0; margin: 0;
+      display: grid; place-items: center;
+      background: transparent; box-shadow: none;
+      border: 1px solid var(--cw-line); border-radius: 50%;
+      color: var(--cw-head);
+    }
+    .cw-footer .cw-footer-socials a:hover,
+    .cw-footer .cw-footer-socials a:focus-visible {
+      background: var(--cw-accent); border-color: var(--cw-accent); color: #fff; transform: translateY(-2px);
+    }
+    .cw-footer .cw-footer-socials svg { width: 18px; height: 18px; fill: currentColor; display: block; }
+
+    .cw-footer-bbbee {
+      display: inline-flex; align-items: center; gap: 12px; margin-top: 20px;
+      padding: 10px 14px; border: 1px solid var(--cw-line); border-radius: 14px;
+    }
+    .cw-footer-bbbee img { width: 40px; height: 40px; object-fit: contain; border-radius: 8px; }
+    .cw-footer-bbbee small { display: block; font-size: .6rem; letter-spacing: .18em; opacity: .7; }
+    .cw-footer-bbbee strong { color: var(--cw-head); font-size: .85rem; }
+
+    .cw-footer-bottom {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px;
+      margin-top: clamp(28px, 4vw, 48px); padding-top: 20px; border-top: 1px solid var(--cw-line);
+      font-size: .78rem;
+    }
+    .cw-footer-motto { letter-spacing: .24em; color: var(--cw-head); font-size: .7rem; }
+    .cw-footer-motto i { color: var(--cw-accent); font-style: normal; margin: 0 .3em; }
+    .cw-footer-legal { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+
+    @media (max-width: 980px) { .cw-footer-grid { grid-template-columns: 1fr 1fr; } .cw-footer-brand { grid-column: 1 / -1; } }
+    @media (max-width: 560px) {
+      .cw-footer-grid { grid-template-columns: 1fr; }
+      .cw-footer-cta .button { width: 100%; justify-content: center; }
+      .cw-footer-bottom { flex-direction: column; align-items: flex-start; }
+      .cw-footer { padding-bottom: 88px; }
+    }
+  </style>
+
+  <!-- OG -->
+  <meta property="og:site_name" content="Comeiin Works" />
+  <meta property="og:url" content="https://comeiin.co.za{{ request.path }}" />
+  <meta property="og:image" content="https://comeiin.co.za{% static 'assets/logo.jpeg' %}" />
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}" {% block body_attrs %}{% endblock %}>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="topline">
+    <span>LABORATORY EQUIPMENT &amp; CONSUMABLES</span>
+    <a href="tel:+27112387334">Telephone &nbsp; 011 238 7334</a>
+  </div>
+
+  <header class="site-header">
+    <a href="{% url 'core:home' %}" class="brand" aria-label="Comeiin Works home">
+      <img src="{% static 'assets/logo.jpeg' %}" alt="Comeiin — Astute, Swift, Passionate" />
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Open navigation</span>
+    </button>
+    <nav id="main-navigation" class="site-nav" aria-label="Main navigation" data-open="false">
+      <a href="{% url 'core:home' %}"
+         {% if request.resolver_match.url_name == 'home' %}aria-current="page"{% endif %}>
+        Home
+      </a>
+      <a href="{% url 'core:about' %}"
+         {% if request.resolver_match.url_name == 'about' %}aria-current="page"{% endif %}>
+        About Us
+      </a>
+      <a href="{% url 'products:catalogue' %}"
+         {% if request.resolver_match.namespace == 'products' %}aria-current="page"{% endif %}>
+        Products
+      </a>
+      <div class="nav-dropdown">
+        <button class="industry-toggle" type="button" aria-expanded="false" aria-controls="industry-menu"
+                {% if request.resolver_match.url_name == 'industries' %}aria-current="page"{% endif %}>
+          Industries <span aria-hidden="true"></span>
+        </button>
+        <div id="industry-menu" class="industry-menu" hidden>
+          <a href="{% url 'core:industries' %}?industry=clinical#industry-paths">Clinical Laboratories</a>
+          <a href="{% url 'core:industries' %}?industry=hospitals#industry-paths">Hospitals</a>
+          <a href="{% url 'core:industries' %}?industry=academic-research#industry-paths">Academic &amp; Research Facilities</a>
+          <a href="{% url 'core:industries' %}?industry=mining#industry-paths">Mining</a>
+          <a href="{% url 'core:industries' %}?industry=hospitality#industry-paths">Hospitality</a>
+          <a href="{% url 'core:industries' %}?industry=manufacturing#industry-paths">Manufacturing</a>
+          <a href="{% url 'core:industries' %}?industry=water-processing#industry-paths">Water Processing</a>
+          <a class="industry-menu-all" href="{% url 'core:industries' %}">View all industries</a>
+        </div>
+      </div>
+      <a href="{% url 'core:contact' %}"
+         {% if request.resolver_match.url_name == 'contact' %}aria-current="page"{% endif %}>
+        Contact
+      </a>
+      <div class="mobile-auth-action">
+        {% if user.is_authenticated %}
+          <form method="post" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            <button type="submit">Sign out</button>
+          </form>
+        {% else %}
+          <a href="{% url 'account_login' %}">Sign in</a>
+        {% endif %}
+      </div>
+    </nav>
+
+    <!-- Auth (Google + allauth) -->
+    <div class="auth-actions">
+      {% if user.is_authenticated %}
+        <span class="auth-user" title="{{ user.email }}">
+          {{ user.get_short_name|default:user.email }}
+        </span>
+        <form method="post" action="{% url 'account_logout' %}" class="auth-logout-form">
+          {% csrf_token %}
+          <button type="submit" class="auth-link">Sign out</button>
+        </form>
+      {% else %}
+        <a href="{% url 'account_login' %}" class="auth-link">Sign in</a>
+      {% endif %}
+    </div>
+
+    <button class="quote-open outline">
+      Your quote
+      <span id="count">0</span>
+    </button>
+
+  </header>
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- ============================================================
+       Comeiin footer (replaces the old simple footer).
+       Uses <div role="contentinfo"> so global `footer` / `nav`
+       styles from style.css / future.css cannot leak into it.
+       ============================================================ -->
+  <div class="cw-footer" role="contentinfo">
+    <div class="cw-footer-cta">
+      <div>
+        <p class="cw-eyebrow">SUPPLY WITHOUT THE FRICTION</p>
+        <h2>Great science starts with<br /><em>the right essentials.</em></h2>
+      </div>
+      <button type="button" class="quote-open button orange">Request a quotation <span>↗︎</span></button>
+    </div>
+
+    <div class="cw-footer-grid">
+      <div class="cw-footer-col cw-footer-brand">
+        <a href="{% url 'core:home' %}" class="cw-footer-logo" aria-label="Comeiin Works home">
+          <img src="{% static 'assets/logo.jpeg' %}" alt="Comeiin — Astute, Swift, Passionate" loading="lazy" />
+        </a>
+        <p>Laboratory equipment, glassware and consumables for routine, clinical, educational and specialised work. Sourced with purpose, supported locally across South Africa.</p>
+        <div class="cw-footer-socials" role="group" aria-label="Comeiin Works social media">
+          <a href="https://www.linkedin.com/in/comeiin-works-631519437/" target="_blank" rel="external noopener" aria-label="Comeiin Works on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.3H3.2V21h3.3V8.3ZM4.9 3A1.9 1.9 0 1 0 5 6.8 1.9 1.9 0 0 0 4.9 3ZM21 13.7c0-3.8-2-5.6-4.7-5.6a4 4 0 0 0-3.7 2h-.1V8.3H9.3V21h3.3v-6.3c0-1.7.3-3.3 2.4-3.3s2.1 1.9 2.1 3.4V21H21v-7.3Z"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61594282446363" target="_blank" rel="external noopener" aria-label="Comeiin Works on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h2.8l.4-3H14V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H8v3h2.6v8H14Z"/></svg></a>
+          <a href="https://www.instagram.com/comeiinworks/" target="_blank" rel="external noopener" aria-label="Comeiin Works on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 2h9.2A5.4 5.4 0 0 1 22 7.4v9.2a5.4 5.4 0 0 1-5.4 5.4H7.4A5.4 5.4 0 0 1 2 16.6V7.4A5.4 5.4 0 0 1 7.4 2Zm-.2 2A3.2 3.2 0 0 0 4 7.2v9.6A3.2 3.2 0 0 0 7.2 20h9.6a3.2 3.2 0 0 0 3.2-3.2V7.2A3.2 3.2 0 0 0 16.8 4H7.2Zm10.5 1.5a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="cw-footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="{% url 'core:home' %}">Home</a></li>
+          <li><a href="{% url 'core:about' %}">About Us</a></li>
+          <li><a href="{% url 'products:catalogue' %}">Products</a></li>
+          <li><a href="{% url 'core:industries' %}">Industries</a></li>
+          <li><a href="{% url 'core:contact' %}">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="cw-footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="{% url 'core:industries' %}?industry=clinical#industry-paths">Clinical Laboratories</a></li>
+          <li><a href="{% url 'core:industries' %}?industry=hospitals#industry-paths">Hospitals</a></li>
+          <li><a href="{% url 'core:industries' %}?industry=academic-research#industry-paths">Academic &amp; Research</a></li>
+          <li><a href="{% url 'core:industries' %}?industry=mining#industry-paths">Mining</a></li>
+          <li><a href="{% url 'core:industries' %}?industry=hospitality#industry-paths">Hospitality</a></li>
+          <li><a href="{% url 'core:industries' %}?industry=manufacturing#industry-paths">Manufacturing</a></li>
+          <li><a href="{% url 'core:industries' %}?industry=water-processing#industry-paths">Water Processing</a></li>
+        </ul>
+      </div>
+
+      <div class="cw-footer-col">
+        <h4>Get in touch</h4>
+        <ul class="cw-footer-contact">
+          <li><a href="mailto:Admin@comeiin.co.za">Admin@comeiin.co.za</a></li>
+          <li><a href="tel:+27112387334">011 238 7334</a></li>
+          <li><a href="https://wa.me/27844106544?text=Hello%20Comeiin%20Works%2C%20I%20would%20like%20help%20with%20a%20quotation." target="_blank" rel="noopener">WhatsApp: 084 410 6544</a></li>
+          <li class="cw-footer-address">Innovation Worx — 1 Scale End<br />Halfway House Estate, Midrand, 1685<br />South Africa</li>
+        </ul>
+        <a class="cw-footer-bbbee" href="{% url 'core:about' %}#bbbee-title" aria-label="Comeiin Works B-BBEE Level 1 contributor status">
+          <img src="{% static 'assets/bbbee-level-1-comeiin.webp' %}" alt="" width="48" height="48" loading="lazy" decoding="async" />
+          <span><small>B-BBEE STATUS</small><strong>Level 1 Contributor</strong></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="cw-footer-bottom">
+      <span>© {% now "Y" %} Comeiin Works (Pty) Ltd.</span>
+      <span class="cw-footer-motto">ASTUTE <i>•</i> SWIFT <i>•</i> PASSIONATE</span>
+      <span class="cw-footer-legal">
+        <a href="{% url 'core:privacy' %}" {% if request.resolver_match.url_name == 'privacy' %}aria-current="page"{% endif %}>Privacy policy</a>
+        <span class="footer-developer-credit">Developed by <a href="https://madenet.netlify.app" target="_blank" rel="external noopener">Madenet</a></span>
+      </span>
+    </div>
+  </div>
+
+  {% include 'partials/_quote_dialog.html' %}
+  {% include 'partials/_detail_dialog.html' %}
+
+  <div id="notice" class="notice" role="status" aria-live="polite"></div>
+
+  <!-- ============================================================
+       PWA install banner (hidden by default, shown by JS)
+       ============================================================ -->
+  <div id="pwa-install-banner" class="pwa-install" hidden>
+    <img src="{% static 'assets/pwa/icon-192.png' %}"
+         alt="Comeiin app icon"
+         class="pwa-install-icon" />
+    <div class="pwa-install-text">
+      <strong>Install Comeiin Works</strong>
+      <span>Fast access to the catalogue &amp; quote list — right from your home screen.</span>
+    </div>
+    <button type="button" class="pwa-install-btn" id="pwa-install-accept">Install</button>
+    <button type="button" class="pwa-install-close" id="pwa-install-dismiss" aria-label="Dismiss">×</button>
+  </div>
+
+  <script>
+    window.CW_API = {
+      products:      "{% url 'products:api-products' %}",
+      categories:    "{% url 'products:api-categories' %}",
+      quoteCreate:   "{% url 'quotes:api-quote-create' %}",
+      contactCreate: "{% url 'core:api-contact' %}",
+      productDetail: "/products/api/products/",
+    };
+    window.CW_STATIC    = "/static/";
+    window.CW_CATALOGUE = "{% url 'products:catalogue' %}";
+    window.CW_ABOUT     = "{% url 'core:about' %}";
+    window.CW_INDUSTRIES = "{% url 'core:industries' %}";
+    window.CW_PRIVACY   = "{% url 'core:privacy' %}";
+    window.CW_CSRF      = "{{ csrf_token }}";
+    window.CW_USER      = {% if user.is_authenticated %}{ id: {{ user.id }}, email: "{{ user.email|escapejs }}" }{% else %}null{% endif %};
+  </script>
+
+  <script src="{% static 'js/catalogue.js' %}?v=100"></script>
+  <script src="{% static 'js/app.js' %}?v=10"></script>
+  <script src="{% static 'js/future.js' %}?v=17"></script>
+
+  <!-- ============================================================
+       PWA — service worker + install prompt
+       ============================================================ -->
+  <script>
+    (function () {
+      const banner      = document.getElementById('pwa-install-banner');
+      const acceptBtn   = document.getElementById('pwa-install-accept');
+      const dismissBtn  = document.getElementById('pwa-install-dismiss');
+      const DISMISS_KEY = 'comeiin-pwa-dismissed-until';
+      const DISMISS_DAYS = 7;
+
+      // --- Register service worker ---
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/serviceworker.js', { scope: '/' })
+            .then((reg) => console.log('[PWA] Service worker registered:', reg.scope))
+            .catch((err) => console.warn('[PWA] Service worker registration failed:', err));
+        });
+      }
+
+      // --- Helpers ---
+      const isStandalone = () =>
+        window.matchMedia('(display-mode: standalone)').matches ||
+        window.navigator.standalone === true;
+
+      const isDismissed = () => {
+        const until = parseInt(localStorage.getItem(DISMISS_KEY) || '0', 10);
+        return until > Date.now();
+      };
+
+      const dismiss = () => {
+        const until = Date.now() + DISMISS_DAYS * 24 * 60 * 60 * 1000;
+        localStorage.setItem(DISMISS_KEY, String(until));
+        banner.hidden = true;
+      };
+
+      // Don't show if already installed or recently dismissed
+      if (isStandalone() || isDismissed()) return;
+
+      // --- Chrome / Edge / Android: capture the install event ---
+      let deferredPrompt = null;
+
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        setTimeout(() => { banner.hidden = false; }, 2000);
+      });
+
+      acceptBtn?.addEventListener('click', async () => {
+        if (!deferredPrompt) {
+          banner.hidden = true;
+          return;
+        }
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log('[PWA] Install outcome:', outcome);
+        deferredPrompt = null;
+        banner.hidden = true;
+        if (outcome === 'accepted' && typeof announce === 'function') {
+          announce('Comeiin Works installed 🎉');
+        }
+      });
+
+      dismissBtn?.addEventListener('click', dismiss);
+
+      // --- iOS Safari fallback ---
+      const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+      if (isIOS && isSafari && !isStandalone()) {
+        window.addEventListener('load', () => {
+          setTimeout(() => {
+            banner.hidden = false;
+            acceptBtn.textContent = 'How to install';
+            acceptBtn.addEventListener('click', () => {
+              alert(
+                'To install Comeiin Works on your iPhone:\n\n' +
+                '1. Tap the Share button (□↑) at the bottom\n' +
+                '2. Scroll and tap "Add to Home Screen"\n' +
+                '3. Tap "Add"\n\n' +
+                'The Comeiin icon will appear on your home screen.'
+              );
+            }, { once: true });
+          }, 3000);
+        });
+      }
+
+      // --- Auto-hide after successful install ---
+      window.addEventListener('appinstalled', () => {
+        console.log('[PWA] App installed');
+        banner.hidden = true;
+        localStorage.setItem(DISMISS_KEY, String(Date.now() + 365 * 24 * 60 * 60 * 1000));
+      });
+    })();
+  </script>
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
