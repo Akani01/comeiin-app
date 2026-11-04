@@ -66,7 +66,12 @@ matchMedia('(min-width: 1051px)').addEventListener?.('change', (event) => {
 
 /* Route the guided finder through the same catalogue filters. */
 function findSupplies(term) {
-  if (document.body.dataset.product || !document.getElementById('catalogue')) {
+  if (
+    document.body.dataset.product ||
+    !document.getElementById('catalogue') ||
+    typeof render !== 'function' ||
+    typeof active === 'undefined'
+  ) {
     location.href = `${FUTURE_CATALOGUE_URL}?q=${encodeURIComponent(term)}#catalogue`;
     return;
   }
@@ -234,5 +239,115 @@ whatsappWidget
   .addEventListener('click', () => setWhatsAppOpen(false));
 whatsappLaunch.addEventListener('click', () => setWhatsAppOpen(whatsappChat.hidden));
 setWhatsAppOpen(false);
+
+
+/* Clients logo carousel: seamless marquee with pause control.
+   Clones the logo group as many times as needed to fill any screen width,
+   then shifts by exactly one group so the loop has no visible jump. */
+document.querySelectorAll('[data-clients]').forEach((section) => {
+  const viewport = section.querySelector('.clients-viewport');
+  const group = section.querySelector('[data-clients-group]');
+  const toggle = section.querySelector('[data-clients-toggle]');
+  if (!viewport || !group) return;
+
+  const SPEED = 45; /* pixels per second */
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const originalMarkup = group.innerHTML;
+  let track = null;
+  let userPaused = false;
+  let resizeTimer;
+
+  /* Replace a broken logo with the company name (alt text). */
+  section.addEventListener('error', (event) => {
+    const img = event.target;
+    if (!(img instanceof HTMLImageElement) || !img.closest('.clients-item')) return;
+    if (img.closest('[aria-hidden="true"]')) return; /* clones are rebuilt from the original */
+    const label = document.createElement('span');
+    label.className = 'clients-name';
+    label.textContent = img.alt || '';
+    img.replaceWith(label);
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(build, 80);
+  }, true);
+
+  function teardown() {
+    if (!track) return;
+    group.removeAttribute('style');
+    group.innerHTML = originalMarkup;
+    viewport.append(group);
+    track.remove();
+    track = null;
+    section.classList.remove('is-marquee', 'is-paused');
+    if (toggle) toggle.hidden = true;
+  }
+
+  function build() {
+    /* Keep any fallback text swaps that already happened. */
+    const current = (track ? track.firstElementChild : group).innerHTML;
+    teardown();
+    group.innerHTML = current;
+    if (reduced.matches) return;
+
+    const width = group.getBoundingClientRect().width;
+    if (!width) return;
+    const copies = Math.max(2, Math.ceil((viewport.clientWidth * 2) / width) + 1);
+
+    track = document.createElement('div');
+    track.className = 'clients-track';
+    viewport.append(track);
+    track.append(group);
+    for (let i = 1; i < copies; i += 1) {
+      const clone = group.cloneNode(true);
+      clone.removeAttribute('data-clients-group');
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('img').forEach((img) => (img.alt = ''));
+      track.append(clone);
+    }
+
+    section.style.setProperty('--clients-shift', `${width}px`);
+    section.style.setProperty('--clients-duration', `${(width / SPEED).toFixed(2)}s`);
+    section.classList.add('is-marquee');
+    section.classList.toggle('is-paused', userPaused);
+    if (toggle) toggle.hidden = false;
+  }
+
+  function setPaused(paused) {
+    section.classList.toggle('is-paused', paused);
+  }
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      userPaused = !userPaused;
+      toggle.setAttribute('aria-pressed', String(userPaused));
+      toggle.querySelector('.clients-toggle-label').textContent = userPaused ? 'Play' : 'Pause';
+      setPaused(userPaused);
+    });
+  }
+
+  /* Pause while hovered or focused (unless the user already paused it). */
+  viewport.addEventListener('mouseenter', () => setPaused(true));
+  viewport.addEventListener('mouseleave', () => setPaused(userPaused));
+  viewport.addEventListener('focusin', () => setPaused(true));
+  viewport.addEventListener('focusout', () => setPaused(userPaused));
+  /* Touch: hold to pause, release to resume. */
+  viewport.addEventListener('touchstart', () => setPaused(true), { passive: true });
+  viewport.addEventListener('touchend', () => setPaused(userPaused), { passive: true });
+  viewport.addEventListener('touchcancel', () => setPaused(userPaused), { passive: true });
+
+  /* Rebuild when the width changes or images finish loading. */
+  let lastWidth = viewport.clientWidth;
+  new ResizeObserver(() => {
+    if (viewport.clientWidth === lastWidth) return;
+    lastWidth = viewport.clientWidth;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(build, 150);
+  }).observe(viewport);
+  group.querySelectorAll('img').forEach((img) => {
+    if (!img.complete) img.addEventListener('load', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(build, 80); }, { once: true });
+  });
+  reduced.addEventListener?.('change', build);
+  window.addEventListener('load', build);
+  build();
+});
 
 })();

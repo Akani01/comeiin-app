@@ -1,0 +1,36 @@
+{% load static %}
+{# ================================================================
+   Clients logo carousel  —  partials/_clients_carousel.html
+
+   HOW TO ADD A LOGO
+   1. Save the file in  static/assets/clients/  (PNG / SVG / WEBP, ideally
+      transparent background, roughly 400px wide).
+   2. Copy one <li class="clients-item"> block below and change the
+      filename and the alt text (use the company name).
+   The carousel handles looping, spacing and screen sizes by itself.
+   ================================================================ #}
+<section class="clients" id="clients" aria-labelledby="clients-title" data-clients>
+  <div class="clients-head">
+    <div>
+      <p class="eyebrow">TRUSTED BY</p>
+      <h2 id="clients-title">Organisations we’ve <em>supplied.</em></h2>
+    </div>
+    <button type="button" class="clients-toggle" data-clients-toggle aria-pressed="false" hidden>
+      <span class="clients-toggle-icon" aria-hidden="true"></span>
+      <span class="clients-toggle-label">Pause</span>
+    </button>
+  </div>
+
+  <div class="clients-viewport">
+    <ul class="clients-group" data-clients-group aria-label="Companies we have worked with">
+      <li class="clients-item"><img src="{% static 'assets/clients/client-1.png' %}" alt="Client name 1" loading="lazy" decoding="async" /></li>
+      <li class="clients-item"><img src="{% static 'assets/clients/client-2.png' %}" alt="Client name 2" loading="lazy" decoding="async" /></li>
+      <li class="clients-item"><img src="{% static 'assets/clients/client-3.png' %}" alt="Client name 3" loading="lazy" decoding="async" /></li>
+      <li class="clients-item"><img src="{% static 'assets/clients/client-4.png' %}" alt="Client name 4" loading="lazy" decoding="async" /></li>
+      <li class="clients-item"><img src="{% static 'assets/clients/client-5.png' %}" alt="Client name 5" loading="lazy" decoding="async" /></li>
+      <li class="clients-item"><img src="{% static 'assets/clients/client-6.png' %}" alt="Client name 6" loading="lazy" decoding="async" /></li>
+      <li class="clients-item"><img src="{% static 'assets/clients/client-7.png' %}" alt="Client name 7" loading="lazy" decoding="async" /></li>
+      <li class="clients-item"><img src="{% static 'assets/clients/client-8.png' %}" alt="Client name 8" loading="lazy" decoding="async" /></li>
+    </ul>
+  </div>
+</section>

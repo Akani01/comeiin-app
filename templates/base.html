@@ -24,7 +24,101 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/future.css' %}?v=23" />
+  <link rel="stylesheet" href="{% static 'css/future.css' %}?v=24" />
+
+  <!-- Clients logo carousel styles (minimal) -->
+  <style>
+    .clients {
+      --cl-gap: clamp(32px, 5vw, 64px);
+      --cl-accent: var(--orange, #f97316);
+      --cl-duration: 40s; /* JS overrides this based on logo count */
+      position: relative;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: transparent;
+      padding: clamp(20px, 3vw, 32px) 0;
+      margin: 24px 0 0;
+    }
+    .clients *, .clients *::before, .clients *::after { box-sizing: border-box; }
+    .clients-head {
+      display: flex; align-items: center; justify-content: center; gap: 14px;
+      padding: 0 clamp(20px, 5vw, 64px);
+      margin-bottom: 14px;
+    }
+    .clients .eyebrow {
+      margin: 0; font-size: .66rem; letter-spacing: .26em; text-transform: uppercase;
+      color: #94a3b8;
+    }
+
+    /* Tiny pause / play control */
+    .clients-toggle {
+      display: inline-grid; place-items: center;
+      width: 22px; height: 22px; padding: 0; cursor: pointer;
+      background: transparent; color: #94a3b8;
+      border: 0; border-radius: 50%;
+      transition: color .2s;
+    }
+    .clients-toggle[hidden] { display: none; }
+    .clients-toggle:hover, .clients-toggle:focus-visible { color: var(--cl-accent); }
+    .clients-toggle-label { display: none; }
+    .clients-toggle-icon { position: relative; width: 8px; height: 10px; display: inline-block; }
+    .clients-toggle-icon::before, .clients-toggle-icon::after {
+      content: ""; position: absolute; top: 0; bottom: 0; width: 2px; background: currentColor; border-radius: 1px;
+    }
+    .clients-toggle-icon::before { left: 0; }
+    .clients-toggle-icon::after  { right: 0; }
+    .clients-toggle[aria-pressed="true"] .clients-toggle-icon::before {
+      left: 1px; top: 0; bottom: auto; width: 0; height: 0; background: none; border-radius: 0;
+      border-left: 8px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent;
+    }
+    .clients-toggle[aria-pressed="true"] .clients-toggle-icon::after { display: none; }
+
+    /* Viewport with faded edges */
+    .clients-viewport {
+      position: relative; overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+              mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+    }
+    .clients-track {
+      display: flex; width: max-content;
+      animation: clients-scroll var(--cl-duration) linear infinite;
+      will-change: transform;
+    }
+    .clients-viewport:hover .clients-track,
+    .clients-viewport:focus-within .clients-track,
+    .clients[data-paused="true"] .clients-track { animation-play-state: paused; }
+
+    @keyframes clients-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); } /* two identical groups = seamless loop */
+    }
+
+    .clients-group {
+      display: flex; flex-shrink: 0; align-items: center; gap: var(--cl-gap);
+      list-style: none; margin: 0; padding: 0 var(--cl-gap) 0 0;
+    }
+    /* No boxes, just small quiet logos */
+    .clients-item {
+      flex: 0 0 auto;
+      width: clamp(70px, 8vw, 100px); height: clamp(28px, 3.4vw, 38px);
+      display: grid; place-items: center;
+    }
+    .clients-item img {
+      display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain;
+      filter: grayscale(1) opacity(.45);
+      transition: filter .25s;
+    }
+    .clients-item:hover img { filter: none; }
+
+    /* Reduced motion: no animation, swipe/scroll manually */
+    @media (prefers-reduced-motion: reduce) {
+      .clients-viewport { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+      .clients-track { animation: none; }
+      .clients-group[aria-hidden="true"], .clients-toggle { display: none; }
+    }
+  </style>
 
   <!-- Comeiin footer styles (light blue) -->
   <style>
@@ -42,7 +136,7 @@
       background: var(--cw-bg);
       color: var(--cw-text);
       padding: clamp(40px, 6vw, 80px) clamp(20px, 5vw, 64px) 24px;
-      margin: 40px 0 0;
+      margin: 0;
       border-top: 1px solid var(--cw-line);
     }
     .cw-footer *, .cw-footer *::before, .cw-footer *::after { box-sizing: border-box; }
@@ -126,7 +220,7 @@
 </head>
 <body class="{% block body_class %}{% endblock %}" {% block body_attrs %}{% endblock %}>
 
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="{{ request.path }}#main">Skip to content</a>
 
   <div class="topline">
     <span>LABORATORY EQUIPMENT &amp; CONSUMABLES</span>
@@ -213,7 +307,41 @@
   </main>
 
   <!-- ============================================================
-       Comeiin footer (replaces the old simple footer).
+       Clients logo carousel (home + about pages only)
+       Sits directly above the footer.
+       ============================================================ -->
+  {% block clients %}
+    {% if request.resolver_match.url_name == 'home' or request.resolver_match.url_name == 'about' %}
+    <section class="clients" id="clients" aria-labelledby="clients-title" data-clients>
+      <div class="clients-head">
+        <p class="eyebrow" id="clients-title">Trusted by</p>
+        <button type="button" class="clients-toggle" data-clients-toggle aria-pressed="false" aria-label="Pause logo scrolling" hidden>
+          <span class="clients-toggle-icon" aria-hidden="true"></span>
+          <span class="clients-toggle-label">Pause</span>
+        </button>
+      </div>
+
+      <div class="clients-viewport">
+        <div class="clients-track" data-clients-track>
+          <ul class="clients-group" data-clients-group aria-label="Companies we have worked with">
+            <li class="clients-item"><img src="{% static 'assets/companies/adam.webp' %}" alt="Adam" loading="lazy" decoding="async" /></li>
+            <li class="clients-item"><img src="{% static 'assets/companies/aquilon.webp' %}" alt="Aquilon" loading="lazy" decoding="async" /></li>
+            <li class="clients-item"><img src="{% static 'assets/companies/biobase.webp' %}" alt="Biobase" loading="lazy" decoding="async" /></li>
+            <li class="clients-item"><img src="{% static 'assets/companies/eins-sci.webp' %}" alt="Eins Sci" loading="lazy" decoding="async" /></li>
+            <li class="clients-item"><img src="{% static 'assets/companies/erez-labmed.webp' %}" alt="Erez Labmed" loading="lazy" decoding="async" /></li>
+            <li class="clients-item"><img src="{% static 'assets/companies/labocare.webp' %}" alt="Labocare" loading="lazy" decoding="async" /></li>
+            <li class="clients-item"><img src="{% static 'assets/companies/sanguilon.webp' %}" alt="Sanguilon" loading="lazy" decoding="async" /></li>
+            <li class="clients-item"><img src="{% static 'assets/companies/symbiolab.webp' %}" alt="Symbiolab" loading="lazy" decoding="async" /></li>
+            <li class="clients-item"><img src="{% static 'assets/companies/vacucare.webp' %}" alt="Vacucare" loading="lazy" decoding="async" /></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+  {% endblock %}
+
+  <!-- ============================================================
+       Comeiin footer.
        Uses <div role="contentinfo"> so global `footer` / `nav`
        styles from style.css / future.css cannot leak into it.
        ============================================================ -->
@@ -327,7 +455,60 @@
 
   <script src="{% static 'js/catalogue.js' %}?v=100"></script>
   <script src="{% static 'js/app.js' %}?v=10"></script>
-  <script src="{% static 'js/future.js' %}?v=17"></script>
+  <script src="{% static 'js/future.js' %}?v=18"></script>
+
+  <!-- ============================================================
+       Clients logo carousel behaviour
+       ============================================================ -->
+  <script>
+    (function () {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      document.querySelectorAll('[data-clients]').forEach((section) => {
+        const track    = section.querySelector('[data-clients-track]');
+        const group    = section.querySelector('[data-clients-group]');
+        const viewport = section.querySelector('.clients-viewport');
+        const toggle   = section.querySelector('[data-clients-toggle]');
+        if (!track || !group || !viewport || reduce.matches) return;
+
+        // Make sure one group is at least as wide as the viewport (few logos / wide screens)
+        const originals = Array.from(group.children);
+        let guard = 0;
+        while (group.scrollWidth < viewport.clientWidth && guard++ < 6) {
+          originals.forEach((li) => group.appendChild(li.cloneNode(true)));
+        }
+
+        // Duplicate the whole group once for the seamless loop (hidden from screen readers)
+        const clone = group.cloneNode(true);
+        clone.removeAttribute('data-clients-group');
+        clone.removeAttribute('aria-label');
+        clone.setAttribute('aria-hidden', 'true');
+        clone.querySelectorAll('img').forEach((img) => { img.alt = ''; img.loading = 'eager'; });
+        track.appendChild(clone);
+
+        // Constant speed (~40px/s) regardless of how many logos there are
+        const setSpeed = () => {
+          const seconds = Math.max(20, group.scrollWidth / 40);
+          section.style.setProperty('--cl-duration', seconds + 's');
+        };
+        setSpeed();
+        window.addEventListener('resize', setSpeed);
+
+        // Pause / Play button
+        if (toggle) {
+          const label = toggle.querySelector('.clients-toggle-label');
+          toggle.hidden = false;
+          toggle.addEventListener('click', () => {
+            const paused = toggle.getAttribute('aria-pressed') !== 'true';
+            toggle.setAttribute('aria-pressed', String(paused));
+            section.dataset.paused = String(paused);
+            if (label) label.textContent = paused ? 'Play' : 'Pause';
+            toggle.setAttribute('aria-label', paused ? 'Play logo scrolling' : 'Pause logo scrolling');
+          });
+        }
+      });
+    })();
+  </script>
 
   <!-- ============================================================
        PWA — service worker + install prompt
@@ -356,13 +537,18 @@
         window.navigator.standalone === true;
 
       const isDismissed = () => {
-        const until = parseInt(localStorage.getItem(DISMISS_KEY) || '0', 10);
-        return until > Date.now();
+        try {
+          const until = parseInt(localStorage.getItem(DISMISS_KEY) || '0', 10);
+          return until > Date.now();
+        } catch (e) { return false; }
+      };
+
+      const remember = (ms) => {
+        try { localStorage.setItem(DISMISS_KEY, String(Date.now() + ms)); } catch (e) { /* storage unavailable */ }
       };
 
       const dismiss = () => {
-        const until = Date.now() + DISMISS_DAYS * 24 * 60 * 60 * 1000;
-        localStorage.setItem(DISMISS_KEY, String(until));
+        remember(DISMISS_DAYS * 24 * 60 * 60 * 1000);
         banner.hidden = true;
       };
 
@@ -421,7 +607,7 @@
       window.addEventListener('appinstalled', () => {
         console.log('[PWA] App installed');
         banner.hidden = true;
-        localStorage.setItem(DISMISS_KEY, String(Date.now() + 365 * 24 * 60 * 60 * 1000));
+        remember(365 * 24 * 60 * 60 * 1000);
       });
     })();
   </script>
