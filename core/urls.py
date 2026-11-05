@@ -13,6 +13,7 @@ urlpatterns = [
     path('laboratory/', views.laboratory_redirect, name='laboratory'),
     path('engineering/', views.engineering_redirect, name='engineering'),
     path('privacy/', views.privacy_view, name='privacy'),
+    path('project/', views.project_view, name='project'),
 
     # API
     path('api/contact/', views.ContactMessageCreateView.as_view(), name='api-contact'),

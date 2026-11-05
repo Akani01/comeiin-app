@@ -1,30 +1,163 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}About Comeiin Works — Laboratory Supply Partner{% endblock %}
+{% block title %}About Comeiin Works — Laboratory Equipment &amp; Consumables Supplier{% endblock %}
 {% block body_class %}about-page{% endblock %}
 
 {% block content %}
-<section class="about-hero section">
-  <div class="about-hero-copy">
-    <p class="eyebrow">
-      <span class="status-dot"></span> ABOUT COMEIIN WORKS
-    </p>
-    <h1>Your laboratory needs a supply partner who keeps up.</h1>
-    <p>We help laboratories source essential equipment, glassware and consumables through one clear, responsive quotation process.</p>
-    <div class="hero-actions">
-      <button class="quote-open button orange">
-        Request a quotation <span>↗︎</span>
-      </button>
-      <a class="hero-secondary" href="{% url 'products:catalogue' %}">
-        Explore our range <span>→</span>
-      </a>
+<style>
+  .cwa {
+    --cwa-accent: var(--orange, var(--accent, #ff7a1a));
+    --cwa-text: #fff;
+    --cwa-muted: rgba(255, 255, 255, .78);
+    --cwa-hair: rgba(255, 255, 255, .18);
+    --cwa-shade: rgba(6, 8, 12, .80);
+  }
+  .cwa *, .cwa *::before, .cwa *::after { box-sizing: border-box; }
+  .cwa-wrap { width: min(1180px, 100% - 2rem); margin-inline: auto; }
+  .cwa-sec { padding: clamp(1.2rem, 3vw, 2rem) 0; }
+
+  /* One picture panel holds all of the information */
+  .cwa-panel {
+    position: relative; isolation: isolate; overflow: hidden; color: var(--cwa-text);
+    border-radius: 26px; padding: clamp(1.5rem, 4.5vw, 3.5rem);
+    background-color: #0b0d12; background-size: cover; background-position: center;
+  }
+  .cwa-panel::before {
+    content: ""; position: absolute; inset: 0; z-index: -1; background: var(--cwa-shade);
+  }
+  .cwa-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+
+  .cwa-eyebrow {
+    margin: 0 0 .8rem; font-size: .72rem; font-weight: 700; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--cwa-accent);
+  }
+  .cwa h2.cwa-h2 { margin: 0 0 1rem; font-size: clamp(1.6rem, 3.2vw, 2.4rem); line-height: 1.12; letter-spacing: -.02em; color: var(--cwa-text); }
+  .cwa-panel p { margin: 0 0 .9rem; line-height: 1.7; color: var(--cwa-muted); }
+
+  /* minimal hairline lists instead of boxes/cards */
+  .cwa-list { list-style: none; margin: 0; padding: 0; }
+  .cwa-list li { padding: .75rem 0; border-top: 1px solid var(--cwa-hair); line-height: 1.55; font-size: .95rem; color: var(--cwa-muted); }
+  .cwa-list li:last-child { border-bottom: 1px solid var(--cwa-hair); }
+  .cwa-list b { display: block; color: var(--cwa-text); font-weight: 650; margin-bottom: .1rem; }
+  .cwa-list.cwa-dots li { padding-left: 1.1rem; position: relative; color: var(--cwa-text); }
+  .cwa-list.cwa-dots li::before { content: ""; position: absolute; left: 0; top: 1.3rem; width: 6px; height: 6px; border-radius: 50%; background: var(--cwa-accent); }
+
+  .cwa-sub { margin: 1.6rem 0 .6rem; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--cwa-accent); }
+
+  /* credentials: a plain inline row */
+  .cwa-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid var(--cwa-hair); }
+  .cwa-facts b { display: block; color: var(--cwa-text); font-size: 1.05rem; margin-bottom: .2rem; }
+  .cwa-facts span { color: var(--cwa-muted); font-size: .88rem; line-height: 1.5; }
+
+  .cwa-vm p { color: var(--cwa-text); }
+  .cwa-values { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin: 0; padding: 0; list-style: none; }
+  .cwa-values li { font-weight: 600; color: var(--cwa-text); }
+  .cwa-values li::before { content: "/ "; color: var(--cwa-accent); }
+
+  .cwa-dl { margin: 0; }
+  .cwa-dl div { display: grid; grid-template-columns: 8.5rem 1fr; gap: .8rem; padding: .7rem 0; border-top: 1px solid var(--cwa-hair); }
+  .cwa-dl div:last-child { border-bottom: 1px solid var(--cwa-hair); }
+  .cwa-dl dt { color: var(--cwa-accent); font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding-top: .15rem; }
+  .cwa-dl dd { margin: 0; color: var(--cwa-text); font-size: .94rem; word-break: break-word; }
+  .cwa-dl a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .cwa-sign { margin-top: 1.4rem !important; font-size: .8rem; font-weight: 700; letter-spacing: .2em; color: var(--cwa-text) !important; }
+  .cwa-sign b { color: var(--cwa-accent); }
+
+
+  /* ---------- hero carousel (self-contained, no Bootstrap needed) ---------- */
+  .cwa-car { position: relative; border-radius: 26px; overflow: hidden; color: var(--cwa-text); background: #0b0d12; }
+  .cwa-car-inner { position: relative; min-height: clamp(460px, 62vh, 620px); }
+  .cwa-slide {
+    position: absolute; inset: 0; display: flex; align-items: center; isolation: isolate;
+    padding: clamp(1.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem) clamp(4.5rem, 8vw, 5.5rem);
+    background-size: cover; background-position: center;
+    opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility .6s;
+  }
+  .cwa-slide::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(6, 8, 12, .88) 0%, rgba(6, 8, 12, .7) 50%, rgba(6, 8, 12, .3) 100%); }
+  .cwa-slide.is-active { opacity: 1; visibility: visible; }
+  .cwa-slide-copy { max-width: 620px; }
+  .cwa-slide-copy h1, .cwa-slide-copy h2 { margin: 0 0 1rem; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.08; letter-spacing: -.02em; color: var(--cwa-text); }
+  .cwa-slide-copy p { line-height: 1.7; color: var(--cwa-muted); }
+  .cwa-slide-copy .hero-actions { margin-top: 1.4rem; }
+  .cwa-stamp { position: absolute; right: clamp(1rem, 4vw, 3rem); bottom: 5rem; text-align: right; font-size: .75rem; font-weight: 700; letter-spacing: .24em; line-height: 1.7; color: var(--cwa-muted); }
+  .cwa-stamp b { color: var(--cwa-accent); }
+  .cwa-car-controls { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; padding: 1rem clamp(1.5rem, 5vw, 4rem); }
+  .cwa-car-btns { display: flex; gap: .5rem; }
+  .cwa-car-btns button { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--cwa-hair); background: rgba(255, 255, 255, .1); color: #fff; font-size: 1.3rem; line-height: 1; cursor: pointer; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  .cwa-car-btns button:hover { background: var(--cwa-accent); border-color: var(--cwa-accent); color: #111; }
+  .cwa-car-dots { display: flex; gap: .45rem; }
+  .cwa-car-dots button { width: 26px; height: 4px; padding: 0; border: 0; border-radius: 4px; background: rgba(255, 255, 255, .35); cursor: pointer; transition: background .3s, width .3s; }
+  .cwa-car-dots button.is-active { width: 44px; background: var(--cwa-accent); }
+  .cwa-car button:focus-visible { outline: 2px solid var(--cwa-accent); outline-offset: 2px; }
+  @media (max-width: 700px) { .cwa-stamp { display: none; } .cwa-slide::before { background: rgba(6, 8, 12, .8); } }
+  @media (prefers-reduced-motion: reduce) { .cwa-slide { transition: none; } }
+
+  @media (max-width: 900px) {
+    .cwa-cols, .cwa-facts { grid-template-columns: 1fr; }
+    .cwa-facts { gap: 1rem; }
+  }
+  @media (max-width: 520px) {
+    .cwa-dl div { grid-template-columns: 1fr; gap: .1rem; }
+  }
+</style>
+
+<div class="cwa">
+
+<!-- ================= HERO CAROUSEL ================= -->
+<section class="cwa-sec cwa-wrap" aria-roledescription="carousel" aria-label="About Comeiin Works">
+  <div class="cwa-car" id="cwaCarousel">
+    <div class="cwa-car-inner">
+
+      <div class="cwa-slide is-active" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}')" aria-roledescription="slide" aria-label="1 of 3">
+        <div class="cwa-slide-copy">
+          <p class="cwa-eyebrow"><span class="status-dot"></span> About Comeiin Works</p>
+          <h1>Your laboratory needs a supply partner who keeps up.</h1>
+          <p>Comeiin Works (Pty) Ltd is a South African supplier of laboratory equipment, consumables and scientific products, giving laboratories one clear, responsive route to a quotation.</p>
+          <div class="hero-actions">
+            <button class="quote-open button orange">Request a quotation <span>↗︎</span></button>
+            <a class="hero-secondary" href="{% url 'products:catalogue' %}">Explore our range <span>→</span></a>
+          </div>
+        </div>
+        <span class="cwa-stamp">ASTUTE<br />SWIFT<br /><b>PASSIONATE</b></span>
+      </div>
+
+      <div class="cwa-slide" style="background-image:url('{% static 'assets/landing-hero-v2.webp' %}')" aria-roledescription="slide" aria-label="2 of 3">
+        <div class="cwa-slide-copy">
+          <p class="cwa-eyebrow">What we supply</p>
+          <h2>Equipment, consumables and specialist products.</h2>
+          <p>From centrifuges and pipettes to plasticware, sample handling, diagnostics and reagents, all in one enquiry.</p>
+          <div class="hero-actions">
+            <a class="hero-secondary" href="{% url 'products:catalogue' %}">Explore our range <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cwa-slide" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}'); background-position: right center;" aria-roledescription="slide" aria-label="3 of 3">
+        <div class="cwa-slide-copy">
+          <p class="cwa-eyebrow">Since 2016</p>
+          <h2>Reliable, responsive and ethical.</h2>
+          <p>Founded in 2016 and incorporated in 2020, with a B-BBEE Level 1 rating and a customer-first approach.</p>
+          <div class="hero-actions">
+            <button class="quote-open button orange">Request a quotation <span>↗︎</span></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cwa-car-controls">
+      <div class="cwa-car-btns">
+        <button type="button" data-cwa="prev" aria-label="Previous slide">‹</button>
+        <button type="button" data-cwa="next" aria-label="Next slide">›</button>
+      </div>
+      <div class="cwa-car-dots">
+        <button type="button" class="is-active" aria-label="Slide 1" aria-current="true"></button>
+        <button type="button" aria-label="Slide 2"></button>
+        <button type="button" aria-label="Slide 3"></button>
+      </div>
     </div>
   </div>
-  <figure>
-    <img src="{% static 'assets/landing-about-v2.webp' %}" alt="Professional laboratory glassware on a modern laboratory bench" width="1400" height="933" fetchpriority="high" decoding="async" />
-    <span class="about-image-stamp">ASTUTE<br />SWIFT<br /><b>PASSIONATE</b></span>
-  </figure>
 </section>
 
 <div class="about-principles" aria-label="Comeiin Works principles">
@@ -33,32 +166,112 @@
   <span><b>03</b> Respond with clarity</span>
 </div>
 
-<section class="about-story section">
-  <div>
-    <p class="eyebrow">OUR ROLE</p>
-    <h2>More focus on the work.<br /><em>Less time chasing supplies.</em></h2>
-  </div>
-  <div class="about-story-copy">
-    <p>Comeiin Works supports routine, clinical, educational and specialised laboratories with practical access to the products they need. We bring equipment and consumables into a single enquiry, then confirm specifications, availability and the right fit for the work.</p>
-    <p>Our approach is built around responsive communication. You share the requirement; we help turn it into a clear, tailored quotation.</p>
-  </div>
-</section>
-
-<section class="about-bbbee section" aria-labelledby="bbbee-title">
-  <div class="about-bbbee-badge">
-    <img src="{% static 'assets/bbbee-level-1-comeiin.webp' %}" alt="B-BBEE Contributor Level 1 rating badge" width="1000" height="1000" loading="lazy" decoding="async" />
-  </div>
-  <div class="about-bbbee-copy">
-    <p class="eyebrow">RESPONSIBLE PROCUREMENT</p>
-    <h2 id="bbbee-title">A Level 1 contributor.</h2>
-    <p>Comeiin Works holds a B-BBEE Level 1 contributor rating, supporting organisations that consider supplier diversity and transformation in their procurement decisions.</p>
-    <div class="about-bbbee-status">
-      <span>STATUS</span>
-      <strong>B-BBEE Level 1</strong>
+<!-- ================= 1. OVERVIEW ================= -->
+<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-overview-title">
+  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}')">
+    <p class="cwa-eyebrow">Company overview</p>
+    <h2 class="cwa-h2" id="cwa-overview-title">More focus on the work. Less time chasing supplies.</h2>
+    <div class="cwa-cols">
+      <p>Comeiin Works (Pty) Ltd is a South African supplier and distribution partner focused on laboratory equipment, consumables and related scientific products. We combine product sourcing, responsive service and practical procurement support.</p>
+      <p>Founded in 2016 and formally incorporated in 2020, we are built around reliability, quality, competitive pricing and long-term business relationships.</p>
+    </div>
+    <div class="cwa-facts">
+      <div><b>2016 / 2020</b><span>Founded and incorporated</span></div>
+      <div><b>2020/436182/07</b><span>Registration · VAT 4420309447</span></div>
+      <div><b>B-BBEE Level 1</b><span>Supporting supplier diversity</span></div>
     </div>
   </div>
 </section>
 
+<!-- ================= 2. BUSINESS + PORTFOLIO ================= -->
+<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-business-title">
+  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-hero-v2.webp' %}')">
+    <div class="cwa-cols">
+      <div>
+        <p class="cwa-eyebrow">Our business</p>
+        <h2 class="cwa-h2" id="cwa-business-title">Laboratory supply, from routine to specialist.</h2>
+        <p>Equipment and consumables for routine operations, research, diagnostics, quality control and industrial applications. Availability is subject to supplier ranges and customer specifications.</p>
+        <ul class="cwa-list cwa-dots">
+          <li>Laboratory equipment and instruments</li>
+          <li>Consumables and single-use products</li>
+          <li>Specialised products sourced to specification</li>
+          <li>Procurement support across multiple categories</li>
+          <li>Recurring supply and replenishment</li>
+        </ul>
+      </div>
+      <div>
+        <p class="cwa-eyebrow">Portfolio</p>
+        <ul class="cwa-list">
+          <li><b>Laboratory Equipment</b>Centrifuges, vortex mixers, shakers, rockers, rollers, pipettors, pipette controllers, bottle-top dispensers.</li>
+          <li><b>Pipetting &amp; Liquid Handling</b>Pipette and filter tips, serological pipettes, liquid-handling accessories.</li>
+          <li><b>Sample Collection &amp; Handling</b>Blood collection products, specimen containers, swabs, specimen bags.</li>
+          <li><b>Laboratory Plasticware</b>Centrifuge and PCR tubes, cryovials, Petri dishes, racks, reservoirs.</li>
+          <li><b>Microscopy &amp; General Consumables</b>Slides, coverslips, mailers, weighing boats, inoculation loops, spreaders.</li>
+          <li><b>Storage, Safety &amp; Accessories</b>Cryoboxes, labelling, autoclave bags and baskets, drying racks, lab mats.</li>
+          <li><b>Diagnostic &amp; Testing Products</b>Diagnostic test kits and selected testing products, subject to availability.</li>
+          <li><b>Reagents &amp; Specialist Products</b>Reagents, blood grouping antisera, coagulation reagents, latex test kits.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. INDUSTRIES + VALUE PROPOSITION ================= -->
+<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-industries-title">
+  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}'); background-position: right center;">
+    <div class="cwa-cols">
+      <div>
+        <p class="cwa-eyebrow">Who we support</p>
+        <h2 class="cwa-h2" id="cwa-industries-title">Industries &amp; customers.</h2>
+        <ul class="cwa-list cwa-dots">
+          <li>Academic and educational laboratories</li>
+          <li>Medical and clinical laboratories</li>
+          <li>Research and scientific organisations</li>
+          <li>Veterinary practices and laboratories</li>
+          <li>Cosmetics and personal care</li>
+          <li>Food and beverage manufacturers and laboratories</li>
+          <li>Industrial and quality-control laboratories</li>
+          <li>Pharmaceutical and related laboratories</li>
+        </ul>
+      </div>
+      <div>
+        <p class="cwa-eyebrow">Our value proposition</p>
+        <ul class="cwa-list">
+          <li><b>Quality-focused sourcing</b>Recognised and trusted suppliers and manufacturers.</li>
+          <li><b>Reliable service</b>Responsive communication and dependable follow-through.</li>
+          <li><b>Competitive pricing</b>Commercially competitive, with quality requirements in mind.</li>
+          <li><b>Customer-centric solutions</b>We understand your requirement and provide suitable options.</li>
+          <li><b>Product breadth</b>Laboratory equipment plus everyday and specialist consumables.</li>
+          <li><b>Long-term relationships</b>Transparent, ethical and professional.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. VISION / MISSION / VALUES ================= -->
+<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-vm-title">
+  <div class="cwa-panel cwa-vm" style="background-image:url('{% static 'assets/landing-hero-v2.webp' %}'); background-position: left center;">
+    <p class="cwa-eyebrow">Vision, mission &amp; values</p>
+    <h2 class="cwa-h2" id="cwa-vm-title">What guides every supply decision.</h2>
+    <div class="cwa-cols">
+      <div>
+        <p class="cwa-sub" style="margin-top:0">Vision</p>
+        <p>To maintain and grow our expertise across our core product range, consistently offering high-quality products and services that meet or exceed customer expectations. We aim to be a reliable, efficient and affordable supplier to the scientific and laboratory community, without compromising on quality.</p>
+      </div>
+      <div>
+        <p class="cwa-sub" style="margin-top:0">Mission</p>
+        <p>To distinguish Comeiin Works through exceptional client relationships, superior customer service and reliable delivery timelines, upholding honesty, integrity and ethical business practices in every aspect of our operations.</p>
+      </div>
+    </div>
+    <p class="cwa-sub">Core values</p>
+    <ul class="cwa-values">
+      <li>Integrity</li><li>Customer focus</li><li>Reliability</li><li>Quality</li><li>Professionalism</li><li>Responsiveness</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= BRAND VALUES (existing) ================= -->
 <section class="about-values section">
   <div class="section-title">
     <div>
@@ -86,6 +299,33 @@
   </div>
 </section>
 
+<!-- ================= 5. PROCUREMENT + QUALITY + WHY ================= -->
+<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-proc-title">
+  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}')">
+    <div class="cwa-cols">
+      <div>
+        <p class="cwa-eyebrow">Procurement &amp; supply support</p>
+        <h2 class="cwa-h2" id="cwa-proc-title">One responsive point of contact.</h2>
+        <p>We identify suitable products across our supply network. If an item is not in our standard range, send specifications, descriptions or product references and we will consider sourcing it.</p>
+        <p>Quality is central to our approach: recognised suppliers, products matched to intended use, clear communication and ethical business practices.</p>
+      </div>
+      <div>
+        <p class="cwa-eyebrow">Our commitment</p>
+        <ul class="cwa-list cwa-dots">
+          <li>Product and supplier selection based on your requirements</li>
+          <li>Clear communication on specifications, availability and lead times</li>
+          <li>Professional handling of quotations and enquiries</li>
+          <li>Reliable delivery and customer support</li>
+          <li>Continuous development of product knowledge and supply network</li>
+        </ul>
+        <p class="cwa-sub">Why choose Comeiin Works</p>
+        <p style="margin:0">A focused equipment and consumables offering, broad categories for routine and specialist needs, responsive service, competitive sourcing and support across multiple industries.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROCESS (existing) ================= -->
 <section class="about-process section">
   <div class="about-process-visual">
     <img src="{% static 'assets/landing-hero-v2.webp' %}" alt="Laboratory glassware illuminated in Comeiin blue and orange" width="1600" height="900" loading="lazy" decoding="async" />
@@ -101,16 +341,69 @@
   </div>
 </section>
 
-<section class="about-cta section">
-  <div>
-    <p class="eyebrow">READY WHEN YOU ARE</p>
-    <h2>Tell us what your laboratory needs.</h2>
-  </div>
-  <div>
-    <p>Start with a single item or a complete requirements list. Our team will help shape the next step.</p>
-    <button class="quote-open button orange">
-      Request a quotation <span>↗︎</span>
-    </button>
+<!-- ================= 6. CONTACT ================= -->
+<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-contact-title">
+  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-hero-v2.webp' %}'); background-position: right center;">
+    <div class="cwa-cols">
+      <div>
+        <p class="cwa-eyebrow">Contact us</p>
+        <h2 class="cwa-h2" id="cwa-contact-title">Let's support your laboratory supply requirements.</h2>
+        <p>Start with a single item or a complete requirements list.</p>
+        <button class="quote-open button orange">
+          Request a quotation <span>↗︎</span>
+        </button>
+        <p class="cwa-sign">COMEIIN · LABORATORY EQUIPMENT &amp; CONSUMABLES<br /><b>Astute | Swift | Passionate</b></p>
+      </div>
+      <dl class="cwa-dl">
+        <div><dt>Company</dt><dd>Comeiin Works (Pty) Ltd</dd></div>
+        <div><dt>Address</dt><dd>Innovation Worx, 1 Scale End, Halfway House Estate, Midrand, 1685</dd></div>
+        <div><dt>Telephone</dt><dd><a href="tel:+27112387334">011 238 7334</a></dd></div>
+        <div><dt>Email</dt><dd><a href="mailto:admin@comeiin.co.za">admin@comeiin.co.za</a></dd></div>
+        <div><dt>Website</dt><dd><a href="https://www.comeiin.co.za">www.comeiin.co.za</a></dd></div>
+        <div><dt>Registration</dt><dd>2020/436182/07</dd></div>
+        <div><dt>VAT number</dt><dd>4420309447</dd></div>
+      </dl>
+    </div>
   </div>
 </section>
+
+
+<script>
+(function () {
+  var root = document.getElementById('cwaCarousel');
+  if (!root) return;
+  var slides = root.querySelectorAll('.cwa-slide');
+  var dots = root.querySelectorAll('.cwa-car-dots button');
+  var i = 0, timer = null;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function go(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
+    dots.forEach(function (d, k) {
+      d.classList.toggle('is-active', k === i);
+      if (k === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+    });
+  }
+  function start() { if (!reduce) { stop(); timer = setInterval(function () { go(i + 1); }, 7000); } }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  root.querySelector('[data-cwa="prev"]').addEventListener('click', function () { go(i - 1); start(); });
+  root.querySelector('[data-cwa="next"]').addEventListener('click', function () { go(i + 1); start(); });
+  dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); start(); }); });
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+  var x0 = null;
+  root.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  root.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) { go(i + (dx < 0 ? 1 : -1)); start(); }
+    x0 = null;
+  });
+  start();
+})();
+</script>
+
+</div>
 {% endblock %}

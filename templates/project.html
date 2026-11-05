@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Brands — Comeiin Works | Laboratory Equipment &amp; Consumables{% endblock %}
+{% block meta_description %}Comeiin Works represents Adam, Aquilon, Biobase, Eins Sci, EREZ labmed, Labocare, Sanguilon ESR, SymbioLab and Vacucare within South Africa.{% endblock %}
+{% block body_class %}about-page project-page{% endblock %}
+
+{% block extra_head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<style>
+  .cwa {
+    --cwa-accent: var(--orange, var(--accent, #ff7a1a));
+    --cwa-text: #fff;
+    --cwa-muted: rgba(255, 255, 255, .78);
+    --cwa-hair: rgba(255, 255, 255, .18);
+    --cwa-shade: rgba(6, 8, 12, .80);
+  }
+  /* Typography: Aptos where installed, Inter as the consistent fallback */
+  .cwa, .cwa button, .cwa input, .cwa a, .cwa h1, .cwa h2, .cwa h3 {
+    font-family: "Aptos", "Inter", "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+  .cwa { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  .cwa *, .cwa *::before, .cwa *::after { box-sizing: border-box; }
+  .cwa-wrap { width: min(1180px, 100% - 2rem); margin-inline: auto; }
+  .cwa-sec { padding: clamp(1.2rem, 3vw, 2rem) 0; }
+
+  .cwa-panel {
+    position: relative; isolation: isolate; overflow: hidden; color: var(--cwa-text);
+    border-radius: 26px; padding: clamp(1.5rem, 4.5vw, 3.5rem);
+    background-color: #0b0d12; background-size: cover; background-position: center;
+  }
+  .cwa-panel::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--cwa-shade); }
+  .cwa-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
+
+  .cwa-eyebrow { margin: 0 0 .8rem; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--cwa-accent); }
+  .cwa h2.cwa-h2 { margin: 0 0 1rem; font-size: clamp(1.6rem, 3.2vw, 2.4rem); line-height: 1.12; letter-spacing: -.02em; color: var(--cwa-text); }
+  .cwa-panel p { margin: 0 0 .9rem; line-height: 1.7; color: var(--cwa-muted); }
+
+  .cwa-list { list-style: none; margin: 0; padding: 0; }
+  .cwa-list li { padding: .75rem 0; border-top: 1px solid var(--cwa-hair); line-height: 1.55; font-size: .95rem; color: var(--cwa-muted); }
+  .cwa-list li:last-child { border-bottom: 1px solid var(--cwa-hair); }
+  .cwa-list b { display: block; color: var(--cwa-text); font-weight: 650; margin-bottom: .1rem; }
+  .cwa-list.cwa-dots li { padding-left: 1.1rem; position: relative; color: var(--cwa-text); }
+  .cwa-list.cwa-dots li::before { content: ""; position: absolute; left: 0; top: 1.3rem; width: 6px; height: 6px; border-radius: 50%; background: var(--cwa-accent); }
+
+  .cwa-sub { margin: 1.6rem 0 .6rem; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--cwa-accent); }
+
+  .cwa-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid var(--cwa-hair); }
+  .cwa-facts b { display: block; color: var(--cwa-text); font-size: 1.05rem; margin-bottom: .2rem; }
+  .cwa-facts span { color: var(--cwa-muted); font-size: .88rem; line-height: 1.5; }
+
+  .cwa-dl { margin: 0; }
+  .cwa-dl div { display: grid; grid-template-columns: 8.5rem 1fr; gap: .8rem; padding: .7rem 0; border-top: 1px solid var(--cwa-hair); }
+  .cwa-dl div:last-child { border-bottom: 1px solid var(--cwa-hair); }
+  .cwa-dl dt { color: var(--cwa-accent); font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding-top: .15rem; }
+  .cwa-dl dd { margin: 0; color: var(--cwa-text); font-size: .94rem; word-break: break-word; }
+  .cwa-dl a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+  .cwa-sign { margin-top: 1.4rem !important; font-size: .8rem; font-weight: 700; letter-spacing: .2em; color: var(--cwa-text) !important; }
+  .cwa-sign b { color: var(--cwa-accent); }
+
+  /* ---------- hero carousel ---------- */
+  .cwa-car { position: relative; border-radius: 26px; overflow: hidden; color: var(--cwa-text); background: #0b0d12; }
+  .cwa-car-inner { position: relative; min-height: clamp(460px, 62vh, 620px); }
+  .cwa-slide {
+    position: absolute; inset: 0; display: flex; align-items: center; isolation: isolate;
+    padding: clamp(1.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem) clamp(4.5rem, 8vw, 5.5rem);
+    background-size: cover; background-position: center;
+    opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility .6s;
+  }
+  .cwa-slide::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(6, 8, 12, .88) 0%, rgba(6, 8, 12, .7) 50%, rgba(6, 8, 12, .3) 100%); }
+  .cwa-slide.is-active { opacity: 1; visibility: visible; }
+  .cwa-slide-copy { max-width: 620px; }
+  .cwa-slide-copy h1, .cwa-slide-copy h2 { margin: 0 0 1rem; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.08; letter-spacing: -.02em; color: var(--cwa-text); }
+  .cwa-slide-copy p { line-height: 1.7; color: var(--cwa-muted); }
+  .cwa-slide-copy .hero-actions { margin-top: 1.4rem; }
+  .cwa-stamp { position: absolute; right: clamp(1rem, 4vw, 3rem); bottom: 5rem; text-align: right; font-size: .75rem; font-weight: 700; letter-spacing: .24em; line-height: 1.7; color: var(--cwa-muted); }
+  .cwa-stamp b { color: var(--cwa-accent); }
+  .cwa-car-controls { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; padding: 1rem clamp(1.5rem, 5vw, 4rem); }
+  .cwa-car-btns { display: flex; gap: .5rem; }
+  .cwa-car-btns button { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--cwa-hair); background: rgba(255, 255, 255, .1); color: #fff; font-size: 1.3rem; line-height: 1; cursor: pointer; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+  .cwa-car-btns button:hover { background: var(--cwa-accent); border-color: var(--cwa-accent); color: #111; }
+  .cwa-car-dots { display: flex; gap: .45rem; }
+  .cwa-car-dots button { width: 26px; height: 4px; padding: 0; border: 0; border-radius: 4px; background: rgba(255, 255, 255, .35); cursor: pointer; transition: background .3s, width .3s; }
+  .cwa-car-dots button.is-active { width: 44px; background: var(--cwa-accent); }
+  .cwa-car button:focus-visible { outline: 2px solid var(--cwa-accent); outline-offset: 2px; }
+
+  @media (max-width: 900px) {
+    .cwa-cols, .cwa-facts { grid-template-columns: 1fr; }
+    .cwa-facts { gap: 1rem; }
+    .cwa-brands { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 700px) { .cwa-stamp { display: none; } .cwa-slide::before { background: rgba(6, 8, 12, .8); } }
+  @media (max-width: 520px) {
+    .cwa-dl div { grid-template-columns: 1fr; gap: .1rem; }
+    .cwa-brands { grid-template-columns: 1fr; }
+    .cwa-brand-logo { height: 110px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .cwa-slide, .cwa-brand { transition: none; } }
+
+  /* ---------- brand portfolio ---------- */
+  .cwb-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.4rem 0 0; padding: 0; list-style: none; }
+  .cwb-filters button {
+    padding: .5rem 1rem; border-radius: 999px; border: 1px solid var(--cwa-hair); cursor: pointer;
+    background: rgba(255, 255, 255, .06); color: var(--cwa-text); font: inherit; font-size: .85rem; font-weight: 600;
+  }
+  .cwb-filters button:hover { border-color: var(--cwa-accent); }
+  .cwb-filters button.is-active { background: var(--cwa-accent); border-color: var(--cwa-accent); color: #111; }
+  .cwb-filters button:focus-visible { outline: 2px solid var(--cwa-accent); outline-offset: 2px; }
+  .cwb-count { margin: 1rem 0 0 !important; font-size: .82rem; }
+
+  .cwb-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; margin-top: 1.4rem; }
+  .cwb-card { display: flex; flex-direction: column; border-radius: 20px; overflow: hidden; border: 1px solid var(--cwa-hair); background: rgba(255, 255, 255, .04); transition: border-color .25s ease, transform .25s ease; }
+  .cwb-card:hover { border-color: var(--cwa-accent); transform: translateY(-3px); }
+  .cwb-card[hidden] { display: none; }
+  .cwb-logo { display: grid; place-items: center; height: 120px; padding: 1.2rem 1.6rem; background: #fff; }
+  .cwb-logo img { display: block; max-width: 100%; max-height: 60px; width: auto; height: auto; object-fit: contain; }
+  .cwb-body { display: flex; flex-direction: column; flex: 1; padding: 1.3rem 1.4rem 1.5rem; }
+  .cwb-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 0 0 .6rem !important; }
+  .cwb-kicker span { font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--cwa-accent); }
+  .cwb-kicker .cwb-pill { padding: .2rem .6rem; border-radius: 999px; border: 1px solid var(--cwa-hair); color: var(--cwa-muted); letter-spacing: .1em; }
+  .cwb-body h3 { margin: 0 0 .6rem; font-size: 1.3rem; line-height: 1.2; letter-spacing: -.01em; color: var(--cwa-text); }
+  .cwb-body > p { font-size: .94rem; }
+  .cwb-meta { margin: .4rem 0 .2rem; }
+  .cwb-meta div { display: grid; grid-template-columns: 6.5rem 1fr; gap: .8rem; padding: .5rem 0; border-top: 1px solid var(--cwa-hair); font-size: .86rem; }
+  .cwb-meta div:last-child { border-bottom: 1px solid var(--cwa-hair); }
+  .cwb-meta dt { color: var(--cwa-accent); font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding-top: .15rem; }
+  .cwb-meta dd { margin: 0; color: var(--cwa-text); }
+  .cwb-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1rem 0 1.2rem; padding: 0; list-style: none; }
+  .cwb-tags li { padding: .25rem .7rem; border-radius: 999px; background: rgba(255, 255, 255, .1); color: var(--cwa-text); font-size: .76rem; font-weight: 600; }
+  .cwb-more { margin-top: auto; align-self: flex-start; background: none; border: 0; padding: 0; cursor: pointer; font: inherit; font-size: .88rem; font-weight: 700; color: var(--cwa-accent); }
+  .cwb-more:hover, .cwb-more:focus-visible { text-decoration: underline; text-underline-offset: 3px; outline: none; }
+  @media (max-width: 900px) { .cwb-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 520px) { .cwb-meta div { grid-template-columns: 1fr; gap: .1rem; } }
+  @media (prefers-reduced-motion: reduce) { .cwb-card { transition: none; } }
+
+</style>
+
+<div class="cwa">
+
+<!-- ================= HERO CAROUSEL ================= -->
+<section class="cwa-sec cwa-wrap" aria-roledescription="carousel" aria-label="Our brands">
+  <div class="cwa-car" id="cwaCarousel">
+    <div class="cwa-car-inner">
+
+      <div class="cwa-slide is-active" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}')" aria-roledescription="slide" aria-label="1 of 3">
+        <div class="cwa-slide-copy">
+          <p class="cwa-eyebrow"><span class="status-dot"></span> Brand portfolio</p>
+          <h1>Nine brands. One route to a quotation.</h1>
+          <p>We represent the following brands within South Africa, from precision balances and autoclaves to PCR-grade plasticware and blood collection systems.</p>
+          <div class="hero-actions">
+            <button class="quote-open button orange">Request a quotation <span>↗︎</span></button>
+            <a class="hero-secondary" href="#portfolio">Browse the brands <span>→</span></a>
+          </div>
+        </div>
+        <span class="cwa-stamp">ASTUTE<br />SWIFT<br /><b>PASSIONATE</b></span>
+      </div>
+
+      <div class="cwa-slide" style="background-image:url('{% static 'assets/landing-hero-v2.webp' %}')" aria-roledescription="slide" aria-label="2 of 3">
+        <div class="cwa-slide-copy">
+          <p class="cwa-eyebrow">Equipment</p>
+          <h2>Adam, Biobase and Eins Sci.</h2>
+          <p>Balances and scales, biosafety cabinets, centrifuges, autoclaves, mixers, PCR and liquid handling.</p>
+          <div class="hero-actions">
+            <a class="hero-secondary" href="#portfolio" data-cwb-jump="equipment">View equipment brands <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="cwa-slide" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}'); background-position: right center;" aria-roledescription="slide" aria-label="3 of 3">
+        <div class="cwa-slide-copy">
+          <p class="cwa-eyebrow">Consumables &amp; diagnostics</p>
+          <h2>Aquilon, Labocare, Vacucare, Sanguilon ESR and more.</h2>
+          <p>Certified plasticware, blood collection tubes, ESR testing and everyday laboratory supplies.</p>
+          <div class="hero-actions">
+            <a class="hero-secondary" href="#portfolio" data-cwb-jump="consumables">View consumables <span>→</span></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cwa-car-controls">
+      <div class="cwa-car-btns">
+        <button type="button" data-cwa="prev" aria-label="Previous slide">‹</button>
+        <button type="button" data-cwa="next" aria-label="Next slide">›</button>
+      </div>
+      <div class="cwa-car-dots">
+        <button type="button" class="is-active" aria-label="Slide 1" aria-current="true"></button>
+        <button type="button" aria-label="Slide 2"></button>
+        <button type="button" aria-label="Slide 3"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BRAND PORTFOLIO ================= -->
+<section class="cwa-sec cwa-wrap" id="portfolio" aria-labelledby="cwa-portfolio-title">
+  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}')">
+    <p class="cwa-eyebrow">Complete brand portfolio</p>
+    <h2 class="cwa-h2" id="cwa-portfolio-title">We represent the following brands within South Africa.</h2>
+    <p>What each brand makes, where it comes from and the product lines we can quote. Availability is subject to supplier ranges and customer specifications.</p>
+
+    <ul class="cwb-filters" role="group" aria-label="Filter brands by category">
+      <li><button type="button" class="is-active" data-filter="all" aria-pressed="true">All brands</button></li>
+      <li><button type="button" data-filter="equipment" aria-pressed="false">Equipment</button></li>
+      <li><button type="button" data-filter="consumables" aria-pressed="false">Consumables</button></li>
+      <li><button type="button" data-filter="diagnostics" aria-pressed="false">Blood collection &amp; diagnostics</button></li>
+    </ul>
+    <p class="cwb-count" id="cwbCount" role="status" aria-live="polite">Showing 9 of 9 brands</p>
+
+    <div class="cwb-grid" id="cwbGrid">
+      <article class="cwb-card" id="adam" data-cat="equipment">
+        <div class="cwb-logo"><img src="{% static 'assets/companies/adam.webp' %}" alt="Adam Equipment logo" width="418" height="183" loading="lazy" decoding="async" /></div>
+        <div class="cwb-body">
+          <p class="cwb-kicker"><span>Weighing & balances</span><span class="cwb-pill">Equipment</span></p>
+          <h3>Adam Equipment</h3>
+          <p>UK manufacturer of precision weighing equipment, headquartered in Milton Keynes and trading since 1972, with its own office in South Africa. The range runs from analytical, semi-micro and precision balances to compact and portable balances, moisture analysers, counting and checkweighing scales, and platform and crane scales for laboratory, industrial, education, medical and retail use.</p>
+          <dl class="cwb-meta"><div><dt>Origin</dt><dd>United Kingdom</dd></div><div><dt>Established</dt><dd>1972</dd></div><div><dt>Quality</dt><dd>ISO 9001 manufacturer</dd></div></dl>
+          <ul class="cwb-tags"><li>Analytical balances</li><li>Precision balances</li><li>Moisture analysers</li><li>Counting scales</li><li>Platform scales</li><li>Crane scales</li></ul>
+          <button type="button" class="cwb-more quote-open" aria-label="Request a quotation for Adam Equipment">Request a quotation for Adam Equipment ↗︎</button>
+        </div>
+      </article>
+      <article class="cwb-card" id="aquilon" data-cat="consumables">
+        <div class="cwb-logo"><img src="{% static 'assets/companies/aquilon.webp' %}" alt="Aquilon logo" width="312" height="93" loading="lazy" decoding="async" /></div>
+        <div class="cwb-body">
+          <p class="cwb-kicker"><span>PCR & molecular biology</span><span class="cwb-pill">Consumables</span></p>
+          <h3>Aquilon</h3>
+          <p>PCR-grade laboratory consumables for molecular biology, manufactured in certified clean rooms from virgin materials. Every product is sterile and certified free of DNase, RNase, pyrogens and human DNA, so it is suited to sensitive amplification and sample-preparation work.</p>
+          <dl class="cwb-meta"><div><dt>Brand owner</dt><dd>EREZ labmed</dd></div><div><dt>Quality</dt><dd>ISO 13485:2016 certified facilities</dd></div><div><dt>Grade</dt><dd>Sterile, DNase / RNase / pyrogen free</dd></div></dl>
+          <ul class="cwb-tags"><li>Standard & filter tips</li><li>Centrifuge tubes</li><li>PCR tubes & strips</li><li>Microplates</li><li>Sealing film</li><li>Cryovials</li><li>Serological pipettes</li></ul>
+          <button type="button" class="cwb-more quote-open" aria-label="Request a quotation for Aquilon">Request a quotation for Aquilon ↗︎</button>
+        </div>
+      </article>
+      <article class="cwb-card" id="biobase" data-cat="equipment">
+        <div class="cwb-logo"><img src="{% static 'assets/companies/biobase.webp' %}" alt="Biobase logo" width="493" height="104" loading="lazy" decoding="async" /></div>
+        <div class="cwb-body">
+          <p class="cwb-kicker"><span>Laboratory & medical equipment</span><span class="cwb-pill">Equipment</span></p>
+          <h3>Biobase</h3>
+          <p>Chinese manufacturer founded in 1999 and headquartered in Jinan, Shandong, covering laboratory equipment, medical devices and in-vitro diagnostics. Its laboratory lines include biological safety cabinets, fume hoods, centrifuges, autoclaves, incubators, ovens, laboratory refrigerators and biochemistry analysers.</p>
+          <dl class="cwb-meta"><div><dt>Origin</dt><dd>China (Jinan, Shandong)</dd></div><div><dt>Established</dt><dd>1999</dd></div><div><dt>Quality</dt><dd>States ISO 9001, ISO 13485 and CE certification</dd></div></dl>
+          <ul class="cwb-tags"><li>Biosafety cabinets</li><li>Centrifuges</li><li>Autoclaves</li><li>Incubators</li><li>Lab refrigeration</li><li>Analysers</li></ul>
+          <button type="button" class="cwb-more quote-open" aria-label="Request a quotation for Biobase">Request a quotation for Biobase ↗︎</button>
+        </div>
+      </article>
+      <article class="cwb-card" id="eins-sci" data-cat="equipment">
+        <div class="cwb-logo"><img src="{% static 'assets/companies/eins-sci.webp' %}" alt="Eins Sci logo" width="522" height="75" loading="lazy" decoding="async" /></div>
+        <div class="cwb-body">
+          <p class="cwb-kicker"><span>General laboratory equipment</span><span class="cwb-pill">Equipment</span></p>
+          <h3>Eins Sci</h3>
+          <p>Johannesburg-based laboratory equipment brand, founded in 1994 as Braden c.c. and relaunched as Eins-Sci in 2015. Autoclaves range from 150 to 4,275 litres, alongside centrifuges, dry bath incubators, hotplate stirrers, shakers, vortex and roller mixers, rotary evaporators, thermal cyclers, ultrasonic cleaners and a liquid-handling range. Most equipment carries a 2-year warranty, backed by an in-house service department.</p>
+          <dl class="cwb-meta"><div><dt>Origin</dt><dd>South Africa (Johannesburg)</dd></div><div><dt>Established</dt><dd>1994, relaunched 2015</dd></div><div><dt>Warranty</dt><dd>2 years on most equipment</dd></div></dl>
+          <ul class="cwb-tags"><li>Autoclaves</li><li>Centrifuges</li><li>Dry baths</li><li>Vortex mixers</li><li>Real-time PCR</li><li>Pipettes</li><li>Bottle-top dispensers</li></ul>
+          <button type="button" class="cwb-more quote-open" aria-label="Request a quotation for Eins Sci">Request a quotation for Eins Sci ↗︎</button>
+        </div>
+      </article>
+      <article class="cwb-card" id="erez-labmed" data-cat="consumables">
+        <div class="cwb-logo"><img src="{% static 'assets/companies/erez-labmed.webp' %}" alt="EREZ labmed logo" width="227" height="62" loading="lazy" decoding="async" /></div>
+        <div class="cwb-body">
+          <p class="cwb-kicker"><span>Supplier & brand owner</span><span class="cwb-pill">Consumables</span></p>
+          <h3>EREZ labmed</h3>
+          <p>South African supplier of laboratory and medical consumables, based in Midrand with more than 20 years in the market and ISO 13485 certification. The portfolio spans blood collection, blood typing and febrile antigens, centrifuge tubes and racks, cryo storage, liquid handling, microscope slides, PCR products, Petri dishes and swabs, rapid tests, sharps containers and specimen containers. EREZ labmed is also the brand owner of Aquilon, Labocare and Vacucare.</p>
+          <dl class="cwb-meta"><div><dt>Origin</dt><dd>South Africa (Midrand)</dd></div><div><dt>Experience</dt><dd>20+ years</dd></div><div><dt>Quality</dt><dd>ISO 13485 certified</dd></div></dl>
+          <ul class="cwb-tags"><li>Blood collection</li><li>Blood typing</li><li>Rapid tests</li><li>Specimen containers</li><li>Cryo storage</li><li>Sharps disposal</li></ul>
+          <button type="button" class="cwb-more quote-open" aria-label="Request a quotation for EREZ labmed">Request a quotation for EREZ labmed ↗︎</button>
+        </div>
+      </article>
+      <article class="cwb-card" id="labocare" data-cat="consumables">
+        <div class="cwb-logo"><img src="{% static 'assets/companies/labocare.webp' %}" alt="Labocare logo" width="360" height="127" loading="lazy" decoding="async" /></div>
+        <div class="cwb-body">
+          <p class="cwb-kicker"><span>General laboratory consumables</span><span class="cwb-pill">Consumables</span></p>
+          <h3>Labocare</h3>
+          <p>Everyday laboratory consumables manufactured on behalf of EREZ labmed in ISO 13485:2016 certified facilities. The range covers universal 200 µl and 1000 µl pipette tips, Pasteur pipettes, 15 ml and 50 ml centrifuge tubes with racks, microcentrifuge tubes, cryovials and cryovial boxes, sterile swab sticks with transport media, and sharps containers.</p>
+          <dl class="cwb-meta"><div><dt>Brand owner</dt><dd>EREZ labmed</dd></div><div><dt>Quality</dt><dd>ISO 13485:2016 certified facilities</dd></div><div><dt>Use</dt><dd>Routine laboratory work</dd></div></dl>
+          <ul class="cwb-tags"><li>Pipette tips</li><li>Centrifuge tubes</li><li>Cryovials</li><li>Swab sticks</li><li>Pasteur pipettes</li><li>Sharps containers</li></ul>
+          <button type="button" class="cwb-more quote-open" aria-label="Request a quotation for Labocare">Request a quotation for Labocare ↗︎</button>
+        </div>
+      </article>
+      <article class="cwb-card" id="sanguilon-esr" data-cat="diagnostics">
+        <div class="cwb-logo"><img src="{% static 'assets/companies/sanguilon.webp' %}" alt="Sanguilon ESR logo" width="350" height="66" loading="lazy" decoding="async" /></div>
+        <div class="cwb-body">
+          <p class="cwb-kicker"><span>ESR testing</span><span class="cwb-pill">Blood collection & diagnostics</span></p>
+          <h3>Sanguilon ESR</h3>
+          <p>A completely closed erythrocyte sedimentation rate (ESR) test that protects laboratory personnel from the risks of handling blood. The two-part Westergren system pairs a 220 mm crystal polystyrene pipette, graduated in 1 mm steps over 150 mm, with a polypropylene reservoir tube prefilled with 200 µl of 3.8% sodium citrate. The pipette pierces the stopper, auto-zeroes the blood and sends any excess into the sealed reservoir.</p>
+          <dl class="cwb-meta"><div><dt>Method</dt><dd>Westergren, closed system</dd></div><div><dt>Anticoagulant</dt><dd>200 µl of 3.8% sodium citrate</dd></div><div><dt>Pipette</dt><dd>220 mm, 1 mm graduations</dd></div></dl>
+          <ul class="cwb-tags"><li>ESR</li><li>Westergren pipette</li><li>Closed system</li><li>Haematology</li></ul>
+          <button type="button" class="cwb-more quote-open" aria-label="Request a quotation for Sanguilon ESR">Request a quotation for Sanguilon ESR ↗︎</button>
+        </div>
+      </article>
+      <article class="cwb-card" id="symbiolab" data-cat="consumables">
+        <div class="cwb-logo"><img src="{% static 'assets/companies/symbiolab.webp' %}" alt="SymbioLab logo" width="379" height="104" loading="lazy" decoding="async" /></div>
+        <div class="cwb-body">
+          <p class="cwb-kicker"><span>Laboratory & testing products</span><span class="cwb-pill">Consumables</span></p>
+          <h3>SymbioLab</h3>
+          <p>South African laboratory supplier founded in June 2017 on more than 28 years of experience in laboratory product sales, based in City Deep, Johannesburg. It serves the academic, scientific, research and medical markets with single-use and reusable consumables, glassware, plasticware, benchtop equipment, laboratory hardware, safety ware and basic chemicals and solutions, including medical and pathology consumables.</p>
+          <dl class="cwb-meta"><div><dt>Origin</dt><dd>South Africa (Johannesburg)</dd></div><div><dt>Established</dt><dd>2017, with 28+ years of experience</dd></div><div><dt>Markets</dt><dd>Academic, research, medical</dd></div></dl>
+          <ul class="cwb-tags"><li>Plasticware</li><li>Glassware</li><li>Pathology consumables</li><li>Safety ware</li><li>Basic chemicals</li><li>Benchtop equipment</li></ul>
+          <button type="button" class="cwb-more quote-open" aria-label="Request a quotation for SymbioLab">Request a quotation for SymbioLab ↗︎</button>
+        </div>
+      </article>
+      <article class="cwb-card" id="vacucare" data-cat="diagnostics">
+        <div class="cwb-logo"><img src="{% static 'assets/companies/vacucare.webp' %}" alt="Vacucare logo" width="318" height="58" loading="lazy" decoding="async" /></div>
+        <div class="cwb-body">
+          <p class="cwb-kicker"><span>Blood collection systems</span><span class="cwb-pill">Blood collection & diagnostics</span></p>
+          <h3>Vacucare</h3>
+          <p>Blood collection system for clinical human and veterinary use, manufactured on behalf of EREZ labmed in ISO 13485:2016 certified facilities. Evacuated tubes come in 13×75, 13×100 and 16×100 mm sizes with draw volumes from 1.8 to 10 ml, plus non-evacuated 0.5 ml micro tubes for capillary blood. Colour-coded additives cover serum, clot activator, EDTA K3, fluoride oxalate, lithium heparin, sodium citrate and gel SST, and recent developments include individually bar-coded tubes and extra-length micro tubes.</p>
+          <dl class="cwb-meta"><div><dt>Brand owner</dt><dd>EREZ labmed</dd></div><div><dt>Use</dt><dd>Human & veterinary</dd></div><div><dt>Tube draw</dt><dd>1.8 to 10 ml (0.5 ml micro)</dd></div></dl>
+          <ul class="cwb-tags"><li>Evacuated tubes</li><li>Micro tubes</li><li>Multi-sample needles</li><li>Safety-lock needles</li><li>Lancets</li><li>Tourniquets</li></ul>
+          <button type="button" class="cwb-more quote-open" aria-label="Request a quotation for Vacucare">Request a quotation for Vacucare ↗︎</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-cta-title">
+  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-hero-v2.webp' %}'); background-position: right center;">
+    <p class="cwa-eyebrow">Not sure which brand fits?</p>
+    <h2 class="cwa-h2" id="cwa-cta-title">Tell us what your laboratory needs.</h2>
+    <p>Combine products from several brands in a single enquiry, or send a specification and we will source it.</p>
+    <button class="quote-open button orange">Request a quotation <span>↗︎</span></button>
+  </div>
+</section>
+
+<script>
+(function () {
+  /* ---- hero carousel ---- */
+  var root = document.getElementById('cwaCarousel');
+  if (root) {
+    var slides = root.querySelectorAll('.cwa-slide');
+    var dots = root.querySelectorAll('.cwa-car-dots button');
+    var i = 0, timer = null;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var go = function (n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
+      dots.forEach(function (d, k) {
+        d.classList.toggle('is-active', k === i);
+        if (k === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+      });
+    };
+    var stop = function () { if (timer) { clearInterval(timer); timer = null; } };
+    var start = function () { if (!reduce) { stop(); timer = setInterval(function () { go(i + 1); }, 7000); } };
+    root.querySelector('[data-cwa="prev"]').addEventListener('click', function () { go(i - 1); start(); });
+    root.querySelector('[data-cwa="next"]').addEventListener('click', function () { go(i + 1); start(); });
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); start(); }); });
+    root.addEventListener('mouseenter', stop);
+    root.addEventListener('mouseleave', start);
+    root.addEventListener('focusin', stop);
+    root.addEventListener('focusout', start);
+    var x0 = null;
+    root.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    root.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 50) { go(i + (dx < 0 ? 1 : -1)); start(); }
+      x0 = null;
+    });
+    start();
+  }
+
+  /* ---- brand filter ---- */
+  var cards = document.querySelectorAll('#cwbGrid .cwb-card');
+  var btns = document.querySelectorAll('.cwb-filters button');
+  var count = document.getElementById('cwbCount');
+  var apply = function (f) {
+    var shown = 0;
+    cards.forEach(function (c) {
+      var ok = f === 'all' || c.getAttribute('data-cat') === f;
+      c.hidden = !ok;
+      if (ok) shown++;
+    });
+    btns.forEach(function (b) {
+      var on = b.getAttribute('data-filter') === f;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    if (count) count.textContent = 'Showing ' + shown + ' of ' + cards.length + ' brands';
+  };
+  btns.forEach(function (b) { b.addEventListener('click', function () { apply(b.getAttribute('data-filter')); }); });
+  document.querySelectorAll('[data-cwb-jump]').forEach(function (a) {
+    a.addEventListener('click', function () { apply(a.getAttribute('data-cwb-jump')); });
+  });
+})();
+</script>
+
+</div>
+{% endblock %}
