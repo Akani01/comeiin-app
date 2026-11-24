@@ -1,85 +1,866 @@
+
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Product Catalogue | Comeiin Works{% endblock %}
+{% block title %}Laboratory Supplies & Equipment | Comeiin Works{% endblock %}
 {% block body_class %}catalogue-page{% endblock %}
 
 {% block content %}
-<section class="catalogue-intro">
-  <div>
-    <p class="eyebrow">THE COMEIIN COLLECTION</p>
-    <h1>Everything your lab needs.<br /><em>Ready to quote.</em></h1>
-  </div>
-  <div class="catalogue-intro-copy">
-    <p>Browse equipment, consumables, liquid handling products and everyday laboratory essentials.</p>
-    <button class="quote-open button orange">
-      Request a quotation <span>↗︎</span>
-    </button>
-  </div>
-</section>
 
-<section id="catalogue" class="catalogue section">
-  <div class="section-title">
+<div class="shop-page">
+
+  <!-- MARKETPLACE HEADER -->
+  <section class="shop-hero">
+    <div class="shop-hero-inner">
+      <div class="shop-hero-copy">
+        <span class="shop-tag">COMEIIN WORKS • LABORATORY STORE</span>
+        <h1>Everything your lab needs.<br>
+          <span>All in one place.</span>
+        </h1>
+        <p>
+          Discover laboratory equipment, consumables and essential
+          supplies. Browse our collection and request a quotation.
+        </p>
+        <a href="#catalogue" class="shop-primary-btn">
+          Shop laboratory supplies →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH BAR -->
+  <div class="shop-search-wrapper">
+    <div class="shop-search">
+      <span>⌕</span>
+      <input id="search" type="search"
+             placeholder="Search for equipment, products and supplies..."
+             aria-label="Search products">
+      <button type="button" class="search-hint" id="shop-search-button">Search</button>
+    </div>
+  </div>
+
+  <div class="shop-catalogue-layout">
+  <!-- CATEGORY NAVIGATION -->
+  <aside class="shop-categories" aria-labelledby="department-heading">
+    <div class="shop-section-heading">
+      <div>
+        <span class="shop-eyebrow">SHOP BY CATEGORY</span>
+        <h2 id="department-heading">Departments</h2>
+      </div>
+    </div>
+
+    <div class="category-strip filters" role="group" aria-label="Product departments">
+      <button type="button" class="category-tile active"
+              aria-pressed="true" data-filter="all">
+        <span class="category-icon">▦</span>
+        <span>All supplies</span>
+      </button>
+
+      <button type="button" class="category-tile"
+              aria-pressed="false" data-filter="Equipment">
+        <span class="category-icon">⚙</span>
+        <span>Equipment</span>
+      </button>
+
+      <button type="button" class="category-tile"
+              aria-pressed="false" data-filter="Consumables">
+        <span class="category-icon">◈</span>
+        <span>Consumables</span>
+      </button>
+
+      <button type="button" class="category-tile"
+              aria-pressed="false" data-filter="Liquid handling">
+        <span class="category-icon">♧</span>
+        <span>Liquid handling</span>
+      </button>
+
+      <button type="button" class="category-tile"
+              aria-pressed="false" data-filter="Lab essentials">
+        <span class="category-icon">✚</span>
+        <span>Lab essentials</span>
+      </button>
+      <button type="button" class="category-tile" aria-pressed="false" data-filter="Diagnostics">
+        <span class="category-icon">+</span><span>Diagnostics</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- PRODUCT CATALOGUE -->
+  <section id="catalogue" class="shop-products">
+
+    <div class="shop-section-heading product-heading">
+      <div>
+        <span class="shop-eyebrow">THE COMEIIN COLLECTION</span>
+        <h2 id="catalogue-heading">Browse all products</h2>
+        <p>Find the right supplies for your laboratory.</p>
+      </div>
+
+      <button class="quote-open shop-quote-btn">
+        ♡ <span>Request a quote</span>
+      </button>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="product-toolbar">
+      <p id="results" class="result-count" aria-live="polite"></p>
+
+      <div class="toolbar-controls">
+        <label>
+          <span>Show:</span>
+          <select id="listing-type">
+            <option value="all">All listings</option>
+            <option value="product">Individual products</option>
+            <option value="range">Supply ranges</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Sort:</span>
+          <select id="sort-order">
+            <option value="review">Recommended</option>
+            <option value="az">Name: A–Z</option>
+            <option value="za">Name: Z–A</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <div id="active-filters" class="active-filters" hidden></div>
+
+    <!-- EXISTING JAVASCRIPT RENDERS PRODUCTS HERE -->
+    <div id="grid" class="shop-product-grid"></div>
+
+    <div id="empty" class="shop-empty" hidden>
+      <div class="empty-icon">⌕</div>
+      <h3>No products found</h3>
+      <p>Try a different search or contact our team for assistance.</p>
+      <button class="quote-open shop-primary-btn">
+        Request a product
+      </button>
+    </div>
+
+    <p class="shop-disclaimer">
+      Product images are illustrative unless supplied by the client.
+      Availability and specifications are confirmed during quotation.
+    </p>
+  </section>
+  <aside class="shop-discovery" aria-label="Laboratory buying guide">
+    <article class="discovery-card">
+      <img src="{% static 'assets/images/lab-equipment-banner.png' %}" alt="Laboratory equipment" loading="lazy">
+      <div class="discovery-copy"><span class="shop-eyebrow">LABORATORY SOLUTIONS</span><h3>Equip your workspace</h3><p>Explore instruments, sample collection supplies and everyday laboratory essentials.</p><button type="button" data-discover="Equipment">Explore equipment →</button></div>
+    </article>
+    <article class="discovery-card"><img src="{% static 'assets/images/clinical-professional.jpg' %}" alt="Healthcare professional" loading="lazy" onerror="this.onerror=null;this.src='{% static 'assets/products/CW-032-generated-v2.webp' %}'"><div class="discovery-copy"><span class="shop-eyebrow">CLINICAL SUPPLIES</span><h3>Supporting clinical teams</h3><p>Discover diagnostic supplies, protective equipment and specimen collection products.</p><button type="button" data-discover="Diagnostics">Browse diagnostics →</button></div></article>
+    <article class="discovery-card discovery-help"><span class="shop-eyebrow">PROCUREMENT SUPPORT</span><h3>Need help choosing?</h3><p>Tell us your requirements, quantities and preferred specifications.</p><button type="button" class="quote-open">Request assistance →</button></article>
+  </aside>
+  </div>
+
+  <!-- FULL PRODUCT CATALOGUE: PDF preview and download -->
+  {% static 'assets/documents/COMEIINWORKSProductCatalogue.pdf' as full_catalogue_url %}
+  <section class="cw-pdf-resource" aria-labelledby="cw-pdf-heading">
+    <div class="cw-pdf-card">
+      <div class="cw-pdf-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l5 5v13H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M14 3v6h6M8 13h8M8 17h6"/></svg>
+        <span>PDF</span>
+      </div>
+      <div class="cw-pdf-copy">
+        <span class="shop-eyebrow">EXPLORE MORE PRODUCTS</span>
+        <h2 id="cw-pdf-heading">Comeiin Works Product Catalogue</h2>
+        <p>Looking for more? Browse our complete selection of laboratory equipment, consumables and clinical supplies, including products not listed above.</p>
+        <span class="cw-pdf-meta">PDF document · Browse online or save a copy</span>
+      </div>
+      <div class="cw-pdf-actions">
+        <a class="cw-pdf-link cw-pdf-preview" id="cw-pdf-preview" href="{{ full_catalogue_url }}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg> Preview catalogue
+        </a>
+        <a class="cw-pdf-link cw-pdf-download" href="{{ full_catalogue_url }}" download="COMEIINWORKSProductCatalogue.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg> Download PDF
+        </a>
+      </div>
+    </div>
+  </section>
+  <dialog id="cw-pdf-dialog" aria-labelledby="cw-pdf-dialog-title">
+    <div class="cw-pdf-dialog-head">
+      <div><span class="shop-eyebrow">COMEIIN WORKS</span><h2 id="cw-pdf-dialog-title">Product catalogue</h2></div>
+      <button type="button" id="cw-pdf-close" aria-label="Close catalogue preview">×</button>
+    </div>
+    <div class="cw-pdf-dialog-tools">
+      <a href="{{ full_catalogue_url }}" target="_blank" rel="noopener">Open in new tab ↗</a>
+      <a href="{{ full_catalogue_url }}" download="COMEIINWORKSProductCatalogue.pdf">Download PDF ↓</a>
+    </div>
+    <p class="cw-pdf-fallback">If your browser cannot display the PDF below, use Open in new tab or Download PDF.</p>
+    <iframe id="cw-pdf-frame" title="Comeiin Works full product catalogue PDF preview"></iframe>
+  </dialog>
+
+  <!-- BOTTOM CTA -->
+  <section class="shop-bottom-banner">
     <div>
-      <p class="eyebrow">FULL PRODUCT CATALOGUE</p>
-      <h2>Find your essentials.</h2>
+      <span>NEED SOMETHING SPECIFIC?</span>
+      <h2>Can't find what you're looking for?</h2>
+      <p>Tell us what your laboratory needs. Our team will help source it.</p>
     </div>
-    <p>Select products as you browse.<br />Your quote list stays with you.</p>
-  </div>
+    <button type="button" class="quote-open shop-primary-btn">Request assistance</button>
+  </section>
 
-  <div class="catalogue-tools">
-    <div class="filters" role="group" aria-label="Filter range">
-      <button aria-pressed="true" data-filter="all">All supplies</button>
-      <button aria-pressed="false" data-filter="Equipment">Equipment</button>
-      <button aria-pressed="false" data-filter="Consumables">Consumables</button>
-      <button aria-pressed="false" data-filter="Liquid handling">Liquid handling</button>
-      <button aria-pressed="false" data-filter="Lab essentials">Lab essentials</button>
-    </div>
-    <label class="search">
-      <span aria-hidden="true">⌕</span>
-      <input id="search" type="search" placeholder="Search the range" aria-label="Search the range" />
-    </label>
-  </div>
+</div>
 
-  <div class="catalogue-meta">
-    <p id="results" class="result-count" aria-live="polite"></p>
-    <div class="refinements">
-      <label>
-        Show
-        <select id="listing-type">
-          <option value="all">Products &amp; ranges</option>
-          <option value="product">Individual products</option>
-          <option value="range">Supply ranges</option>
-        </select>
-      </label>
-      <label>
-        Sort by
-        <select id="sort-order">
-          <option value="review">Catalogue order</option>
-          <option value="az">Name: A–Z</option>
-          <option value="za">Name: Z–A</option>
-        </select>
-      </label>
-    </div>
-  </div>
+<style>
+/* =================================
+   COMEIIN MARKETPLACE
+================================= */
 
-  <div id="active-filters" class="active-filters" hidden></div>
-  <div id="grid" class="grid"></div>
-  <div id="empty" hidden>
-    <h3>No matching supplies</h3>
-    <p>Try another search, or send our team your requirements.</p>
-    <button class="quote-open button navy">Request a product</button>
-  </div>
-  <p class="image-note">
-    Product images are illustrative unless supplied by the client. Availability, pricing and final specifications are confirmed with your quotation.
-  </p>
-</section>
+.catalogue-page {
+  background: #fff;
+  color: #202a36;
+}
 
-<section class="catalogue-cta section">
-  <p class="eyebrow">CAN'T FIND THE EXACT ITEM?</p>
-  <h2>Tell us what your laboratory needs.</h2>
-  <button class="quote-open button orange">
-    Start a quotation <span>↗︎</span>
-  </button>
-</section>
+.shop-page {
+  font-family: Aptos, "Segoe UI", Arial, sans-serif;
+  padding-bottom: 55px;
+}
+
+/* HERO */
+
+.shop-hero {
+  background: linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.88) 38%, rgba(255,255,255,.18) 100%), url("{% static 'assets/images/lab-equipment-banner.png' %}") center right / cover no-repeat;
+  color: #143b70;
+  overflow: hidden;
+}
+
+.shop-hero-inner {
+  max-width: 1250px;
+  min-height: 420px;
+  margin: auto;
+  padding: 45px 25px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 35px;
+}
+
+.shop-tag,
+.shop-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.shop-tag {
+  color: #245b94;
+}
+
+.shop-hero h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.12;
+  margin: 16px 0;
+}
+
+.shop-hero h1 span {
+  color: #245b94;
+}
+
+.shop-hero-copy p {
+  color: #40536a;
+  line-height: 1.7;
+  max-width: 490px;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+
+
+
+
+.shop-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 21px;
+  border: 0;
+  border-radius: 5px;
+  background: #ffb52e;
+  color: #172b46;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.shop-primary-btn:hover {
+  background: #ffc65d;
+  transform: translateY(-2px);
+}
+
+/* SEARCH */
+
+.shop-search-wrapper {
+  max-width: 1250px;
+  margin: -23px auto 0;
+  padding: 0 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.shop-search {
+  background: white;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid #dce2ea;
+  border-radius: 7px;
+  padding: 0 17px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.shop-search > span:first-child {
+  font-size: 25px;
+  color: #8290a2;
+}
+
+.shop-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 14px;
+  color: #26364a;
+}
+
+.search-hint {
+  background: #143b70;
+  color: white;
+  padding: 9px 17px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* SECTIONS */
+
+.shop-categories,
+.shop-products {
+  max-width: 1250px;
+  margin: auto;
+  padding: 42px 25px 0;
+}
+
+.shop-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.shop-eyebrow {
+  color: #75859a;
+}
+
+.shop-section-heading h2 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 6px 0;
+  color: #1c2e44;
+}
+
+.shop-section-heading p {
+  color: #7a8797;
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+/* CATEGORIES */
+
+.category-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.category-tile {
+  min-height: 110px;
+  background: white;
+  border: 1px solid #e1e6ed;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #36485e;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+.category-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #edf3fb;
+  color: #17477f;
+  font-size: 22px;
+}
+
+.category-tile:hover,
+.category-tile.active {
+  border-color: #17477f;
+  background: #f0f5fc;
+  color: #143b70;
+}
+
+/* PRODUCT TOOLBAR */
+
+.shop-quote-btn {
+  border: 1px solid #dce2ea;
+  background: white;
+  border-radius: 5px;
+  padding: 11px 16px;
+  color: #143b70;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.product-toolbar {
+  background: white;
+  border: 1px solid #e1e6ed;
+  border-radius: 6px;
+  padding: 13px 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 17px;
+}
+
+.result-count {
+  color: #627187;
+  font-size: 12px;
+  margin: 0;
+}
+
+.toolbar-controls {
+  display: flex;
+  gap: 20px;
+}
+
+.toolbar-controls label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #748194;
+  font-size: 12px;
+}
+
+.toolbar-controls select {
+  border: 1px solid #dce2ea;
+  background: white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: #29394d;
+  font-size: 12px;
+}
+
+/* PRODUCT GRID */
+
+.shop-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* Cards generated by your existing JavaScript
+   should use this class: .product-card */
+
+.product-card {
+  background: white;
+  border: 1px solid #e2e7ee;
+  border-radius: 7px;
+  overflow: hidden;
+  transition: .2s ease;
+}
+
+.product-card:hover {
+  border-color: #b6c9e1;
+  box-shadow: 0 5px 18px rgba(20,59,112,.09);
+  transform: translateY(-3px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 175px;
+  object-fit: contain;
+  padding: 15px;
+  background: #fff;
+}
+
+.product-card h3 {
+  font-size: 14px;
+  font-weight: 750;
+  color: #26374d;
+  line-height: 1.4;
+}
+
+.product-card p {
+  color: #7a8797;
+  font-size: 12px;
+}
+
+.product-card button {
+  cursor: pointer;
+}
+
+/* EMPTY STATE */
+
+.shop-empty {
+  text-align: center;
+  background: white;
+  border-radius: 8px;
+  padding: 50px 20px;
+  margin-top: 15px;
+}
+
+.empty-icon {
+  font-size: 42px;
+  color: #9baabd;
+}
+
+.shop-empty h3 {
+  color: #26374d;
+  margin: 10px 0;
+}
+
+.shop-empty p {
+  font-size: 13px;
+  color: #7a8797;
+}
+
+/* FOOTER CTA */
+
+.shop-disclaimer {
+  margin-top: 22px;
+  color: #8793a2;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.shop-bottom-banner {
+  max-width: 1200px;
+  margin: 55px auto 0;
+  padding: 30px;
+  background: #e8eff8;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.shop-bottom-banner span {
+  color: #41648d;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.shop-bottom-banner h2 {
+  font-size: 22px;
+  color: #173b66;
+  margin: 8px 0;
+}
+
+.shop-bottom-banner p {
+  color: #66778c;
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+  .shop-product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .category-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media(max-width: 600px) {
+  .shop-hero-inner {
+    grid-template-columns: 1fr;
+    padding: 35px 20px;
+    gap: 15px;
+  }
+
+  
+
+  
+
+  .shop-search-wrapper {
+    padding: 0 14px;
+  }
+
+  .shop-search {
+    height: 52px;
+  }
+
+  .shop-categories,
+  .shop-products {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .category-strip {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .category-tile {
+    min-width: 125px;
+  }
+
+  .shop-section-heading h2 {
+    font-size: 20px;
+  }
+
+  .product-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toolbar-controls {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .toolbar-controls label {
+    flex: 1;
+    flex-wrap: wrap;
+  }
+
+  .toolbar-controls select {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .shop-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .product-card img {
+    height: 125px;
+  }
+
+  .shop-bottom-banner {
+    margin: 35px 14px 0;
+    padding: 22px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 360px) {
+  .shop-product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* White theme refinements and responsive interaction */
+.shop-page *, .shop-page *::before, .shop-page *::after { box-sizing: border-box; }
+#catalogue { scroll-margin-top: 110px; }
+.shop-page [hidden] { display: none !important; }
+.shop-hero-copy { max-width: 620px; }
+.shop-primary-btn { background: #143b70; color: white; border-radius: 8px; }
+.shop-primary-btn:hover { background: #245b94; color: white; }
+.search-hint { border: 0; cursor: pointer; }
+
+.category-tile, .product-card { border-radius: 12px; }
+.category-tile:hover { transform: translateY(-2px); }
+.category-tile.active { box-shadow: inset 0 0 0 1px #17477f; }
+.shop-page :focus-visible, .shop-share-dialog :focus-visible { outline: 3px solid #4288c9; outline-offset: 3px; }
+.shop-share-trigger { display: block; margin: 12px; padding: 9px 14px; border: 1px solid #dce2ea; border-radius: 7px; background: white; color: #143b70; font: inherit; font-size: 13px; cursor: pointer; }
+.shop-share-dialog { width: min(440px, calc(100% - 32px)); max-height: 85vh; overflow: auto; border: 1px solid #dce2ea; border-radius: 16px; padding: 24px; color: #143b70; background: white; }
+.shop-share-dialog::backdrop { background: rgba(16,34,55,.45); }
+.shop-share-options { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+.shop-share-options a, .shop-share-options button, .shop-share-close { display: block; padding: 12px; border: 1px solid #dce2ea; border-radius: 8px; background: white; color: #143b70; text-align: center; font: inherit; cursor: pointer; text-decoration: none; }
+.shop-share-options a:hover, .shop-share-options button:hover { background: #edf3fb; }
+.shop-share-close { margin: 16px 0 0 auto; }
+.product-card.shop-shared-target { outline: 3px solid #245b94; scroll-margin-top: 110px; }
+@media(max-width:600px) {
+ .shop-hero { background-image: linear-gradient(90deg,rgba(255,255,255,.94),rgba(255,255,255,.67)),url("{% static 'assets/images/lab-equipment-banner.png' %}"); background-position: center; }
+ .shop-hero-inner { min-height: 350px; }
+ .product-heading { flex-wrap: wrap; }
+ .category-strip { scroll-snap-type: x proximity; }
+ .category-tile { scroll-snap-align: start; }
+ .shop-share-trigger { min-height: 44px; }
+}
+@media(prefers-reduced-motion:reduce) { .shop-page * { transition: none !important; } }
+
+
+/* Responsive department sidebar */
+.shop-catalogue-layout { max-width: 1250px; margin: 0 auto; padding: 42px 25px 0; display: grid; grid-template-columns: minmax(0,1fr); gap: 22px; align-items: start; }
+.shop-catalogue-layout .shop-categories, .shop-catalogue-layout .shop-products { margin: 0; padding: 0; min-width: 0; width: 100%; max-width: none; }
+@media (min-width: 768px) {
+  .shop-catalogue-layout { grid-template-columns: 218px minmax(0,1fr); gap: 24px; }
+  .shop-catalogue-layout .shop-categories { position: sticky; top: 110px; max-height: calc(100vh - 130px); overflow-y: auto; border: 1px solid #e1e6ed; border-radius: 12px; padding: 18px 12px; background: #fff; }
+  .shop-categories .shop-section-heading { padding: 0 8px; margin-bottom: 15px; }
+  .shop-categories .shop-section-heading h2 { font-size: 20px; }
+  .shop-categories .category-strip { display: flex; flex-direction: column; gap: 6px; }
+  .shop-categories .category-tile { width: 100%; min-width: 0; min-height: 54px; flex-direction: row; justify-content: flex-start; text-align: left; padding: 8px 10px; gap: 10px; border-color: transparent; border-radius: 8px; font-size: 13px; }
+  .shop-categories .category-icon { width: 32px; height: 32px; flex: 0 0 32px; font-size: 18px; }
+  .shop-categories .category-tile:hover { transform: none; background: #f5f8fc; }
+  .shop-categories .category-tile.active { background: #edf3fb; border-color: #d3e1f2; box-shadow: inset 3px 0 #143b70; }
+  .shop-categories .category-tile::after { content: '›'; margin-left: auto; font-size: 18px; color: #8290a2; }
+  .shop-product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .product-toolbar, .toolbar-controls, .product-heading { flex-wrap: wrap; }
+}
+@media (min-width: 1050px) { .shop-catalogue-layout { grid-template-columns: 245px minmax(0,1fr); gap: 28px; } .shop-product-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (max-width: 767px) { .shop-catalogue-layout { padding: 30px 14px 0; } .shop-categories .category-strip { display: flex; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity; } .shop-categories .category-tile { flex: 0 0 125px; min-height: 90px; scroll-snap-align: start; } }
+
+
+/* Search: keep a single clean border, including when typing. */
+.shop-page .shop-search { outline: none; background: #fff; }
+.shop-page .shop-search:focus-within { border-color: #7899be; box-shadow: 0 4px 16px rgba(20,59,112,.09); outline: none; }
+.shop-page .shop-search #search, .shop-page .shop-search #search:focus, .shop-page .shop-search #search:focus-visible { border: 0 !important; outline: none !important; box-shadow: none !important; background: transparent !important; background-image: none !important; border-radius: 0; }
+.shop-page .shop-search #shop-search-button:focus:not(:focus-visible) { outline: none; box-shadow: none; }
+.shop-page .shop-search #shop-search-button:focus-visible { outline: 2px solid #245b94; outline-offset: 2px; }
+#grid .shop-share-trigger { display: inline-flex; align-items: center; justify-content: center; gap: 7px; width: calc(100% - 24px); min-height: 42px; margin: 12px; background: #fff; border: 1px solid #cbd8e7; color: #143b70; font-weight: 650; }
+#grid .shop-share-trigger:hover { background: #edf3fb; border-color: #143b70; }
+.shop-share-trigger svg { width: 17px; height: 17px; flex: none; }
+.shop-share-dialog #shop-share-url { box-sizing: border-box; width: 100%; padding: 10px; border: 1px solid #dce2ea; border-radius: 6px; color: #143b70; background: #f7f9fc; margin: 8px 0 14px; }
+
+
+/* Keep department colours crisp in every interaction state. */
+.shop-page .shop-categories .category-tile {
+  appearance: none;
+  background: #ffffff !important;
+  color: #36485e !important;
+  border: 1px solid transparent !important;
+  opacity: 1 !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  transform: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  transition: none !important;
+}
+.shop-page .shop-categories .category-tile:hover {
+  background: #f5f8fc !important;
+  border-color: #d3e1f2 !important;
+}
+.shop-page .shop-categories .category-tile:is(.active, [aria-pressed="true"]) {
+  background: #edf3fb !important;
+  color: #143b70 !important;
+  border-color: #17477f !important;
+  box-shadow: inset 3px 0 0 #143b70 !important;
+}
+.shop-page .shop-categories .category-tile span {
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+  text-shadow: none !important;
+  transition: none !important;
+  color: inherit !important;
+}
+.shop-page .shop-categories .category-tile .category-icon {
+  background: #edf3fb !important;
+  color: #17477f !important;
+}
+.shop-page .shop-categories .category-tile:focus:not(:focus-visible) {
+  outline: none !important;
+}
+.shop-page .shop-categories .category-tile:focus-visible {
+  outline: 2px solid #143b70 !important;
+  outline-offset: -3px;
+}
+
+
+.shop-discovery{display:grid;gap:15px;min-width:0}.discovery-card{border:1px solid #e0e7ef;border-radius:10px;overflow:hidden;background:#fff}.discovery-card img{width:100%;height:138px;display:block;object-fit:cover;background:#eef3f7}.discovery-copy,.discovery-help{padding:15px}.discovery-card h3{font-size:16px;line-height:1.3;margin:7px 0;color:#143b70}.discovery-card p{font-size:13px;line-height:1.6;color:#526479;margin:0 0 10px}.discovery-card button{border:0;background:transparent;color:#245b94;font-size:12px;font-weight:700;padding:8px 0;cursor:pointer;text-align:left}.discovery-help{background:#f3f7fb}.shop-discovery .shop-eyebrow{font-size:9px;letter-spacing:1px}
+@media(min-width:1280px){.shop-catalogue-layout{max-width:1540px;grid-template-columns:205px minmax(0,1fr) 220px;gap:20px}.shop-product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.shop-discovery{position:sticky;top:110px;max-height:calc(100vh - 125px);overflow:auto}}
+@media(max-width:1279px){.shop-discovery{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr))}}@media(max-width:700px){.shop-discovery{grid-template-columns:1fr}.discovery-card img{height:180px}}
+
+/* Complete catalogue resource — white theme, compact editorial layout */
+.cw-pdf-resource{max-width:1250px;margin:42px auto 0;padding:0 25px}
+.cw-pdf-card{display:flex;align-items:center;gap:20px;padding:22px 24px;border:1px solid #dce5ef;border-radius:12px;background:#fff;position:relative;border-left:4px solid #143b70}
+.cw-pdf-icon{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;flex:0 0 64px;height:76px;border:1px solid #dce7f3;border-radius:9px;background:#f0f5fb;color:#143b70}
+.cw-pdf-icon svg{width:30px;height:30px}.cw-pdf-icon span{font-size:10px;font-weight:800;letter-spacing:1px}
+.cw-pdf-copy{flex:1;min-width:0}.cw-pdf-copy .shop-eyebrow{font-size:10px;color:#245b94}.cw-pdf-copy h2{font-size:19px;line-height:1.3;margin:5px 0;color:#143b70}.cw-pdf-copy p{font-size:13px;line-height:1.55;margin:0 0 6px;color:#526479}.cw-pdf-meta{font-size:11px;color:#65758a}
+.cw-pdf-actions{display:flex;flex-wrap:wrap;gap:8px;flex-shrink:0}
+.shop-page .cw-pdf-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:8px 12px;border:1px solid #c9d8e9;border-radius:6px;font-size:12px;font-weight:700;line-height:1.3;text-decoration:none!important;white-space:nowrap;opacity:1;filter:none;transform:none;box-shadow:none}
+.cw-pdf-link svg{width:16px;height:16px;flex:none}.shop-page .cw-pdf-preview{background:#fff;color:#143b70}.shop-page .cw-pdf-preview:hover{background:#edf3fb;color:#143b70}.shop-page .cw-pdf-download{background:#143b70;color:#fff;border-color:#143b70}.shop-page .cw-pdf-download:hover{background:#245b94;color:#fff}
+#cw-pdf-dialog{box-sizing:border-box;width:min(1100px,calc(100% - 32px));height:min(88vh,900px);height:min(88dvh,900px);max-width:100%;max-height:95vh;padding:0;margin:auto;background:#fff;color:#20334b;border:1px solid #dce5ef;border-radius:12px;overflow:hidden}
+#cw-pdf-dialog[open]{display:flex;flex-direction:column}#cw-pdf-dialog::backdrop{background:rgba(16,34,55,.55)}
+.cw-pdf-dialog-head{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid #e1e6ed}.cw-pdf-dialog-head h2{font-size:20px;margin:4px 0;color:#143b70}.cw-pdf-dialog-head button{width:36px;height:36px;border:1px solid #dce5ef;border-radius:6px;background:#fff;color:#143b70;font-size:23px;cursor:pointer;line-height:1}
+.cw-pdf-dialog-tools{display:flex;flex-wrap:wrap;gap:18px;padding:10px 20px}.cw-pdf-dialog-tools a{color:#143b70;font-size:13px;font-weight:700;text-decoration:underline}.cw-pdf-fallback{font-size:11px;color:#526479;margin:0;padding:0 20px 10px}#cw-pdf-frame{display:block;width:100%;flex:1;min-height:0;border:0;background:#f0f4f8}
+@media(max-width:900px){.cw-pdf-card{flex-wrap:wrap}.cw-pdf-actions{flex-basis:100%;padding-left:84px}}
+@media(max-width:600px){.cw-pdf-resource{padding:0 14px;margin-top:20px}.cw-pdf-card{padding:16px;gap:12px}.cw-pdf-icon{flex-basis:46px;height:60px}.cw-pdf-icon svg{width:23px;height:23px}.cw-pdf-copy h2{font-size:16px}.cw-pdf-actions{padding-left:0}.shop-page .cw-pdf-link{flex:1;white-space:normal;text-align:center;min-height:42px}}
+
+
+/* Catalogue typography: Aptos where installed, with system fallbacks. */
+body.catalogue-page, .catalogue-page .shop-page,
+.catalogue-page .shop-page :is(h1,h2,h3,h4,h5,h6,p,a,button,input,select,textarea,label,span,small,li,dt,dd),
+#cw-product-guide, #cw-product-guide :is(h2,h3,p,button,dt,dd,span),
+#cw-share-dialog, #cw-share-dialog :is(h2,p,a,button,input,label,span),
+.catalogue-page dialog, .catalogue-page dialog :is(button,a,input,label,h2,h3,p,span) {
+  font-family: Aptos, "Segoe UI", Arial, sans-serif !important;
+}
+
+</style>
+
+
+<script>
+(() => {
+  const init = () => {
+    const page = document.querySelector('.shop-page');
+    if (!page) return;
+
+    // Desktop inline PDF preview; native tab remains the fallback on mobile.
+    const pdfLink = page.querySelector('#cw-pdf-preview');
+    const pdfDialog = page.querySelector('#cw-pdf-dialog');
+    const pdfFrame = page.querySelector('#cw-pdf-frame');
+    if (pdfLink && pdfDialog && pdfFrame && typeof pdfDialog.showModal === 'function') {
+      pdfLink.addEventListener('click', event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || matchMedia('(max-width: 767px)').matches) return;
+        event.preventDefault();
+        pdfFrame.src = pdfLink.href;
+        pdfDialog.showModal();
+      });
+      page.querySelector('#cw-pdf-close').addEventListener('click', () => pdfDialog.close());
+      pdfDialog.addEventListener('close', () => { pdfFrame.removeAttribute('src'); pdfLink.focus(); });
+      pdfDialog.addEventListener('click', event => {
+        if (event.target !== pdfDialog) return;
+        const r = pdfDialog.getBoundingClientRect();
+        if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) pdfDialog.close();
+      });
+    }
+
+    const catalogue = page.querySelector('#catalogue');
+    const search = page.querySelector('#search');
+    const behavior = () => matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    const scroll = () => catalogue.scrollIntoView({behavior: behavior(), block:'start'});
+    page.querySelector('.shop-hero a[href="#catalogue"]').addEventListener('click', e => { e.preventDefault(); scroll(); });
+    page.querySelectorAll('.category-tile').forEach(button => button.addEventListener('click', () => {
+      page.querySelectorAll('.category-tile').forEach(b => { b.classList.toggle('active', b === button); b.setAttribute('aria-pressed', String(b === button)); });
+      page.querySelector('#catalogue-heading').textContent = button.dataset.filter === 'all' ? 'Browse all products' : 'Browse ' + button.dataset.filter;
+      requestAnimationFrame(scroll);
+    }));
+    page.querySelectorAll('[data-discover]').forEach(b=>b.addEventListener('click',()=>{const tile=Array.from(page.querySelectorAll('.category-tile')).find(t=>t.dataset.filter===b.dataset.discover);if(tile)tile.click();}));
+    const submitSearch = () => { search.dispatchEvent(new Event('input', {bubbles:true})); scroll(); };
+    page.querySelector('#shop-search-button').addEventListener('click', submitSearch);
+    search.addEventListener('keydown', e => { if(e.key === 'Enter') { e.preventDefault(); submitSearch(); } });
+  };
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
 {% endblock %}

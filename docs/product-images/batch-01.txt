@@ -1,0 +1,53 @@
+BATCH 01 — APPROVED PRODUCT IMAGES
+
+20 images approved on 2026-11-15: "First batch is okay."
+The user also requested individual listings using confirmed catalogue details.
+
+RESULT
+20 approved images are used across 17 individual listings: 15 new listings and
+two updated existing entries (CW-017 and CW-001-SLIDES). The 100–120 ml specimen
+container has two views; the sharps container has three. These are additional
+views of the same catalogue product, not invented size-specific products.
+There are 37 catalogue entries in total. All other existing entries are retained.
+CAT-Pxx-Ixx identifiers are internal catalogue references, not supplier SKUs.
+
+SOURCE AND LIMITS
+Comeiin Updated Catalogue.pdf, file pages 3–6 / printed pages 2–5.
+The product names, materials, capacities and packaging were checked against the
+page text and layout. No new prices, inventory claims or supplier model numbers
+were inferred. The slide finish and individual sharps-photo capacities are not
+established, so no particular finish/volume is assigned to those pictures.
+The unverified regulatory claim in the source was not added to the listing.
+Image approval does not establish current stock expiry dates in photographed labels.
+
+FILES
+static/content/catalogue.json is the browser catalogue source.
+Run python scripts/build_catalogue.py after editing it; commit the generated JS.
+static/content/product-images-batch-01.json holds the approved batch listings.
+docs/product-images/batch-01.json maps every review ID to a product and image hash.
+Previous images remain in the repository; image-history.json records replaced entries.
+The approved PNG files are copied unchanged; all 20 SHA-256 hashes were checked.
+
+DEPLOYMENT
+The change is prepared on codex/product-images-batch-01. No live site has been
+deployed or production database changed from this chat.
+After deploying the branch with the existing app environment:
+  python manage.py apply_product_image_batch 1 --dry-run
+  python manage.py apply_product_image_batch 1
+  python manage.py collectstatic --noinput
+The batch command copies all 20 immutable assets to configured media storage
+and updates/creates 17 database products. It is safe to rerun. Existing price,
+stock, slug, category, active and featured fields are preserved. New stock uses
+the model's default zero; this is not a confirmed inventory count. Existing media
+with conflicting content causes a stop without database edits or file overwrites.
+Keep the usual persistent media storage/serving configuration in deployment.
+The legacy initial import also applies Batch 01 after its original seed records;
+for existing production data, use the focused command above, not the seed script.
+
+VALIDATION
+Three Django tests: repeat application without duplicate records, preservation
+of commercial fields, dry-run without writes, and conflict protection.
+JavaScript syntax checks and catalogue asset checks passed.
+collectstatic passed (pre-existing duplicate PWA-icon notices only).
+Local browser: 37 catalogue entries; sharps-gallery switching; capacity selection;
+swab pack selection; quote quantities use items, boxes, cartons or polybags.

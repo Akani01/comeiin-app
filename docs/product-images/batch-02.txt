@@ -1,0 +1,74 @@
+BATCH 02 - APPROVED PRODUCT IMAGES
+
+20 images approved on 2026-11-15: "all batch 2 products are okay".
+The user requested individual listings using confirmed catalogue details.
+
+RESULT
+All 20 images have separate listings: 20 new entries and no replacements.
+The catalogue now contains 57 entries. The 37 entries present after Batch 01
+are unchanged, including the existing broad product groups. No group is an
+exact match for these individual products. The ESR rack is listed separately
+because the source explicitly offers extra 10-place racks.
+CAT-Pxx-Ixx identifiers are internal references, not supplier SKUs.
+
+SOURCE AND LIMITS
+Comeiin Updated Catalogue.pdf, file pages 7-12 / printed pages 6-11.
+The source pages were rendered and inspected to confirm each image's caption
+and adjacent specifications, including the blood-collection additive table.
+Micro tubes include only the five options marked as available in micro tubes;
+standard tubes have nine options. Needle gauges and colours come from the
+catalogue table, not reconstructed package print. Each product photo illustrates
+the catalogue product; it does not establish the specific variant pictured.
+
+No exact micropipette volume range, filter-tip capacity, tube fill volume,
+lancet depth, missing pack size, diagnostic sensitivity or result interpretation
+was inferred. Pregnancy-test formats come from the source list; the pictured
+device is not assigned to a particular format. No certification claims, prices,
+inventory quantities or supplier model numbers were added.
+
+B02-01 (pipette digits), B02-13 (needle label) and B02-20 (RPR reagent labels)
+had earlier fine-detail audit flags. The user approved the displayed Batch 02
+images. Those audit notes remain in the provenance records; image approval
+is not independent verification of reconstructed fine print. The reviewed PNG
+files, including these three, are copied byte-for-byte without new image edits.
+
+FILES
+static/content/catalogue.json is the browser catalogue source.
+Run python scripts/build_catalogue.py after changes; commit the generated JS.
+static/content/product-images-batch-02.json holds the 20 approved listings.
+docs/product-images/batch-02.json maps review IDs, products and SHA-256 hashes.
+static/content/image-register.json records approval and prior audit notes.
+All earlier files and approval records are retained.
+
+DEPLOYMENT
+This branch, codex/product-images-batch-02, builds on Batch 01's branch because
+its pull request was still open when Batch 02 started. Review/merge Batch 01
+first, then retarget Batch 02 to master2 if GitHub has not done so automatically.
+No live deployment or production database changes were performed here.
+After deploying the code with the existing app environment:
+  python manage.py apply_product_image_batch 1 --dry-run
+  python manage.py apply_product_image_batch 1
+  python manage.py apply_product_image_batch 2 --dry-run
+  python manage.py apply_product_image_batch 2
+  python manage.py collectstatic --noinput
+Skip Batch 01 commands if it has already been applied. Batch imports are safe
+to rerun and preserve existing prices, stock, slugs, categories and visibility.
+The Batch 02 import copies all 20 images to configured media storage and creates
+or updates the 20 mapped records. Conflicting media causes a stop without any
+database changes or overwrite. Keep persistent media storage/serving configured.
+The initial seed script applies both approved batches. On existing production
+data, use the focused commands above, not the legacy seed script.
+
+VALIDATION
+Four Django tests passed: repeated imports, preservation of existing commercial
+fields and all Batch 01 records, dry-run without writes, and conflicting-media
+protection for both batches. All 40 imported image hashes were checked in tests.
+Catalogue validation: 57 unique entries, 37 earlier records unchanged, all 20
+Batch 02 product/image mappings complete, all prior approval records retained.
+JavaScript syntax and git diff whitespace checks passed.
+All 20 static and 20 media URLs return the approved bytes; API count is 57.
+collectstatic passed (existing duplicate PWA-icon notices only).
+Browser checks passed: Diagnostics filter shows four products; micro tube
+options match the five catalogue-marked additives; pipette-tip bulk pack choice
+is retained in the quote; RPR quantities use kits. Product images render at the
+browser's existing width. No browser console errors were recorded.

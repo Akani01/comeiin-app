@@ -1,0 +1,670 @@
+{
+  "batch": 1,
+  "approvalDate": "2026-11-15",
+  "products": [
+    {
+      "id": "CW-017",
+      "reference": "CW-017",
+      "name": "Universal specimen container, sterile, 30 ml labelled",
+      "sourceName": "Universal specimen container, sterile, 30 ml labelled",
+      "category": "Consumables",
+      "description": "Clear polypropylene specimen container with a conical bottom and skirt.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Capacity": "30 ml",
+        "Sterility": "Sterile",
+        "Material": "Clear polypropylene",
+        "Base": "Conical bottom with skirt",
+        "Packaging": "100 per polybag; 5 bags per carton"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "500 per carton",
+      "quoteUnit": "carton",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_01-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_01-refined-v3.png",
+          "alt": "Universal specimen container, sterile, 30 ml labelled"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 3,
+      "reviewIds": [
+        "B01-01"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P03-I02",
+      "reference": "CAT-P03-I02",
+      "name": "Sputum container, sterile, 30 ml",
+      "sourceName": "Sputum container, sterile, 30 ml",
+      "category": "Consumables",
+      "description": "Wide-mouth clear polypropylene container with a screw cap.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Capacity": "30 ml",
+        "Sterility": "Sterile",
+        "Material": "Clear polypropylene",
+        "Packaging": "10 per polybag; 50 bags per carton"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "500 per carton",
+      "quoteUnit": "carton",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_02-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_02-refined-v3.png",
+          "alt": "Sputum container, sterile, 30 ml"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 3,
+      "reviewIds": [
+        "B01-02"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P03-I03",
+      "reference": "CAT-P03-I03",
+      "name": "Universal specimen container, sterile, 40 ml labelled",
+      "sourceName": "Universal specimen container, sterile, 40 ml labelled",
+      "category": "Consumables",
+      "description": "Clear polypropylene specimen container with a round bottom and skirt.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Capacity": "40 ml",
+        "Sterility": "Sterile",
+        "Material": "Clear polypropylene",
+        "Base": "Round bottom with skirt",
+        "Packaging": "Tubes of 10; 50 tubes per carton"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "500 per carton",
+      "quoteUnit": "carton",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_03-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_03-refined-v3.png",
+          "alt": "Universal specimen container, sterile, 40 ml labelled"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 3,
+      "reviewIds": [
+        "B01-03"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P03-I04",
+      "reference": "CAT-P03-I04",
+      "name": "Universal specimen container, sterile, 60 ml labelled",
+      "sourceName": "Universal specimen container, sterile, 60 ml labelled",
+      "category": "Consumables",
+      "description": "Flat-bottom crystal polystyrene specimen container, individually wrapped.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Capacity": "60 ml",
+        "Sterility": "Sterile",
+        "Material": "Crystal polystyrene",
+        "Packaging": "Individually wrapped"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "500 per carton",
+      "quoteUnit": "carton",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_04-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_04-refined-v3.png",
+          "alt": "Universal specimen container, sterile, 60 ml labelled"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 3,
+      "reviewIds": [
+        "B01-04"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P03-I05",
+      "reference": "CAT-P03-I05",
+      "name": "Stool container with spoon, 60 ml",
+      "sourceName": "Stool container with spoon, 60 ml",
+      "category": "Consumables",
+      "description": "Flat-bottom crystal polystyrene stool container with a spoon.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Capacity": "60 ml",
+        "Material": "Crystal polystyrene",
+        "Base": "Flat bottom"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "500 per carton",
+      "quoteUnit": "carton",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_05-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_05-refined-v3.png",
+          "alt": "Stool container with spoon, 60 ml"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 3,
+      "reviewIds": [
+        "B01-05"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P03-I07",
+      "reference": "CAT-P03-I07",
+      "name": "Universal specimen container, sterile, 100–120 ml",
+      "sourceName": "Universal specimen container, sterile, 100–120 ml",
+      "category": "Consumables",
+      "description": "Flat-bottom clear polypropylene specimen containers, individually wrapped.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Catalogue capacity": "100–120 ml",
+        "Sterility": "Sterile",
+        "Material": "Clear polypropylene",
+        "Packaging": "Individually wrapped"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "500 per carton",
+      "quoteUnit": "carton",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_07-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_07-refined-v3.png",
+          "alt": "Universal specimen container, sterile, 100–120 ml"
+        },
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_06-refined-v3.png",
+          "alt": "Universal specimen container, sterile, 100–120 ml — additional catalogue view"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 3,
+      "reviewIds": [
+        "B01-07",
+        "B01-06"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CW-001-SLIDES",
+      "reference": "CW-001-SLIDES",
+      "name": "Microscope slides",
+      "sourceName": "Microscope slides",
+      "category": "Consumables",
+      "description": "Glass microscope slides in a vacuum-sealed, moisture- and gas-impermeable liner.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Dimensions": "26 × 76 mm",
+        "Thickness": "1–1.2 mm",
+        "Pack quantity": "50 slides per box",
+        "Carton quantity": "50 boxes",
+        "Options": "Plain cut-edge; plain ground-edge; frosted ground-edge; bevelled-edge; target-circle ground-edge on request"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "50 per box",
+      "quoteUnit": "box",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_01-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_01-refined-v3.png",
+          "alt": "Microscope slides"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 4",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 4,
+      "reviewIds": [
+        "B01-08"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P04-I02",
+      "reference": "CAT-P04-I02",
+      "name": "Microscope cover slips",
+      "sourceName": "Microscope cover slips",
+      "category": "Consumables",
+      "description": "Flat, optically clear microscope cover slips supplied in plastic boxes.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Packaging": "100 per plastic box; 10 boxes in a vacuum-sealed liner"
+      },
+      "variants": [
+        "18 × 18 mm",
+        "22 × 22 mm",
+        "22 × 40 mm",
+        "24 × 24 mm",
+        "24 × 40 mm",
+        "24 × 50 mm"
+      ],
+      "variantLabel": "Size",
+      "pack": "100 per box",
+      "quoteUnit": "box",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_02-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_02-refined-v3.png",
+          "alt": "Microscope cover slips"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 4",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 4,
+      "reviewIds": [
+        "B01-09"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P04-I03",
+      "reference": "CAT-P04-I03",
+      "name": "Cardboard slide mailer, 20 place",
+      "sourceName": "Cardboard slide mailer, 20 place",
+      "category": "Consumables",
+      "description": "Book-style cardboard slide mailer with a protective flap.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Capacity": "20 slides",
+        "Material": "Cardboard",
+        "Style": "Book style with flap"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_03-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_03-refined-v3.png",
+          "alt": "Cardboard slide mailer, 20 place"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 4",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 4,
+      "reviewIds": [
+        "B01-10"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P04-I04",
+      "reference": "CAT-P04-I04",
+      "name": "Cardboard slide mailer, double",
+      "sourceName": "Cardboard slide mailer, double",
+      "category": "Consumables",
+      "description": "Book-style cardboard slide mailer for two slides, with a protective flap.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Capacity": "2 slides",
+        "Material": "Cardboard",
+        "Style": "Book style with flap"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_04-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_04-refined-v3.png",
+          "alt": "Cardboard slide mailer, double"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 4",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 4,
+      "reviewIds": [
+        "B01-11"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P04-I05",
+      "reference": "CAT-P04-I05",
+      "name": "Slide storage box",
+      "sourceName": "Slide storage box",
+      "category": "Consumables",
+      "description": "Cork-based slide storage box with numbered slots, an indexed lid and a snap lock.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Base": "Cork",
+        "Index": "Numbered slots correspond to the index card inside the lid",
+        "Closure": "Snap lock"
+      },
+      "variants": [
+        "50 slides",
+        "100 slides"
+      ],
+      "variantLabel": "Capacity",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_05-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_05-refined-v3.png",
+          "alt": "Slide storage box"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 4",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 4,
+      "reviewIds": [
+        "B01-12"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P05-I01",
+      "reference": "CAT-P05-I01",
+      "name": "Sterile disposable Petri dishes",
+      "sourceName": "Sterile disposable Petri dishes",
+      "category": "Consumables",
+      "description": "Disposable crystal polystyrene Petri dishes in the catalogue sizes and formats.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Material": "Crystal polystyrene",
+        "Sterility": "Sterile",
+        "90 × 15 mm, 3 vents": "500 per carton (50 tubes of 10)",
+        "50 × 15 mm": "1,000 per carton (100 tubes of 10)",
+        "90 × 15 mm, half plate": "500 per carton (50 tubes of 10)",
+        "65 × 15 mm, gridded": "700 per carton (70 tubes of 10)"
+      },
+      "variants": [
+        "90 × 15 mm, 3 vents",
+        "50 × 15 mm",
+        "90 × 15 mm, half plate",
+        "65 × 15 mm, gridded"
+      ],
+      "variantLabel": "Size / format",
+      "pack": "Carton quantity depends on selected format",
+      "quoteUnit": "carton",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_01-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_01-refined-v3.png",
+          "alt": "Sterile disposable Petri dishes"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 5",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 5,
+      "reviewIds": [
+        "B01-13"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P05-I02",
+      "reference": "CAT-P05-I02",
+      "name": "Sterile labelled collection swabs",
+      "sourceName": "Sterile labelled collection swabs",
+      "category": "Consumables",
+      "description": "Sterile labelled swab sticks for specimen collection.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Sterility": "Sterile",
+        "Packaging": "100 or 250 per polybag"
+      },
+      "variants": [
+        "100 per polybag",
+        "250 per polybag"
+      ],
+      "variantLabel": "Pack size",
+      "pack": "100 or 250 per polybag",
+      "quoteUnit": "polybag",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_02-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_02-refined-v3.png",
+          "alt": "Sterile labelled collection swabs"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 5",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 5,
+      "reviewIds": [
+        "B01-14"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P05-I03",
+      "reference": "CAT-P05-I03",
+      "name": "Amies transport swabs",
+      "sourceName": "Amies transport swabs",
+      "category": "Consumables",
+      "description": "Sterile swab sticks with Amies transport medium, individually wrapped in peel packs.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Sterility": "Sterile",
+        "Transport medium": "Amies",
+        "Packaging": "Individual peel packs"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "50 per polybag",
+      "quoteUnit": "polybag",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_03-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_03-refined-v3.png",
+          "alt": "Amies transport swabs"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 5",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 5,
+      "reviewIds": [
+        "B01-15"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P06-I01",
+      "reference": "CAT-P06-I01",
+      "name": "Sharps container",
+      "sourceName": "Sharps container",
+      "category": "Lab essentials",
+      "description": "Puncture-resistant polypropylene sharps containers with a transparent cap, maximum fill line and locking lid.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Material": "Polypropylene",
+        "Cap": "Transparent; permanently locks to base",
+        "Lid": "Irreversible lock",
+        "Opening": "Wide aperture with integrated needle extractor"
+      },
+      "variants": [
+        "500 ml",
+        "1 litre",
+        "5 litres",
+        "7 litres",
+        "10 litres",
+        "13 litres",
+        "20 litres"
+      ],
+      "variantLabel": "Capacity",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_01-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_01-refined-v3.png",
+          "alt": "Sharps container"
+        },
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_02-refined-v3.png",
+          "alt": "Sharps container — additional catalogue view"
+        },
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_03-refined-v3.png",
+          "alt": "Sharps container — additional catalogue view"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 6",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 6,
+      "reviewIds": [
+        "B01-16",
+        "B01-17",
+        "B01-18"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P06-I04",
+      "reference": "CAT-P06-I04",
+      "name": "Sharps safety box, 5 litres",
+      "sourceName": "Sharps safety box, 5 litres",
+      "category": "Lab essentials",
+      "description": "Water-resistant, three-layer cardboard safety box with a wide sharps port and carry handle.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Capacity": "5 litres",
+        "Construction": "Plastic-film-coated cardboard; heavy-grade cardboard; puncture-resistant inner paper",
+        "Use": "Syringes, needles and biohazardous waste"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_04-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_04-refined-v3.png",
+          "alt": "Sharps safety box, 5 litres"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 6",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 6,
+      "reviewIds": [
+        "B01-19"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P06-I05",
+      "reference": "CAT-P06-I05",
+      "name": "Biohazard waste bags",
+      "sourceName": "Biohazard waste bags",
+      "category": "Lab essentials",
+      "description": "Red heavyweight polyethylene bags with black biohazard printing and heavy-duty seams.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Material": "Flexible polyethylene",
+        "Use": "Non-sharps biohazardous waste",
+        "Colour": "Red with black printing",
+        "Options": "Various sizes, with or without gussets; confirm requirements"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_05-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_05-refined-v3.png",
+          "alt": "Biohazard waste bags"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 6",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 6,
+      "reviewIds": [
+        "B01-20"
+      ],
+      "supplierSku": null
+    }
+  ]
+}

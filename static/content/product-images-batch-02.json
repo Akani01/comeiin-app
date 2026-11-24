@@ -1,0 +1,780 @@
+{
+  "batch": 2,
+  "approvalDate": "2026-11-15",
+  "products": [
+    {
+      "id": "CAT-P07-I01",
+      "reference": "CAT-P07-I01",
+      "name": "Automatic micropipettes",
+      "sourceName": "Automatic micropipettes",
+      "category": "Liquid handling",
+      "description": "Single-channel and multichannel micropipettes with fixed- or variable-volume configurations.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Operating types": "Mechanical or digital-electronic",
+        "Variable-volume feature": "Volume lock",
+        "Tip ejection": "Soft touch",
+        "Seal": "PTFE",
+        "Accessories": "Calibration tools included"
+      },
+      "variants": [
+        "Single channel, fixed volume",
+        "Single channel, variable volume",
+        "8 channel, variable volume",
+        "12 channel, variable volume"
+      ],
+      "variantLabel": "Configuration",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_01-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_01-refined-v3.png",
+          "alt": "Automatic micropipettes"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 7",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 7,
+      "reviewIds": [
+        "B02-01"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P07-I02",
+      "reference": "CAT-P07-I02",
+      "name": "LABOCARE universal yellow pipette tips, 200 µl",
+      "sourceName": "LABOCARE universal yellow pipette tips, 200 µl",
+      "category": "Liquid handling",
+      "description": "Yellow universal pipette tips made from virgin low-adhesion polypropylene.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Capacity": "200 µl",
+        "Material": "Virgin low-adhesion polypropylene",
+        "Packaging": "96-tip rack or 1,000-tip bulk polybag"
+      },
+      "variants": [
+        "Rack of 96 tips",
+        "Bulk polybag of 1,000 tips"
+      ],
+      "variantLabel": "Pack format",
+      "pack": "96 per rack or 1,000 per polybag",
+      "quoteUnit": "pack",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_02-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_02-refined-v3.png",
+          "alt": "LABOCARE universal yellow pipette tips, 200 µl"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 7",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 7,
+      "reviewIds": [
+        "B02-02"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P07-I03",
+      "reference": "CAT-P07-I03",
+      "name": "LABOCARE universal blue pipette tips, 1,000 µl",
+      "sourceName": "LABOCARE universal blue pipette tips, 1,000 µl",
+      "category": "Liquid handling",
+      "description": "Blue universal pipette tips made from virgin low-adhesion polypropylene.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Capacity": "1,000 µl",
+        "Material": "Virgin low-adhesion polypropylene",
+        "Packaging": "100-tip rack or 500-tip bulk polybag"
+      },
+      "variants": [
+        "Rack of 100 tips",
+        "Bulk polybag of 500 tips"
+      ],
+      "variantLabel": "Pack format",
+      "pack": "100 per rack or 500 per polybag",
+      "quoteUnit": "pack",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_03-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_03-refined-v3.png",
+          "alt": "LABOCARE universal blue pipette tips, 1,000 µl"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 7",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 7,
+      "reviewIds": [
+        "B02-03"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P07-I04",
+      "reference": "CAT-P07-I04",
+      "name": "Sterile clear filter pipette tips",
+      "sourceName": "Sterile clear filter pipette tips",
+      "category": "Liquid handling",
+      "description": "Clear filter tips made from virgin low-adhesion polypropylene, supplied sterile in racks.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Sterility": "Sterile",
+        "Material": "Virgin low-adhesion polypropylene",
+        "Rack quantity": "96 tips",
+        "Case quantity": "10 racks (960 tips)"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "10 racks of 96 tips per case (960 tips)",
+      "quoteUnit": "case",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_04-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_04-refined-v3.png",
+          "alt": "Sterile clear filter pipette tips"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 7",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 7,
+      "reviewIds": [
+        "B02-04"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P08-I01",
+      "reference": "CAT-P08-I01",
+      "name": "Electronic pipette controller",
+      "sourceName": "Electronic pipette controller",
+      "category": "Liquid handling",
+      "description": "Battery-powered controller for glass or plastic pipettes, with high and low speed modes and gravity drain.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Pipette volume range": "0.1–200 ml",
+        "Power": "2 × 1.2 V, 1,000 mAh NiMH batteries",
+        "Battery service life": "8 hours continuous use",
+        "Charge time": "2–3 hours",
+        "Safety system": "Replaceable hydrophobic 0.45 µm PTFE filter and safety check valve",
+        "Included": "Battery charger; 0.45 µm and 0.20 µm hydrophobic PTFE filters; wall mount"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_01-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_01-refined-v3.png",
+          "alt": "Electronic pipette controller"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 8",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 8,
+      "reviewIds": [
+        "B02-05"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P08-I02",
+      "reference": "CAT-P08-I02",
+      "name": "Sterile serological pipettes",
+      "sourceName": "Sterile serological pipettes",
+      "category": "Liquid handling",
+      "description": "Colour-coded polystyrene serological pipettes with negative graduations and a cellulose acetate fibre plug.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Material": "Optically polished virgin polystyrene",
+        "Sterility": "Sterile",
+        "Packaging": "Individual peel-packs"
+      },
+      "variants": [
+        "1 ml",
+        "2 ml",
+        "5 ml",
+        "10 ml",
+        "25 ml",
+        "50 ml"
+      ],
+      "variantLabel": "Capacity",
+      "pack": "Individually peel-packed",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_02-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_02-refined-v3.png",
+          "alt": "Sterile serological pipettes"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 8",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 8,
+      "reviewIds": [
+        "B02-06"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P08-I03",
+      "reference": "CAT-P08-I03",
+      "name": "LABOCARE Pasteur transfer pipettes",
+      "sourceName": "LABOCARE Pasteur transfer pipettes",
+      "category": "Liquid handling",
+      "description": "Disposable graduated transfer pipettes in 1 ml and 3 ml sizes, with sterile and non-sterile packaging options.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Capacities": "1 ml or 3 ml",
+        "Sterile packaging": "Individually wrapped; 100 per polybag",
+        "Non-sterile packaging": "Bulk; 250 per polybag"
+      },
+      "variants": [
+        "1 ml, sterile — 100 per polybag",
+        "3 ml, sterile — 100 per polybag",
+        "1 ml, non-sterile — 250 per polybag",
+        "3 ml, non-sterile — 250 per polybag"
+      ],
+      "variantLabel": "Capacity and sterility",
+      "pack": "100 sterile or 250 non-sterile per polybag",
+      "quoteUnit": "polybag",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_03-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_03-refined-v3.png",
+          "alt": "LABOCARE Pasteur transfer pipettes"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 8",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 8,
+      "reviewIds": [
+        "B02-07"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P09-I01",
+      "reference": "CAT-P09-I01",
+      "name": "VACUCARE blood collection micro tubes",
+      "sourceName": "VACUCARE blood collection micro tubes",
+      "category": "Consumables",
+      "description": "Blood collection micro tubes with the additive options identified in the catalogue.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Lavender top": "EDTA-K3 (liquid)",
+        "Red top, clot activator": "Silica",
+        "Grey top": "Fl Oxalate",
+        "Green top": "Li Heparin",
+        "Yellow top SST": "Gel/Silica"
+      },
+      "variants": [
+        "Lavender — EDTA-K3 (liquid)",
+        "Red — clot activator (silica)",
+        "Grey — Fl Oxalate",
+        "Green — Li Heparin",
+        "Yellow SST — Gel/Silica"
+      ],
+      "variantLabel": "Additive / cap colour",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_09_Image_01-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_09_Image_01-refined-v3.png",
+          "alt": "VACUCARE blood collection micro tubes"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 9",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 9,
+      "reviewIds": [
+        "B02-08"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P09-I02",
+      "reference": "CAT-P09-I02",
+      "name": "VACUCARE blood collection tubes",
+      "sourceName": "VACUCARE blood collection tubes",
+      "category": "Consumables",
+      "description": "Blood collection tubes with plain, anticoagulant, clot-activator and gel options.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Lavender top": "EDTA-K2 (powder) or EDTA-K3 (liquid)",
+        "Red top": "Plain (no additive) or silica clot activator",
+        "Light blue top": "Na Citrate",
+        "Grey top": "Fl Oxalate",
+        "Green top": "Li Heparin",
+        "Silver top PPT": "Gel/EDTA-K2",
+        "Yellow top SST": "Gel/Silica"
+      },
+      "variants": [
+        "Lavender — EDTA-K2 (powder)",
+        "Lavender — EDTA-K3 (liquid)",
+        "Red — clot activator (silica)",
+        "Red — plain (no additive)",
+        "Light blue — Na Citrate",
+        "Grey — Fl Oxalate",
+        "Green — Li Heparin",
+        "Silver PPT — Gel/EDTA-K2",
+        "Yellow SST — Gel/Silica"
+      ],
+      "variantLabel": "Additive / cap colour",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_09_Image_02-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_09_Image_02-refined-v3.png",
+          "alt": "VACUCARE blood collection tubes"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 9",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 9,
+      "reviewIds": [
+        "B02-09"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P10-I01",
+      "reference": "CAT-P10-I01",
+      "name": "VACUCARE twist-off tip lancet",
+      "sourceName": "VACUCARE twist-off tip lancet",
+      "category": "Consumables",
+      "description": "Single-use lancet with a twist-off tip.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Tip": "Twist-off",
+        "Use": "Single use"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_01-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_01-refined-v3.png",
+          "alt": "VACUCARE twist-off tip lancet"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 10",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 10,
+      "reviewIds": [
+        "B02-10"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P10-I02",
+      "reference": "CAT-P10-I02",
+      "name": "VACUCARE automatic safety lancet",
+      "sourceName": "VACUCARE automatic safety lancet",
+      "category": "Consumables",
+      "description": "Automatic pre-loaded single-use lancet.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Operation": "Automatic, pre-loaded",
+        "Use": "Single use"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_02-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_02-refined-v3.png",
+          "alt": "VACUCARE automatic safety lancet"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 10",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 10,
+      "reviewIds": [
+        "B02-11"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P10-I03",
+      "reference": "CAT-P10-I03",
+      "name": "VACUCARE safety lock multisample needles",
+      "sourceName": "VACUCARE safety lock multisample needles",
+      "category": "Consumables",
+      "description": "Safety lock multisample needles in the catalogue-listed green and blue gauge options.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Gauge options": "21G (green); 23G (blue)"
+      },
+      "variants": [
+        "21G — green",
+        "23G — blue"
+      ],
+      "variantLabel": "Gauge / colour",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_03-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_03-refined-v3.png",
+          "alt": "VACUCARE safety lock multisample needles"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 10",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 10,
+      "reviewIds": [
+        "B02-12"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P10-I04",
+      "reference": "CAT-P10-I04",
+      "name": "VACUCARE multisample needles",
+      "sourceName": "VACUCARE multisample needles",
+      "category": "Consumables",
+      "description": "Multisample needles in four colour-coded gauge options.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Gauge options": "18G (pink); 21G (green); 22G (black); 23G (blue)"
+      },
+      "variants": [
+        "18G — pink",
+        "21G — green",
+        "22G — black",
+        "23G — blue"
+      ],
+      "variantLabel": "Gauge / colour",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_04-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_04-refined-v3.png",
+          "alt": "VACUCARE multisample needles"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 10",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 10,
+      "reviewIds": [
+        "B02-13"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P10-I05",
+      "reference": "CAT-P10-I05",
+      "name": "VACUCARE tourniquet",
+      "sourceName": "VACUCARE tourniquet",
+      "category": "Consumables",
+      "description": "Tourniquet from the VACUCARE blood collection accessories range.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Product type": "Tourniquet"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_05-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_05-refined-v3.png",
+          "alt": "VACUCARE tourniquet"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 10",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 10,
+      "reviewIds": [
+        "B02-14"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P11-I01",
+      "reference": "CAT-P11-I01",
+      "name": "Sanguilon Westergren ESR test system",
+      "sourceName": "Sanguilon Westergren ESR test system",
+      "category": "Consumables",
+      "description": "Two-part closed ESR test system comprising a Westergren pipette and reservoir tube.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Pipette material": "Crystal polystyrene",
+        "Pipette length": "220 mm",
+        "Graduations": "1 mm increments over 150 mm",
+        "Reservoir material": "Polypropylene",
+        "Anticoagulant": "200 µl of 3.8% sodium citrate per reservoir tube",
+        "Bag contents": "250 pipettes and 250 reservoir tubes",
+        "Carton contents": "4 bags"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "4 bags per carton; 250 pipettes + 250 reservoir tubes per bag",
+      "quoteUnit": "carton",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_11_Image_01-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_11_Image_01-refined-v3.png",
+          "alt": "Sanguilon Westergren ESR test system"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 11",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 11,
+      "reviewIds": [
+        "B02-15"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P11-I02",
+      "reference": "CAT-P11-I02",
+      "name": "Westergren ESR rack, 10 place",
+      "sourceName": "Westergren ESR rack, 10 place",
+      "category": "Lab essentials",
+      "description": "Extra polystyrene rack for the Westergren ESR test system.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Positions": "10",
+        "Material": "Polystyrene"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_11_Image_02-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_11_Image_02-refined-v3.png",
+          "alt": "Westergren ESR rack, 10 place"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 11",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 11,
+      "reviewIds": [
+        "B02-16"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P12-I01",
+      "reference": "CAT-P12-I01",
+      "name": "Urine test strips",
+      "sourceName": "Urine test strips",
+      "category": "Diagnostics",
+      "description": "Urine test strips offered in 2-, 5- and 10-parameter options.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Parameter options": "2, 5 or 10"
+      },
+      "variants": [
+        "2 parameter",
+        "5 parameter",
+        "10 parameter"
+      ],
+      "variantLabel": "Parameters",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_01-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_01-refined-v3.png",
+          "alt": "Urine test strips"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 12",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 12,
+      "reviewIds": [
+        "B02-17"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P12-I02",
+      "reference": "CAT-P12-I02",
+      "name": "Pregnancy tests",
+      "sourceName": "Pregnancy tests",
+      "category": "Diagnostics",
+      "description": "Pregnancy tests available as strips or cassettes.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Available formats": "Strips or cassettes"
+      },
+      "variants": [
+        "Strips",
+        "Cassettes"
+      ],
+      "variantLabel": "Format",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_02-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_02-refined-v3.png",
+          "alt": "Pregnancy tests"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 12",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 12,
+      "reviewIds": [
+        "B02-18"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P12-I03",
+      "reference": "CAT-P12-I03",
+      "name": "HBsAg hepatitis B rapid test cassette",
+      "sourceName": "HBsAg hepatitis B rapid test cassette",
+      "category": "Diagnostics",
+      "description": "Hepatitis B surface antigen (HBsAg) rapid test in cassette format.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Target": "Hepatitis B surface antigen (HBsAg)",
+        "Format": "Cassette"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "",
+      "quoteUnit": "item",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_03-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_03-refined-v3.png",
+          "alt": "HBsAg hepatitis B rapid test cassette"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 12",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 12,
+      "reviewIds": [
+        "B02-19"
+      ],
+      "supplierSku": null
+    },
+    {
+      "id": "CAT-P12-I04",
+      "reference": "CAT-P12-I04",
+      "name": "FORTRESS DIAGNOSTICS RPR Carbon Kit",
+      "sourceName": "FORTRESS DIAGNOSTICS RPR Carbon Kit",
+      "category": "Diagnostics",
+      "description": "RPR Carbon Kit from the FORTRESS DIAGNOSTICS serology range.",
+      "sourceListingType": "Catalogue product",
+      "kind": "product",
+      "specs": {
+        "Kit size": "100 tests"
+      },
+      "variants": [],
+      "variantLabel": "Option",
+      "pack": "100 tests per kit",
+      "quoteUnit": "kit",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_04-refined-v3.png",
+      "gallery": [
+        {
+          "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_04-refined-v3.png",
+          "alt": "FORTRESS DIAGNOSTICS RPR Carbon Kit"
+        }
+      ],
+      "imageSource": "Comeiin Updated Catalogue.pdf, page 12",
+      "imageOrigin": "AI-refined catalogue photograph",
+      "imageStatus": "Image approved by client, 15 November 2026",
+      "sourcePdfPage": 12,
+      "reviewIds": [
+        "B02-20"
+      ],
+      "supplierSku": null
+    }
+  ]
+}

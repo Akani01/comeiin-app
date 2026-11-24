@@ -1,0 +1,71 @@
+[
+  {
+    "productId": "CW-017",
+    "replacedAt": "2026-11-15",
+    "reason": "Client-approved Batch 01",
+    "previousCatalogueEntry": {
+      "id": "CW-017",
+      "reference": "CW-017",
+      "name": "Universal specimen containers",
+      "sourceName": "Specimen Containers",
+      "category": "Consumables",
+      "description": "Sterile universal specimen containers for sample collection.",
+      "sourceListingType": "Product group",
+      "kind": "product",
+      "specs": {
+        "Sterility": "Sterile",
+        "Capacities": "30 ml, 40 ml, 60 ml and 120 ml",
+        "Pack quantity": "500 pieces per box"
+      },
+      "variants": [
+        "30 ml",
+        "40 ml",
+        "60 ml",
+        "120 ml"
+      ],
+      "pack": "500 pieces per box",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "sourceRow": 22,
+      "launchPriority": "Launch first",
+      "image": "assets/products/CW-017-generated-v2.webp",
+      "imageSource": "Built-in image generation — unified professional catalogue set",
+      "imageOrigin": "AI-generated product image",
+      "imageStatus": "Generated catalogue photography; client approval pending",
+      "note": ""
+    }
+  },
+  {
+    "productId": "CW-001-SLIDES",
+    "replacedAt": "2026-11-15",
+    "reason": "Client-approved Batch 01",
+    "previousCatalogueEntry": {
+      "id": "CW-001-SLIDES",
+      "reference": "CW-001",
+      "name": "Microscope slides",
+      "sourceName": "Microscopes & Imaging",
+      "category": "Consumables",
+      "description": "Glass microscope slides supplied in a vacuum-sealed, moisture- and gas-impermeable liner.",
+      "sourceListingType": "Product group",
+      "kind": "product",
+      "specs": {
+        "Width": "26 mm",
+        "Length": "76 mm",
+        "Thickness": "1–1.2 mm",
+        "Pack quantity": "50 pieces per box",
+        "Packaging": "Vacuum-sealed, moisture- and gas-impermeable liner"
+      },
+      "variants": [],
+      "pack": "50 pieces per box",
+      "availability": "On request",
+      "priceBasis": "Request quote",
+      "sourceRow": 6,
+      "launchPriority": "Launch first",
+      "image": "assets/products/CW-001-SLIDES-generated-v2.webp",
+      "imageSource": "Built-in image generation — unified professional catalogue set",
+      "imageOrigin": "AI-generated product image",
+      "imageStatus": "Generated catalogue photography; client approval pending",
+      "note": "Separate slide listing derived from J6 and K6; not microscope specifications."
+    }
+  }
+]

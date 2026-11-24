@@ -1,409 +1,800 @@
 {% extends 'base.html' %}
+
 {% load static %}
 
 {% block title %}About Comeiin Works — Laboratory Equipment &amp; Consumables Supplier{% endblock %}
+
 {% block body_class %}about-page{% endblock %}
 
 {% block content %}
+
 <style>
+
   .cwa {
+
     --cwa-accent: var(--orange, var(--accent, #ff7a1a));
+
     --cwa-text: #fff;
+
     --cwa-muted: rgba(255, 255, 255, .78);
+
     --cwa-hair: rgba(255, 255, 255, .18);
+
     --cwa-shade: rgba(6, 8, 12, .80);
+
   }
+
   .cwa *, .cwa *::before, .cwa *::after { box-sizing: border-box; }
+
   .cwa-wrap { width: min(1180px, 100% - 2rem); margin-inline: auto; }
+
   .cwa-sec { padding: clamp(1.2rem, 3vw, 2rem) 0; }
 
   /* One picture panel holds all of the information */
+
   .cwa-panel {
+
     position: relative; isolation: isolate; overflow: hidden; color: var(--cwa-text);
+
     border-radius: 26px; padding: clamp(1.5rem, 4.5vw, 3.5rem);
+
     background-color: #0b0d12; background-size: cover; background-position: center;
+
   }
+
   .cwa-panel::before {
+
     content: ""; position: absolute; inset: 0; z-index: -1; background: var(--cwa-shade);
+
   }
+
   .cwa-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start; }
 
   .cwa-eyebrow {
+
     margin: 0 0 .8rem; font-size: .72rem; font-weight: 700; letter-spacing: .18em;
+
     text-transform: uppercase; color: var(--cwa-accent);
+
   }
+
   .cwa h2.cwa-h2 { margin: 0 0 1rem; font-size: clamp(1.6rem, 3.2vw, 2.4rem); line-height: 1.12; letter-spacing: -.02em; color: var(--cwa-text); }
+
   .cwa-panel p { margin: 0 0 .9rem; line-height: 1.7; color: var(--cwa-muted); }
 
   /* minimal hairline lists instead of boxes/cards */
+
   .cwa-list { list-style: none; margin: 0; padding: 0; }
+
   .cwa-list li { padding: .75rem 0; border-top: 1px solid var(--cwa-hair); line-height: 1.55; font-size: .95rem; color: var(--cwa-muted); }
+
   .cwa-list li:last-child { border-bottom: 1px solid var(--cwa-hair); }
+
   .cwa-list b { display: block; color: var(--cwa-text); font-weight: 650; margin-bottom: .1rem; }
+
   .cwa-list.cwa-dots li { padding-left: 1.1rem; position: relative; color: var(--cwa-text); }
+
   .cwa-list.cwa-dots li::before { content: ""; position: absolute; left: 0; top: 1.3rem; width: 6px; height: 6px; border-radius: 50%; background: var(--cwa-accent); }
 
   .cwa-sub { margin: 1.6rem 0 .6rem; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--cwa-accent); }
 
   /* credentials: a plain inline row */
+
   .cwa-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid var(--cwa-hair); }
+
   .cwa-facts b { display: block; color: var(--cwa-text); font-size: 1.05rem; margin-bottom: .2rem; }
+
   .cwa-facts span { color: var(--cwa-muted); font-size: .88rem; line-height: 1.5; }
 
   .cwa-vm p { color: var(--cwa-text); }
+
   .cwa-values { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin: 0; padding: 0; list-style: none; }
+
   .cwa-values li { font-weight: 600; color: var(--cwa-text); }
+
   .cwa-values li::before { content: "/ "; color: var(--cwa-accent); }
 
   .cwa-dl { margin: 0; }
+
   .cwa-dl div { display: grid; grid-template-columns: 8.5rem 1fr; gap: .8rem; padding: .7rem 0; border-top: 1px solid var(--cwa-hair); }
+
   .cwa-dl div:last-child { border-bottom: 1px solid var(--cwa-hair); }
+
   .cwa-dl dt { color: var(--cwa-accent); font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding-top: .15rem; }
+
   .cwa-dl dd { margin: 0; color: var(--cwa-text); font-size: .94rem; word-break: break-word; }
+
   .cwa-dl a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
   .cwa-sign { margin-top: 1.4rem !important; font-size: .8rem; font-weight: 700; letter-spacing: .2em; color: var(--cwa-text) !important; }
+
   .cwa-sign b { color: var(--cwa-accent); }
 
-
   /* ---------- hero carousel (self-contained, no Bootstrap needed) ---------- */
+
   .cwa-car { position: relative; border-radius: 26px; overflow: hidden; color: var(--cwa-text); background: #0b0d12; }
+
   .cwa-car-inner { position: relative; min-height: clamp(460px, 62vh, 620px); }
+
   .cwa-slide {
+
     position: absolute; inset: 0; display: flex; align-items: center; isolation: isolate;
+
     padding: clamp(1.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem) clamp(4.5rem, 8vw, 5.5rem);
+
     background-size: cover; background-position: center;
+
     opacity: 0; visibility: hidden; transition: opacity .6s ease, visibility .6s;
+
   }
+
   .cwa-slide::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(6, 8, 12, .88) 0%, rgba(6, 8, 12, .7) 50%, rgba(6, 8, 12, .3) 100%); }
+
   .cwa-slide.is-active { opacity: 1; visibility: visible; }
+
   .cwa-slide-copy { max-width: 620px; }
+
   .cwa-slide-copy h1, .cwa-slide-copy h2 { margin: 0 0 1rem; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.08; letter-spacing: -.02em; color: var(--cwa-text); }
+
   .cwa-slide-copy p { line-height: 1.7; color: var(--cwa-muted); }
+
   .cwa-slide-copy .hero-actions { margin-top: 1.4rem; }
+
   .cwa-stamp { position: absolute; right: clamp(1rem, 4vw, 3rem); bottom: 5rem; text-align: right; font-size: .75rem; font-weight: 700; letter-spacing: .24em; line-height: 1.7; color: var(--cwa-muted); }
+
   .cwa-stamp b { color: var(--cwa-accent); }
+
   .cwa-car-controls { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; padding: 1rem clamp(1.5rem, 5vw, 4rem); }
+
   .cwa-car-btns { display: flex; gap: .5rem; }
+
   .cwa-car-btns button { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--cwa-hair); background: rgba(255, 255, 255, .1); color: #fff; font-size: 1.3rem; line-height: 1; cursor: pointer; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+
   .cwa-car-btns button:hover { background: var(--cwa-accent); border-color: var(--cwa-accent); color: #111; }
+
   .cwa-car-dots { display: flex; gap: .45rem; }
+
   .cwa-car-dots button { width: 26px; height: 4px; padding: 0; border: 0; border-radius: 4px; background: rgba(255, 255, 255, .35); cursor: pointer; transition: background .3s, width .3s; }
+
   .cwa-car-dots button.is-active { width: 44px; background: var(--cwa-accent); }
+
   .cwa-car button:focus-visible { outline: 2px solid var(--cwa-accent); outline-offset: 2px; }
+
   @media (max-width: 700px) { .cwa-stamp { display: none; } .cwa-slide::before { background: rgba(6, 8, 12, .8); } }
+
   @media (prefers-reduced-motion: reduce) { .cwa-slide { transition: none; } }
 
   @media (max-width: 900px) {
+
     .cwa-cols, .cwa-facts { grid-template-columns: 1fr; }
+
     .cwa-facts { gap: 1rem; }
+
   }
+
   @media (max-width: 520px) {
+
     .cwa-dl div { grid-template-columns: 1fr; gap: .1rem; }
+
   }
+
+/* Readable editorial layout; photography never sits behind body copy. */
+.cwa{--cwa-text:#18324f;--cwa-muted:#44566b;--cwa-hair:#e0e7ef;--cwa-accent:#b54a0b;background:#fff;color:var(--cwa-text);font-family:Aptos,"Segoe UI",Arial,sans-serif;line-height:1.65;padding-bottom:70px}
+.cwa button,.cwa a,.cwa input{font-family:inherit}.cwa h1,.cwa h2,.cwa h3{letter-spacing:-.025em}.cwa a:focus-visible,.cwa button:focus-visible{outline:3px solid #2563a4;outline-offset:3px}
+.cwa .cwa-car{border-radius:16px;background:#f0f5fa;color:#18324f}.cwa .cwa-car-inner{min-height:0;display:grid}.cwa .cwa-slide{position:relative;inset:auto;grid-area:1/1;display:grid;align-items:center;min-height:440px;padding:42px 48px 90px;background-size:cover;background-position:center right;filter:none;backdrop-filter:none}.cwa .cwa-slide::before{background:linear-gradient(90deg,#fff 0%,#fff 45%,rgba(255,255,255,.95) 51%,rgba(255,255,255,.08) 80%)}.cwa .cwa-slide-copy{max-width:48%;position:relative;z-index:1}.cwa .cwa-slide-copy h1,.cwa .cwa-slide-copy h2{color:#18324f;font-size:clamp(28px,3.5vw,47px);line-height:1.12}.cwa .cwa-slide-copy p{color:#34485e;font-size:16px}.cwa .cwa-slide-copy .cwa-eyebrow{color:#b54a0b;font-size:12px}.cwa .cwa-stamp{display:none}.cwa .hero-actions{display:flex;gap:10px;flex-wrap:wrap}.cwa .hero-actions .hero-secondary{color:#18324f!important;background:white!important;border:1px solid #b8c9dc;border-radius:6px;padding:10px 15px;text-decoration:none}.cwa .cwa-car-controls{background:#fff;border-top:1px solid #e0e7ef;padding:12px 20px}.cwa .cwa-car-btns button{background:#fff;color:#18324f;border:1px solid #bbcadd;backdrop-filter:none;filter:none}.cwa .cwa-car-dots button{background:#c5d0dd;height:8px}.cwa .cwa-car-dots button.is-active{background:#18324f}.cwa-intro-next{text-align:center;padding:8px 0 22px}.cwa-intro-next a{display:inline-flex;align-items:center;gap:15px;color:#18324f;font-weight:700;text-decoration:none}.cwa-intro-next span{border:1px solid #cbd7e4;border-radius:50%;width:36px;height:36px;display:grid;place-items:center}
+.cwa .about-principles{width:min(1180px,calc(100% - 32px));margin:0 auto 32px;display:flex;flex-wrap:wrap;gap:12px 28px;background:#f3f6fa;color:#18324f;padding:16px 22px;border:1px solid #e0e7ef;border-radius:10px}.cwa .about-principles b{color:#b54a0b;margin-right:6px}
+.cwa-layout{width:min(1320px,calc(100% - 40px));margin:auto;display:grid;grid-template-columns:252px minmax(0,1fr);gap:36px;align-items:start}.cwa-side{position:sticky;top:110px;max-height:calc(100vh - 130px);overflow:auto;border:1px solid #dce5ef;border-radius:12px;background:white}.cwa-side-inner{padding:20px 14px}.cwa-side h2{font-size:21px;margin:0 6px;color:#18324f}.cwa-side .cwa-eyebrow,.cwa-side-note{margin:0 6px 8px}.cwa-side-note{font-size:13px;color:#526479}.cwa-nav{display:grid;gap:3px;margin-top:16px}.cwa-nav a{display:flex;gap:10px;align-items:flex-start;padding:10px 8px;border-left:3px solid transparent;border-radius:5px;color:#34485e;text-decoration:none;background:#fff;opacity:1;filter:none;transform:none}.cwa-nav a:hover,.cwa-nav a[aria-current="location"]{border-left-color:#1d4e80;background:#eaf1f9;color:#18324f}.cwa-num{font-size:11px;font-weight:700;color:#1d4e80;padding-top:2px}.cwa-nav strong{display:block;font-size:14px;line-height:1.3}.cwa-nav small{display:block;font-size:11.5px;line-height:1.4;margin-top:4px;color:#526479}.cwa-side-bottom{border-top:1px solid #e0e7ef;margin-top:14px;padding:14px 6px 0;font-size:13px}.cwa-side-bottom a{color:#1d4e80;font-weight:700;text-decoration:none}
+.cwa-content{min-width:0}.cwa-content .cwa-chapter{width:100%;max-width:none;margin:0 0 34px;padding:0;scroll-margin-top:120px;border-bottom:1px solid #dce5ef}.cwa .cwa-panel{background:#fff!important;color:#18324f;border-radius:0;padding:26px 0 14px;overflow:visible;isolation:auto}.cwa .cwa-panel::before{display:none}.cwa .cwa-panel p{font-size:16px;color:#44566b;line-height:1.75}.cwa .cwa-panel h2.cwa-h2{font-size:clamp(26px,3vw,38px);color:#18324f;max-width:720px}.cwa .cwa-panel .cwa-eyebrow,.cwa .cwa-panel .cwa-sub{color:#b54a0b;font-size:12px}.cwa .cwa-cols{gap:28px}.cwa .cwa-list li{font-size:15px;color:#44566b}.cwa .cwa-list b,.cwa .cwa-list.cwa-dots li,.cwa .cwa-values li,.cwa .cwa-dl dd,.cwa .cwa-facts b{color:#18324f}.cwa .cwa-facts{background:#f4f7fa;padding:20px;border:1px solid #e0e7ef;border-radius:10px;gap:18px}.cwa .cwa-facts b{overflow-wrap:anywhere}.cwa .cwa-facts span{color:#44566b}.cwa-editorial-image{height:clamp(160px,22vw,250px);overflow:hidden;border-radius:12px;background:#f1f5f9}.cwa-editorial-image img{width:100%;height:100%;object-fit:cover;display:block;filter:none}.cwa .cwa-sign{color:#18324f!important}.cwa .about-values,.cwa .about-process{background:#fff!important;color:#18324f!important}.cwa .about-values h2,.cwa .about-values h3,.cwa .about-process h2,.cwa .about-process b{color:#18324f!important}.cwa .about-values p,.cwa .about-process span{color:#44566b!important}.cwa .about-value-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.cwa .about-value-grid article{background:#f4f7fa!important;border:1px solid #dce5ef;padding:18px;border-radius:8px}.cwa .about-process{display:block}.cwa .about-process-visual img{width:100%;height:220px;object-fit:cover;border-radius:12px}.cwa .about-process ol{padding-left:0;list-style:none}.cwa .about-process li{padding:12px 0;border-bottom:1px solid #e0e7ef}.cwa .about-process li b,.cwa .about-process li span{display:block}.cwa .about-process li i{color:#b54a0b}.cwa-chapter-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:20px 0}.cwa-chapter-foot>span{font-size:11px;color:#60758b;letter-spacing:.08em}.cwa-chapter-foot a,.cwa-float a{display:inline-flex;align-items:center;gap:8px;background:#183b65;color:#fff!important;padding:10px 15px;border-radius:7px;font-size:13px;font-weight:700;text-decoration:none;filter:none;opacity:1}.cwa-float{position:fixed;right:18px;bottom:24px;z-index:20;display:flex;gap:6px;background:#fff;padding:5px;border-radius:9px;box-shadow:0 3px 18px #18324f22}.cwa-float a:last-child{background:#fff;color:#183b65!important;border:1px solid #cbd7e4}.cwa-float[hidden]{display:none}
+@media(max-width:950px){.cwa-layout{grid-template-columns:205px minmax(0,1fr);gap:22px}.cwa .cwa-cols,.cwa .cwa-facts{grid-template-columns:1fr}.cwa .about-value-grid{grid-template-columns:1fr}.cwa .cwa-slide{padding:30px 30px 80px}.cwa .cwa-slide-copy{max-width:58%}}
+@media(max-width:700px){.cwa-layout{width:calc(100% - 28px);grid-template-columns:1fr;gap:22px}.cwa-side{position:static;max-height:none}.cwa-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.cwa .cwa-slide{min-height:0;padding:180px 20px 80px;background-size:100% 180px;background-position:top center;background-repeat:no-repeat;background-color:white;align-items:start}.cwa .cwa-slide::before{display:none}.cwa .cwa-slide-copy{max-width:100%;padding-top:20px}.cwa .cwa-slide-copy h1,.cwa .cwa-slide-copy h2{font-size:29px}.cwa .cwa-panel{padding-top:20px}.cwa-float{bottom:calc(16px + env(safe-area-inset-bottom,0px));right:12px}.cwa-chapter-foot a{font-size:12px}.cwa .cwa-dl div{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.cwa *{scroll-behavior:auto!important;transition:none!important}}
+
 </style>
 
-<div class="cwa">
+<div class="cwa" id="cwa-top">
 
 <!-- ================= HERO CAROUSEL ================= -->
+
 <section class="cwa-sec cwa-wrap" aria-roledescription="carousel" aria-label="About Comeiin Works">
+
   <div class="cwa-car" id="cwaCarousel">
+
     <div class="cwa-car-inner">
 
-      <div class="cwa-slide is-active" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}')" aria-roledescription="slide" aria-label="1 of 3">
+      <div class="cwa-slide is-active" style="background-image:url('{% static 'assets/logistics/Hospital.png' %}')" aria-roledescription="slide" aria-label="1 of 3">
+
         <div class="cwa-slide-copy">
+
           <p class="cwa-eyebrow"><span class="status-dot"></span> About Comeiin Works</p>
+
           <h1>Your laboratory needs a supply partner who keeps up.</h1>
+
           <p>Comeiin Works (Pty) Ltd is a South African supplier of laboratory equipment, consumables and scientific products, giving laboratories one clear, responsive route to a quotation.</p>
+
           <div class="hero-actions">
+
             <button class="quote-open button orange">Request a quotation <span>↗︎</span></button>
+
             <a class="hero-secondary" href="{% url 'products:catalogue' %}">Explore our range <span>→</span></a>
+
           </div>
+
         </div>
+
         <span class="cwa-stamp">ASTUTE<br />SWIFT<br /><b>PASSIONATE</b></span>
+
       </div>
 
-      <div class="cwa-slide" style="background-image:url('{% static 'assets/landing-hero-v2.webp' %}')" aria-roledescription="slide" aria-label="2 of 3">
+      <div class="cwa-slide" style="background-image:url('{% static 'assets/logistics/logistics-receiving.png' %}')" aria-roledescription="slide" aria-label="2 of 3">
+
         <div class="cwa-slide-copy">
+
           <p class="cwa-eyebrow">What we supply</p>
+
           <h2>Equipment, consumables and specialist products.</h2>
+
           <p>From centrifuges and pipettes to plasticware, sample handling, diagnostics and reagents, all in one enquiry.</p>
+
           <div class="hero-actions">
+
             <a class="hero-secondary" href="{% url 'products:catalogue' %}">Explore our range <span>→</span></a>
+
           </div>
+
         </div>
+
       </div>
 
       <div class="cwa-slide" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}'); background-position: right center;" aria-roledescription="slide" aria-label="3 of 3">
+
         <div class="cwa-slide-copy">
+
           <p class="cwa-eyebrow">Since 2016</p>
+
           <h2>Reliable, responsive and ethical.</h2>
+
           <p>Founded in 2016 and incorporated in 2020, with a B-BBEE Level 1 rating and a customer-first approach.</p>
+
           <div class="hero-actions">
+
             <button class="quote-open button orange">Request a quotation <span>↗︎</span></button>
+
           </div>
+
         </div>
+
       </div>
 
     </div>
 
     <div class="cwa-car-controls">
+
       <div class="cwa-car-btns">
+
         <button type="button" data-cwa="prev" aria-label="Previous slide">‹</button>
+
         <button type="button" data-cwa="next" aria-label="Next slide">›</button>
+
       </div>
+
       <div class="cwa-car-dots">
+
         <button type="button" class="is-active" aria-label="Slide 1" aria-current="true"></button>
+
         <button type="button" aria-label="Slide 2"></button>
+
         <button type="button" aria-label="Slide 3"></button>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+<div class="cwa-wrap cwa-intro-next"><a href="#overview">Discover our company <span aria-hidden="true">↓</span></a></div>
 
 <div class="about-principles" aria-label="Comeiin Works principles">
+
   <span><b>01</b> Understand the requirement</span>
+
   <span><b>02</b> Source with purpose</span>
+
   <span><b>03</b> Respond with clarity</span>
+
 </div>
 
 <!-- ================= 1. OVERVIEW ================= -->
-<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-overview-title">
-  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}')">
+
+<div class="cwa-layout"><aside class="cwa-side" aria-label="About page contents"><div class="cwa-side-inner"><p class="cwa-eyebrow">Company profile</p><h2>On this page</h2><p class="cwa-side-note">Explore Comeiin Works, section by section.</p><nav class="cwa-nav" aria-label="Chapters"><a href="#overview"><span class="cwa-num">01</span><span><strong>Company overview</strong><small>History, registration and credentials</small></span></a>
+<a href="#business"><span class="cwa-num">02</span><span><strong>Our business</strong><small>Supply range and product portfolio</small></span></a>
+<a href="#industries"><span class="cwa-num">03</span><span><strong>Industries & customers</strong><small>Who we support and why</small></span></a>
+<a href="#vision"><span class="cwa-num">04</span><span><strong>Vision & mission</strong><small>Purpose and core values</small></span></a>
+<a href="#values"><span class="cwa-num">05</span><span><strong>How we work</strong><small>Astute, swift and passionate</small></span></a>
+<a href="#procurement"><span class="cwa-num">06</span><span><strong>Procurement support</strong><small>Sourcing, quality and commitments</small></span></a>
+<a href="#process"><span class="cwa-num">07</span><span><strong>Quotation process</strong><small>From requirement to response</small></span></a>
+<a href="#contact"><span class="cwa-num">08</span><span><strong>Contact us</strong><small>Company and contact details</small></span></a>
+</nav><div class="cwa-side-bottom"><a href="{% url 'products:catalogue' %}">Explore product catalogue →</a></div></div></aside><div class="cwa-content" aria-label="Company profile">
+<section id="overview" class="cwa-sec cwa-wrap cwa-chapter" aria-labelledby="cwa-overview-title">
+
+  <div class="cwa-editorial-image"><img src="{% static 'assets/logistics/logistics-quality-check.webp' %}" alt="Laboratory workspace" loading="lazy" decoding="async"></div>
+<div class="cwa-panel">
+
     <p class="cwa-eyebrow">Company overview</p>
+
     <h2 class="cwa-h2" id="cwa-overview-title">More focus on the work. Less time chasing supplies.</h2>
+
     <div class="cwa-cols">
+
       <p>Comeiin Works (Pty) Ltd is a South African supplier and distribution partner focused on laboratory equipment, consumables and related scientific products. We combine product sourcing, responsive service and practical procurement support.</p>
+
       <p>Founded in 2016 and formally incorporated in 2020, we are built around reliability, quality, competitive pricing and long-term business relationships.</p>
+
     </div>
+
     <div class="cwa-facts">
+
       <div><b>2016 / 2020</b><span>Founded and incorporated</span></div>
+
       <div><b>2020/436182/07</b><span>Registration · VAT 4420309447</span></div>
+
       <div><b>B-BBEE Level 1</b><span>Supporting supplier diversity</span></div>
+
     </div>
+
   </div>
+
+<div class="cwa-chapter-foot"><span>CHAPTER 01 / 08</span><a href="#business">Next: Our business <span aria-hidden="true">↓</span></a></div>
 </section>
 
 <!-- ================= 2. BUSINESS + PORTFOLIO ================= -->
-<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-business-title">
-  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-hero-v2.webp' %}')">
+
+<section id="business" class="cwa-sec cwa-wrap cwa-chapter" aria-labelledby="cwa-business-title">
+
+  <div class="cwa-editorial-image"><img src="{% static 'assets/landing-hero-v2.webp' %}" alt="Laboratory equipment and supplies" loading="lazy" decoding="async"></div>
+<div class="cwa-panel">
+
     <div class="cwa-cols">
+
       <div>
+
         <p class="cwa-eyebrow">Our business</p>
+
         <h2 class="cwa-h2" id="cwa-business-title">Laboratory supply, from routine to specialist.</h2>
+
         <p>Equipment and consumables for routine operations, research, diagnostics, quality control and industrial applications. Availability is subject to supplier ranges and customer specifications.</p>
+
         <ul class="cwa-list cwa-dots">
+
           <li>Laboratory equipment and instruments</li>
+
           <li>Consumables and single-use products</li>
+
           <li>Specialised products sourced to specification</li>
+
           <li>Procurement support across multiple categories</li>
+
           <li>Recurring supply and replenishment</li>
+
         </ul>
+
       </div>
+
       <div>
+
         <p class="cwa-eyebrow">Portfolio</p>
+
         <ul class="cwa-list">
+
           <li><b>Laboratory Equipment</b>Centrifuges, vortex mixers, shakers, rockers, rollers, pipettors, pipette controllers, bottle-top dispensers.</li>
+
           <li><b>Pipetting &amp; Liquid Handling</b>Pipette and filter tips, serological pipettes, liquid-handling accessories.</li>
+
           <li><b>Sample Collection &amp; Handling</b>Blood collection products, specimen containers, swabs, specimen bags.</li>
+
           <li><b>Laboratory Plasticware</b>Centrifuge and PCR tubes, cryovials, Petri dishes, racks, reservoirs.</li>
+
           <li><b>Microscopy &amp; General Consumables</b>Slides, coverslips, mailers, weighing boats, inoculation loops, spreaders.</li>
+
           <li><b>Storage, Safety &amp; Accessories</b>Cryoboxes, labelling, autoclave bags and baskets, drying racks, lab mats.</li>
+
           <li><b>Diagnostic &amp; Testing Products</b>Diagnostic test kits and selected testing products, subject to availability.</li>
+
           <li><b>Reagents &amp; Specialist Products</b>Reagents, blood grouping antisera, coagulation reagents, latex test kits.</li>
+
         </ul>
+
       </div>
+
     </div>
+
   </div>
+
+<div class="cwa-chapter-foot"><span>CHAPTER 02 / 08</span><a href="#industries">Next: Industries & customers <span aria-hidden="true">↓</span></a></div>
 </section>
 
 <!-- ================= 3. INDUSTRIES + VALUE PROPOSITION ================= -->
-<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-industries-title">
-  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}'); background-position: right center;">
+
+<section id="industries" class="cwa-sec cwa-wrap cwa-chapter" aria-labelledby="cwa-industries-title">
+
+  <div class="cwa-panel">
+
     <div class="cwa-cols">
+
       <div>
+
         <p class="cwa-eyebrow">Who we support</p>
+
         <h2 class="cwa-h2" id="cwa-industries-title">Industries &amp; customers.</h2>
+
         <ul class="cwa-list cwa-dots">
+
           <li>Academic and educational laboratories</li>
+
           <li>Medical and clinical laboratories</li>
+
           <li>Research and scientific organisations</li>
+
           <li>Veterinary practices and laboratories</li>
+
           <li>Cosmetics and personal care</li>
+
           <li>Food and beverage manufacturers and laboratories</li>
+
           <li>Industrial and quality-control laboratories</li>
+
           <li>Pharmaceutical and related laboratories</li>
+
         </ul>
+
       </div>
+
       <div>
+
         <p class="cwa-eyebrow">Our value proposition</p>
+
         <ul class="cwa-list">
+
           <li><b>Quality-focused sourcing</b>Recognised and trusted suppliers and manufacturers.</li>
+
           <li><b>Reliable service</b>Responsive communication and dependable follow-through.</li>
+
           <li><b>Competitive pricing</b>Commercially competitive, with quality requirements in mind.</li>
+
           <li><b>Customer-centric solutions</b>We understand your requirement and provide suitable options.</li>
+
           <li><b>Product breadth</b>Laboratory equipment plus everyday and specialist consumables.</li>
+
           <li><b>Long-term relationships</b>Transparent, ethical and professional.</li>
+
         </ul>
+
       </div>
+
     </div>
+
   </div>
+
+<div class="cwa-chapter-foot"><span>CHAPTER 03 / 08</span><a href="#vision">Next: Vision & mission <span aria-hidden="true">↓</span></a></div>
 </section>
 
 <!-- ================= 4. VISION / MISSION / VALUES ================= -->
-<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-vm-title">
-  <div class="cwa-panel cwa-vm" style="background-image:url('{% static 'assets/landing-hero-v2.webp' %}'); background-position: left center;">
+
+<section id="vision" class="cwa-sec cwa-wrap cwa-chapter" aria-labelledby="cwa-vm-title">
+
+  <div class="cwa-panel cwa-vm">
+
     <p class="cwa-eyebrow">Vision, mission &amp; values</p>
+
     <h2 class="cwa-h2" id="cwa-vm-title">What guides every supply decision.</h2>
+
     <div class="cwa-cols">
+
       <div>
+
         <p class="cwa-sub" style="margin-top:0">Vision</p>
+
         <p>To maintain and grow our expertise across our core product range, consistently offering high-quality products and services that meet or exceed customer expectations. We aim to be a reliable, efficient and affordable supplier to the scientific and laboratory community, without compromising on quality.</p>
+
       </div>
+
       <div>
+
         <p class="cwa-sub" style="margin-top:0">Mission</p>
+
         <p>To distinguish Comeiin Works through exceptional client relationships, superior customer service and reliable delivery timelines, upholding honesty, integrity and ethical business practices in every aspect of our operations.</p>
+
       </div>
+
     </div>
+
     <p class="cwa-sub">Core values</p>
+
     <ul class="cwa-values">
+
       <li>Integrity</li><li>Customer focus</li><li>Reliability</li><li>Quality</li><li>Professionalism</li><li>Responsiveness</li>
+
     </ul>
+
   </div>
+
+<div class="cwa-chapter-foot"><span>CHAPTER 04 / 08</span><a href="#values">Next: How we work <span aria-hidden="true">↓</span></a></div>
 </section>
 
 <!-- ================= BRAND VALUES (existing) ================= -->
-<section class="about-values section">
+
+<section id="values" class="about-values section cwa-chapter">
+
   <div class="section-title">
+
     <div>
+
       <p class="eyebrow">HOW WE WORK</p>
+
       <h2>Three values. One dependable experience.</h2>
+
     </div>
+
     <p>Clear thinking, timely action and care for the result.</p>
+
   </div>
+
   <div class="about-value-grid">
+
     <article>
+
       <span>01</span>
+
       <h3>Astute.</h3>
+
       <p>We pay attention to specifications and ask the practical questions that help identify the right supply option.</p>
+
     </article>
+
     <article>
+
       <span>02</span>
+
       <h3>Swift.</h3>
+
       <p>We keep enquiries moving with responsive communication and a straightforward request-for-quotation process.</p>
+
     </article>
+
     <article>
+
       <span>03</span>
+
       <h3>Passionate.</h3>
+
       <p>We care about helping laboratories stay equipped for the work that matters to them.</p>
+
     </article>
+
   </div>
+
+<div class="cwa-chapter-foot"><span>CHAPTER 05 / 08</span><a href="#procurement">Next: Procurement support <span aria-hidden="true">↓</span></a></div>
 </section>
 
 <!-- ================= 5. PROCUREMENT + QUALITY + WHY ================= -->
-<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-proc-title">
-  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-about-v2.webp' %}')">
+
+<section id="procurement" class="cwa-sec cwa-wrap cwa-chapter" aria-labelledby="cwa-proc-title">
+
+  <div class="cwa-panel">
+
     <div class="cwa-cols">
+
       <div>
+
         <p class="cwa-eyebrow">Procurement &amp; supply support</p>
+
         <h2 class="cwa-h2" id="cwa-proc-title">One responsive point of contact.</h2>
+
         <p>We identify suitable products across our supply network. If an item is not in our standard range, send specifications, descriptions or product references and we will consider sourcing it.</p>
+
         <p>Quality is central to our approach: recognised suppliers, products matched to intended use, clear communication and ethical business practices.</p>
+
       </div>
+
       <div>
+
         <p class="cwa-eyebrow">Our commitment</p>
+
         <ul class="cwa-list cwa-dots">
+
           <li>Product and supplier selection based on your requirements</li>
+
           <li>Clear communication on specifications, availability and lead times</li>
+
           <li>Professional handling of quotations and enquiries</li>
+
           <li>Reliable delivery and customer support</li>
+
           <li>Continuous development of product knowledge and supply network</li>
+
         </ul>
+
         <p class="cwa-sub">Why choose Comeiin Works</p>
+
         <p style="margin:0">A focused equipment and consumables offering, broad categories for routine and specialist needs, responsive service, competitive sourcing and support across multiple industries.</p>
+
       </div>
+
     </div>
+
   </div>
+
+<div class="cwa-chapter-foot"><span>CHAPTER 06 / 08</span><a href="#process">Next: Quotation process <span aria-hidden="true">↓</span></a></div>
 </section>
 
 <!-- ================= PROCESS (existing) ================= -->
-<section class="about-process section">
+
+<section id="process" class="about-process section cwa-chapter">
+
   <div class="about-process-visual">
-    <img src="{% static 'assets/landing-hero-v2.webp' %}" alt="Laboratory glassware illuminated in Comeiin blue and orange" width="1600" height="900" loading="lazy" decoding="async" />
+
+    <img src="{% static 'assets/logistics/FocusedMedical.png' %}" alt="Laboratory glassware illuminated in Comeiin blue and orange" width="1600" height="900" loading="lazy" decoding="async" />
+
   </div>
+
   <div>
+
     <p class="eyebrow">ONE CLEAR ROUTE</p>
+
     <h2>From requirement to quotation.</h2>
+
     <ol>
+
       <li><i>01</i><b>Browse or describe</b><span>Select products from the catalogue or tell us what your laboratory requires.</span></li>
+
       <li><i>02</i><b>Build one enquiry</b><span>Combine equipment, consumables and quantities in a single request.</span></li>
+
       <li><i>03</i><b>Receive a tailored response</b><span>We confirm specifications, availability and pricing for your review.</span></li>
+
     </ol>
+
   </div>
+
+<div class="cwa-chapter-foot"><span>CHAPTER 07 / 08</span><a href="#contact">Next: Contact us <span aria-hidden="true">↓</span></a></div>
 </section>
 
 <!-- ================= 6. CONTACT ================= -->
-<section class="cwa-sec cwa-wrap" aria-labelledby="cwa-contact-title">
-  <div class="cwa-panel" style="background-image:url('{% static 'assets/landing-hero-v2.webp' %}'); background-position: right center;">
+
+<section id="contact" class="cwa-sec cwa-wrap cwa-chapter" aria-labelledby="cwa-contact-title">
+
+  <div class="cwa-panel">
+
     <div class="cwa-cols">
+
       <div>
+
         <p class="cwa-eyebrow">Contact us</p>
+
         <h2 class="cwa-h2" id="cwa-contact-title">Let's support your laboratory supply requirements.</h2>
+
         <p>Start with a single item or a complete requirements list.</p>
+
         <button class="quote-open button orange">
+
           Request a quotation <span>↗︎</span>
+
         </button>
+
         <p class="cwa-sign">COMEIIN · LABORATORY EQUIPMENT &amp; CONSUMABLES<br /><b>Astute | Swift | Passionate</b></p>
+
       </div>
+
       <dl class="cwa-dl">
+
         <div><dt>Company</dt><dd>Comeiin Works (Pty) Ltd</dd></div>
+
         <div><dt>Address</dt><dd>Innovation Worx, 1 Scale End, Halfway House Estate, Midrand, 1685</dd></div>
+
         <div><dt>Telephone</dt><dd><a href="tel:+27112387334">011 238 7334</a></dd></div>
+
         <div><dt>Email</dt><dd><a href="mailto:admin@comeiin.co.za">admin@comeiin.co.za</a></dd></div>
+
         <div><dt>Website</dt><dd><a href="https://www.comeiin.co.za">www.comeiin.co.za</a></dd></div>
+
         <div><dt>Registration</dt><dd>2020/436182/07</dd></div>
+
         <div><dt>VAT number</dt><dd>4420309447</dd></div>
+
       </dl>
+
     </div>
+
   </div>
+
+<div class="cwa-chapter-foot"><span>CHAPTER 08 / 08</span><a href="#cwa-top">Back to top ↑</a></div>
 </section>
 
-
+</div></div>
+<div class="cwa-float" aria-label="Chapter navigation"><a id="cwa-next" href="#overview"><span>Next section</span> ↓</a><a href="#cwa-top" aria-label="Back to top" title="Back to top">↑</a></div>
 <script>
+
 (function () {
+
   var root = document.getElementById('cwaCarousel');
+
   if (!root) return;
+
   var slides = root.querySelectorAll('.cwa-slide');
+
   var dots = root.querySelectorAll('.cwa-car-dots button');
+
   var i = 0, timer = null;
+
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function go(n) {
+
     i = (n + slides.length) % slides.length;
+
     slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); });
+
     dots.forEach(function (d, k) {
+
       d.classList.toggle('is-active', k === i);
+
       if (k === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+
     });
+
   }
-  function start() { if (!reduce) { stop(); timer = setInterval(function () { go(i + 1); }, 7000); } }
+
+  function start() { stop(); }
+
   function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
   root.querySelector('[data-cwa="prev"]').addEventListener('click', function () { go(i - 1); start(); });
+
   root.querySelector('[data-cwa="next"]').addEventListener('click', function () { go(i + 1); start(); });
+
   dots.forEach(function (d, k) { d.addEventListener('click', function () { go(k); start(); }); });
+
   root.addEventListener('mouseenter', stop);
+
   root.addEventListener('mouseleave', start);
+
   root.addEventListener('focusin', stop);
+
   root.addEventListener('focusout', start);
+
   var x0 = null;
+
   root.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+
   root.addEventListener('touchend', function (e) {
+
     if (x0 === null) return;
+
     var dx = e.changedTouches[0].clientX - x0;
+
     if (Math.abs(dx) > 50) { go(i + (dx < 0 ? 1 : -1)); start(); }
+
     x0 = null;
+
   });
+
   start();
+
 })();
+
 </script>
 
 </div>
+
+<script>
+(function(){
+ const root=document.getElementById('cwa-top'); if(!root)return;
+ const sections=Array.from(root.querySelectorAll('.cwa-chapter'));
+ const links=Array.from(root.querySelectorAll('.cwa-nav a'));
+ const floating=root.querySelector('.cwa-float'), next=root.querySelector('#cwa-next');
+ let scheduled=false;
+ function update(){scheduled=false;let active=0;sections.forEach((s,i)=>{if(s.getBoundingClientRect().top<=160)active=i;});links.forEach((a,i)=>{if(i===active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});const upcoming=sections[active+1]; const before=sections[0].getBoundingClientRect().top>160;next.href=before?'#overview':upcoming?'#'+upcoming.id:'#cwa-top';next.querySelector('span').textContent=before?'Start reading':upcoming?'Next section':'Back to top';floating.hidden=window.scrollY<200;}
+ window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(update);}}, {passive:true});
+ root.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const target=document.getElementById(a.getAttribute('href').slice(1));if(!target)return;e.preventDefault();target.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});history.replaceState(null,'',a.getAttribute('href'));});update();
+})();
+</script>
 {% endblock %}

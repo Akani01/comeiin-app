@@ -1,0 +1,39 @@
+COMEIIN WORKS WEBSITE - COMPLETE SOURCE PROJECT
+Exported: 23 November 2026
+Repository: https://github.com/Madenet/comeiin-app
+Branch: codex/product-images-batch-02
+Commit: 1673aa4d6ad981443e0e72255e65dbaacd7c3575
+
+CONTENTS
+All repository-tracked project files: Django applications and migrations,
+HTML templates, styles, JavaScript, original assets, approved Batch 01 and
+Batch 02 images, catalogue data, requirements and deployment notes.
+57 catalogue entries, including both approved image batches.
+Git history, virtual environments, local credentials and database contents
+are not part of this source-code export.
+
+LOCAL SETUP (NEW, EMPTY DEVELOPMENT DATABASE ONLY)
+Extract this ZIP and open a terminal in the comeiin-website-project folder.
+Create and activate a Python virtual environment, then install requirements.txt.
+The repository dependency file is included unchanged; full dependency
+installation was not revalidated for this export.
+Set DEBUG=True and a local SECRET_KEY in your environment or .env file.
+With DATABASE_URL unset, the project uses local SQLite.
+Run:
+  python manage.py migrate
+  python import_products.py
+  python manage.py collectstatic --noinput
+  python manage.py runserver
+Open http://127.0.0.1:8000/products/
+
+EXISTING DEPLOYMENTS
+Use the focused batch commands rather than the initial seed script on existing
+data. Read docs/product-images/batch-01.txt and batch-02.txt for deployment steps.
+The database and persistent media storage need their normal deployment setup.
+Regenerate staticfiles with collectstatic; the source assets in static/ contain
+the latest approved images and catalogue.
+
+BATCH RECORDS
+Batch 01: https://github.com/Madenet/comeiin-app/pull/1
+Batch 02: https://github.com/Madenet/comeiin-app/pull/2
+Only Batches 01 and 02 are included as approved repository updates.

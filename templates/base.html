@@ -26,12 +26,11 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   <link rel="stylesheet" href="{% static 'css/future.css' %}?v=24" />
 
-  <!-- Clients logo carousel styles (minimal) -->
+  <!-- Brand association: ONE belt, every logo shown once -->
   <style>
     .clients {
       --cl-gap: clamp(32px, 5vw, 64px);
       --cl-accent: var(--orange, #f97316);
-      --cl-duration: 40s; /* JS overrides this based on logo count */
       position: relative;
       display: block;
       width: 100%;
@@ -52,7 +51,7 @@
       color: #94a3b8;
     }
 
-    /* Tiny pause / play control */
+    /* Tiny pause / play control (only shown while the belt is moving) */
     .clients-toggle {
       display: inline-grid; place-items: center;
       width: 22px; height: 22px; padding: 0; cursor: pointer;
@@ -81,28 +80,26 @@
       -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
               mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
     }
+
+    /* One track, one list. JS moves it left and recycles the first logo to the end,
+       so the same logo is never on screen twice. */
     .clients-track {
-      display: flex; width: max-content;
-      animation: clients-scroll var(--cl-duration) linear infinite;
+      display: flex;
+      width: max-content;
+      min-width: 100%;
+      justify-content: center;   /* centred when everything fits */
       will-change: transform;
     }
-    .clients-viewport:hover .clients-track,
-    .clients-viewport:focus-within .clients-track,
-    .clients[data-paused="true"] .clients-track { animation-play-state: paused; }
-
-    @keyframes clients-scroll {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); } /* two identical groups = seamless loop */
-    }
-
     .clients-group {
-      display: flex; flex-shrink: 0; align-items: center; gap: var(--cl-gap);
-      list-style: none; margin: 0; padding: 0 var(--cl-gap) 0 0;
+      display: flex; flex: 0 0 auto; align-items: center;
+      list-style: none; margin: 0; padding: 0;
     }
+
     /* No boxes, just small quiet logos */
     .clients-item {
       flex: 0 0 auto;
       width: clamp(70px, 8vw, 100px); height: clamp(28px, 3.4vw, 38px);
+      margin-right: var(--cl-gap);
       display: grid; place-items: center;
     }
     .clients-item img {
@@ -112,11 +109,15 @@
     }
     .clients-item:hover img { filter: none; }
 
-    /* Reduced motion: no animation, swipe/scroll manually */
+    /* Static mode: logos fit, so nothing moves */
+    .clients[data-static="true"] .clients-item:last-child { margin-right: 0; }
+    .clients[data-static="true"] .clients-viewport { overflow-x: auto; scrollbar-width: none; }
+    .clients[data-static="true"] .clients-viewport::-webkit-scrollbar { display: none; }
+
+    /* Reduced motion: no mask, swipe/scroll manually */
     @media (prefers-reduced-motion: reduce) {
-      .clients-viewport { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
-      .clients-track { animation: none; }
-      .clients-group[aria-hidden="true"], .clients-toggle { display: none; }
+      .clients-viewport { -webkit-mask-image: none; mask-image: none; }
+      .clients-toggle { display: none; }
     }
   </style>
 
@@ -264,10 +265,6 @@
           <a class="industry-menu-all" href="{% url 'core:industries' %}">View all industries</a>
         </div>
       </div>
-      <a href="{% url 'core:project' %}"
-         {% if request.resolver_match.url_name == 'project' %}aria-current="page"{% endif %}>
-         Projects
-      </a>
       <a href="{% url 'core:contact' %}"
          {% if request.resolver_match.url_name == 'contact' %}aria-current="page"{% endif %}>
         Contact
@@ -311,14 +308,14 @@
   </main>
 
   <!-- ============================================================
-       Clients logo carousel (home + about pages only)
-       Sits directly above the footer.
+       Brand association belt (home + about pages only)
+       Sits directly above the footer. One list, one belt.
        ============================================================ -->
   {% block clients %}
     {% if request.resolver_match.url_name == 'home' or request.resolver_match.url_name == 'about' %}
-    <section class="clients" id="clients" aria-labelledby="clients-title" data-clients>
+    <section class="clients" id="clients" aria-labelledby="clients-title" data-clients data-static="true">
       <div class="clients-head">
-        <p class="eyebrow" id="clients-title">Trusted by</p>
+        <p class="eyebrow" id="clients-title">Brand Association</p>
         <button type="button" class="clients-toggle" data-clients-toggle aria-pressed="false" aria-label="Pause logo scrolling" hidden>
           <span class="clients-toggle-icon" aria-hidden="true"></span>
           <span class="clients-toggle-label">Pause</span>
@@ -327,7 +324,7 @@
 
       <div class="clients-viewport">
         <div class="clients-track" data-clients-track>
-          <ul class="clients-group" data-clients-group aria-label="Companies we have worked with">
+          <ul class="clients-group" data-clients-group aria-label="Brands we are associated with">
             <li class="clients-item"><img src="{% static 'assets/companies/adam.webp' %}" alt="Adam" loading="lazy" decoding="async" /></li>
             <li class="clients-item"><img src="{% static 'assets/companies/aquilon.webp' %}" alt="Aquilon" loading="lazy" decoding="async" /></li>
             <li class="clients-item"><img src="{% static 'assets/companies/biobase.webp' %}" alt="Biobase" loading="lazy" decoding="async" /></li>
@@ -378,7 +375,6 @@
           <li><a href="{% url 'core:about' %}">About Us</a></li>
           <li><a href="{% url 'products:catalogue' %}">Products</a></li>
           <li><a href="{% url 'core:industries' %}">Industries</a></li>
-          <li><a href="{% url 'core:project' %}">Projects</a></li>
           <li><a href="{% url 'core:contact' %}">Contact</a></li>
         </ul>
       </div>
@@ -463,54 +459,130 @@
   <script src="{% static 'js/future.js' %}?v=18"></script>
 
   <!-- ============================================================
-       Clients logo carousel behaviour
+       Brand association belt behaviour
+       - Never clones logos: each logo exists once in the page.
+       - If every logo fits on screen, they sit still, centred.
+       - If not, the single belt scrolls: the first logo is moved to
+         the end once it has fully left the screen, so no logo is ever
+         visible twice at the same time.
        ============================================================ -->
   <script>
     (function () {
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const SPEED = 40; // px per second
 
       document.querySelectorAll('[data-clients]').forEach((section) => {
+        if (section.dataset.ready === '1') return; // never initialise twice
+        section.dataset.ready = '1';
+
         const track    = section.querySelector('[data-clients-track]');
         const group    = section.querySelector('[data-clients-group]');
         const viewport = section.querySelector('.clients-viewport');
         const toggle   = section.querySelector('[data-clients-toggle]');
-        if (!track || !group || !viewport || reduce.matches) return;
+        if (!track || !group || !viewport) return;
 
-        // Make sure one group is at least as wide as the viewport (few logos / wide screens)
-        const originals = Array.from(group.children);
-        let guard = 0;
-        while (group.scrollWidth < viewport.clientWidth && guard++ < 6) {
-          originals.forEach((li) => group.appendChild(li.cloneNode(true)));
-        }
+        // Safety net: drop any extra belts/groups and repeated logos
+        // (e.g. left behind by older scripts or cached markup).
+        track.querySelectorAll('.clients-group').forEach((g) => { if (g !== group) g.remove(); });
+        const seen = new Set();
+        Array.from(group.children).forEach((li) => {
+          const img = li.querySelector('img');
+          const key = img ? (img.getAttribute('src') || '') : li.textContent.trim();
+          if (seen.has(key)) li.remove(); else seen.add(key);
+        });
+        const original = Array.from(group.children);
 
-        // Duplicate the whole group once for the seamless loop (hidden from screen readers)
-        const clone = group.cloneNode(true);
-        clone.removeAttribute('data-clients-group');
-        clone.removeAttribute('aria-label');
-        clone.setAttribute('aria-hidden', 'true');
-        clone.querySelectorAll('img').forEach((img) => { img.alt = ''; img.loading = 'eager'; });
-        track.appendChild(clone);
+        let offset = 0, last = 0, raf = 0;
+        let animating = false, userPaused = false, hoverPaused = false;
 
-        // Constant speed (~40px/s) regardless of how many logos there are
-        const setSpeed = () => {
-          const seconds = Math.max(20, group.scrollWidth / 40);
-          section.style.setProperty('--cl-duration', seconds + 's');
+        const gapOf = (el) => parseFloat(getComputedStyle(el).marginRight) || 0;
+        const stepOf = (el) => el.offsetWidth + gapOf(el);
+
+        const totalWidth = () =>
+          Array.from(group.children).reduce((sum, li) => sum + stepOf(li), 0);
+
+        const widestStep = () =>
+          Array.from(group.children).reduce((max, li) => Math.max(max, stepOf(li)), 0);
+
+        const shouldRun = () =>
+          animating && !userPaused && !hoverPaused && !document.hidden;
+
+        const tick = (t) => {
+          if (!shouldRun()) { raf = 0; return; }
+          const dt = Math.min(0.1, (t - last) / 1000);
+          last = t;
+          offset -= SPEED * dt;
+
+          let first = group.firstElementChild;
+          let step = stepOf(first);
+          while (-offset >= step) {
+            group.appendChild(first);   // recycle: same logo, moved to the end
+            offset += step;
+            first = group.firstElementChild;
+            step = stepOf(first);
+          }
+          track.style.transform = 'translate3d(' + offset + 'px,0,0)';
+          raf = requestAnimationFrame(tick);
         };
-        setSpeed();
-        window.addEventListener('resize', setSpeed);
+
+        const sync = () => {
+          if (shouldRun()) {
+            if (!raf) { last = performance.now(); raf = requestAnimationFrame(tick); }
+          } else if (raf) {
+            cancelAnimationFrame(raf);
+            raf = 0;
+          }
+        };
+
+        const setStatic = () => {
+          animating = false;
+          sync();
+          offset = 0;
+          track.style.transform = '';
+          original.forEach((li) => group.appendChild(li)); // restore natural order
+          section.dataset.static = 'true';
+          if (toggle) toggle.hidden = true;
+        };
+
+        const evaluate = () => {
+          if (reduce.matches) { setStatic(); return; }
+          // restore order so measurements are consistent
+          original.forEach((li) => group.appendChild(li));
+          const needsBelt = totalWidth() - widestStep() >= viewport.clientWidth;
+          if (!needsBelt) { setStatic(); return; }
+          section.dataset.static = 'false';
+          animating = true;
+          if (toggle) toggle.hidden = false;
+          sync();
+        };
+
+        // Pause on hover / keyboard focus
+        viewport.addEventListener('mouseenter', () => { hoverPaused = true;  sync(); });
+        viewport.addEventListener('mouseleave', () => { hoverPaused = false; sync(); });
+        viewport.addEventListener('focusin',    () => { hoverPaused = true;  sync(); });
+        viewport.addEventListener('focusout',   () => { hoverPaused = false; sync(); });
+        document.addEventListener('visibilitychange', sync);
 
         // Pause / Play button
         if (toggle) {
           const label = toggle.querySelector('.clients-toggle-label');
-          toggle.hidden = false;
           toggle.addEventListener('click', () => {
-            const paused = toggle.getAttribute('aria-pressed') !== 'true';
-            toggle.setAttribute('aria-pressed', String(paused));
-            section.dataset.paused = String(paused);
-            if (label) label.textContent = paused ? 'Play' : 'Pause';
-            toggle.setAttribute('aria-label', paused ? 'Play logo scrolling' : 'Pause logo scrolling');
+            userPaused = !userPaused;
+            toggle.setAttribute('aria-pressed', String(userPaused));
+            if (label) label.textContent = userPaused ? 'Play' : 'Pause';
+            toggle.setAttribute('aria-label', userPaused ? 'Play logo scrolling' : 'Pause logo scrolling');
+            sync();
           });
         }
+
+        let resizeTimer = 0;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(evaluate, 150);
+        });
+        if (reduce.addEventListener) reduce.addEventListener('change', evaluate);
+
+        evaluate();
       });
     })();
   </script>

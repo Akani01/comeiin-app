@@ -1,0 +1,1893 @@
+[
+  {
+    "id": "CW-001",
+    "reference": "CW-001",
+    "name": "Microscopes & Imaging",
+    "sourceName": "Microscopes & Imaging",
+    "category": "Equipment",
+    "description": "Microscopes and laboratory imaging equipment for routine and educational laboratory work.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 6,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-001-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": "Slide details from this row are assigned only to CW-001-SLIDES."
+  },
+  {
+    "id": "CW-001-SLIDES",
+    "reference": "CW-001-SLIDES",
+    "name": "Microscope slides",
+    "sourceName": "Microscope slides",
+    "category": "Consumables",
+    "description": "Glass microscope slides in a vacuum-sealed, moisture- and gas-impermeable liner.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Dimensions": "26 × 76 mm",
+      "Thickness": "1–1.2 mm",
+      "Pack quantity": "50 slides per box",
+      "Carton quantity": "50 boxes",
+      "Options": "Plain cut-edge; plain ground-edge; frosted ground-edge; bevelled-edge; target-circle ground-edge on request"
+    },
+    "variants": [],
+    "pack": "50 per box",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 6,
+    "launchPriority": "Launch first",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_01-refined-v3.png",
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 4",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "note": "Separate slide listing derived from J6 and K6; not microscope specifications.",
+    "variantLabel": "Option",
+    "quoteUnit": "box",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_01-refined-v3.png",
+        "alt": "Microscope slides"
+      }
+    ],
+    "sourcePdfPage": 4,
+    "reviewIds": [
+      "B01-08"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CW-002",
+    "reference": "CW-002",
+    "name": "Centrifuges",
+    "sourceName": "Centrifuges",
+    "category": "Equipment",
+    "description": "Laboratory centrifuges and sample-processing equipment.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 7,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-002-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-005",
+    "reference": "CW-005",
+    "name": "Pipettes & Accessories",
+    "sourceName": "Pipettes & Accessories",
+    "category": "Liquid handling",
+    "description": "Pipettes, burettes and associated laboratory measuring equipment.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 10,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-005-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-007",
+    "reference": "CW-007",
+    "name": "Hot Plates & Stirrers",
+    "sourceName": "Hot Plates & Stirrers",
+    "category": "Equipment",
+    "description": "Hot plates, magnetic stirrers and laboratory mixing equipment.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 12,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-007-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-008",
+    "reference": "CW-008",
+    "name": "Autoclaves & Sterilization",
+    "sourceName": "Autoclaves & Sterilization",
+    "category": "Equipment",
+    "description": "Autoclaves and laboratory sterilization equipment.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 13,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-008-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-009",
+    "reference": "CW-009",
+    "name": "Laboratory Refrigerators & Freezers",
+    "sourceName": "Laboratory Refrigerators & Freezers",
+    "category": "Equipment",
+    "description": "Laboratory cold-storage equipment for temperature-sensitive materials.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 14,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-009-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-014",
+    "reference": "CW-014",
+    "name": "Laboratory Plasticware",
+    "sourceName": "Laboratory Plasticware",
+    "category": "Consumables",
+    "description": "Laboratory plastic containers, racks, pipettes and storage products.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 19,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-014-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-017",
+    "reference": "CW-017",
+    "name": "Universal specimen container, sterile, 30 ml labelled",
+    "sourceName": "Universal specimen container, sterile, 30 ml labelled",
+    "category": "Consumables",
+    "description": "Clear polypropylene specimen container with a conical bottom and skirt.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Capacity": "30 ml",
+      "Sterility": "Sterile",
+      "Material": "Clear polypropylene",
+      "Base": "Conical bottom with skirt",
+      "Packaging": "100 per polybag; 5 bags per carton"
+    },
+    "variants": [],
+    "pack": "500 per carton",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 22,
+    "launchPriority": "Launch first",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_01-refined-v3.png",
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "note": "",
+    "variantLabel": "Option",
+    "quoteUnit": "carton",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_01-refined-v3.png",
+        "alt": "Universal specimen container, sterile, 30 ml labelled"
+      }
+    ],
+    "sourcePdfPage": 3,
+    "reviewIds": [
+      "B01-01"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CW-018",
+    "reference": "CW-018",
+    "name": "Test Tubes & Vacutainers",
+    "sourceName": "Test Tubes & Vacutainers",
+    "category": "Consumables",
+    "description": "Test tubes, collection tubes and Vacutainer-style products.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 23,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-018-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-019",
+    "reference": "CW-019",
+    "name": "Pipette Tips & Consumables",
+    "sourceName": "Pipette Tips & Consumables",
+    "category": "Liquid handling",
+    "description": "Pipette tips and disposable laboratory consumables.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 24,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-019-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-022",
+    "reference": "CW-022",
+    "name": "Syringes & Needles",
+    "sourceName": "Syringes & Needles",
+    "category": "Consumables",
+    "description": "Laboratory syringes and associated sampling accessories.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 27,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-022-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-023",
+    "reference": "CW-023",
+    "name": "Alcohol swabs",
+    "sourceName": "Swabs & Sampling Kits",
+    "category": "Consumables",
+    "description": "Individually packed sterile antiseptic wipes.",
+    "sourceListingType": "Product group",
+    "kind": "product",
+    "specs": {
+      "Product type": "Alcohol swabs",
+      "Sterility": "Sterile",
+      "Pack quantity": "200 per box"
+    },
+    "variants": [],
+    "pack": "200 per box",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 28,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-023-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-024",
+    "reference": "CW-024",
+    "name": "Reagent Bottles & Storage",
+    "sourceName": "Reagent Bottles & Storage",
+    "category": "Consumables",
+    "description": "Reagent bottles and laboratory chemical/sample storage containers.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 29,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-024-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-025",
+    "reference": "CW-025",
+    "name": "Stirrers & Lab Mixers",
+    "sourceName": "Stirrers & Lab Mixers",
+    "category": "Equipment",
+    "description": "Magnetic stirrers, stirrer hot plates, shaft stirrers, vortex mixers and mixing accessories.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 30,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-025-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-028",
+    "reference": "CW-028",
+    "name": "Pipettes & Burettes",
+    "sourceName": "Pipettes & Burettes",
+    "category": "Liquid handling",
+    "description": "Pipettes, fill pipettes, burettes and associated laboratory measuring equipment.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 33,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-028-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-029",
+    "reference": "CW-029",
+    "name": "Dissection Kits & Tools",
+    "sourceName": "Dissection Kits & Tools",
+    "category": "Lab essentials",
+    "description": "Dissection sets, boards, scissors, scalpels, needles, forceps and magnifiers.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 34,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-029-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-030",
+    "reference": "CW-030",
+    "name": "Stands, Racks & Supports",
+    "sourceName": "Stands, Racks & Supports",
+    "category": "Lab essentials",
+    "description": "Retort and burette stands, tripods, test-tube racks, pipette stands and support systems.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 35,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-030-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-031",
+    "reference": "CW-031",
+    "name": "Laboratory Metalware",
+    "sourceName": "Laboratory Metalware",
+    "category": "Lab essentials",
+    "description": "Clamps, boss heads, tongs, spatulas, scoops and other laboratory metal tools.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 36,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-031-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-032",
+    "reference": "CW-032",
+    "name": "Laboratory Safety Gear",
+    "sourceName": "Laboratory Safety Gear",
+    "category": "Lab essentials",
+    "description": "Lab coats, gloves, protective eyewear, reusable mats and laboratory PPE.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 37,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-032-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-033",
+    "reference": "CW-033",
+    "name": "Digital fridge / freezer thermometer",
+    "sourceName": "Thermometers & Probes",
+    "category": "Equipment",
+    "description": "Digital thermometer for monitoring fridge and freezer temperatures.",
+    "sourceListingType": "Product group",
+    "kind": "product",
+    "specs": {
+      "Temperature range": "−50 °C to +70 °C",
+      "Order unit": "Each"
+    },
+    "variants": [],
+    "pack": "Each",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 38,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-033-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CW-034",
+    "reference": "CW-034",
+    "name": "Lab Cleaning Supplies",
+    "sourceName": "Lab Cleaning Supplies",
+    "category": "Lab essentials",
+    "description": "Brushes, detergents and cleaning tools designed for glassware, pipettes and laboratory equipment.",
+    "sourceListingType": "Product group",
+    "kind": "range",
+    "specs": {},
+    "variants": [],
+    "pack": "",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "sourceRow": 39,
+    "launchPriority": "Launch first",
+    "image": "assets/products/CW-034-generated-v2.webp",
+    "imageSource": "Built-in image generation — unified professional catalogue set",
+    "imageOrigin": "AI-generated product image",
+    "imageStatus": "Generated catalogue photography; client approval pending",
+    "note": ""
+  },
+  {
+    "id": "CAT-P03-I02",
+    "reference": "CAT-P03-I02",
+    "name": "Sputum container, sterile, 30 ml",
+    "sourceName": "Sputum container, sterile, 30 ml",
+    "category": "Consumables",
+    "description": "Wide-mouth clear polypropylene container with a screw cap.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Capacity": "30 ml",
+      "Sterility": "Sterile",
+      "Material": "Clear polypropylene",
+      "Packaging": "10 per polybag; 50 bags per carton"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "500 per carton",
+    "quoteUnit": "carton",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_02-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_02-refined-v3.png",
+        "alt": "Sputum container, sterile, 30 ml"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 3,
+    "reviewIds": [
+      "B01-02"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P03-I03",
+    "reference": "CAT-P03-I03",
+    "name": "Universal specimen container, sterile, 40 ml labelled",
+    "sourceName": "Universal specimen container, sterile, 40 ml labelled",
+    "category": "Consumables",
+    "description": "Clear polypropylene specimen container with a round bottom and skirt.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Capacity": "40 ml",
+      "Sterility": "Sterile",
+      "Material": "Clear polypropylene",
+      "Base": "Round bottom with skirt",
+      "Packaging": "Tubes of 10; 50 tubes per carton"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "500 per carton",
+    "quoteUnit": "carton",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_03-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_03-refined-v3.png",
+        "alt": "Universal specimen container, sterile, 40 ml labelled"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 3,
+    "reviewIds": [
+      "B01-03"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P03-I04",
+    "reference": "CAT-P03-I04",
+    "name": "Universal specimen container, sterile, 60 ml labelled",
+    "sourceName": "Universal specimen container, sterile, 60 ml labelled",
+    "category": "Consumables",
+    "description": "Flat-bottom crystal polystyrene specimen container, individually wrapped.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Capacity": "60 ml",
+      "Sterility": "Sterile",
+      "Material": "Crystal polystyrene",
+      "Packaging": "Individually wrapped"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "500 per carton",
+    "quoteUnit": "carton",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_04-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_04-refined-v3.png",
+        "alt": "Universal specimen container, sterile, 60 ml labelled"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 3,
+    "reviewIds": [
+      "B01-04"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P03-I05",
+    "reference": "CAT-P03-I05",
+    "name": "Stool container with spoon, 60 ml",
+    "sourceName": "Stool container with spoon, 60 ml",
+    "category": "Consumables",
+    "description": "Flat-bottom crystal polystyrene stool container with a spoon.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Capacity": "60 ml",
+      "Material": "Crystal polystyrene",
+      "Base": "Flat bottom"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "500 per carton",
+    "quoteUnit": "carton",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_05-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_05-refined-v3.png",
+        "alt": "Stool container with spoon, 60 ml"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 3,
+    "reviewIds": [
+      "B01-05"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P03-I07",
+    "reference": "CAT-P03-I07",
+    "name": "Universal specimen container, sterile, 100–120 ml",
+    "sourceName": "Universal specimen container, sterile, 100–120 ml",
+    "category": "Consumables",
+    "description": "Flat-bottom clear polypropylene specimen containers, individually wrapped.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Catalogue capacity": "100–120 ml",
+      "Sterility": "Sterile",
+      "Material": "Clear polypropylene",
+      "Packaging": "Individually wrapped"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "500 per carton",
+    "quoteUnit": "carton",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_07-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_07-refined-v3.png",
+        "alt": "Universal specimen container, sterile, 100–120 ml"
+      },
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_03_Image_06-refined-v3.png",
+        "alt": "Universal specimen container, sterile, 100–120 ml — additional catalogue view"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 3",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 3,
+    "reviewIds": [
+      "B01-07",
+      "B01-06"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P04-I02",
+    "reference": "CAT-P04-I02",
+    "name": "Microscope cover slips",
+    "sourceName": "Microscope cover slips",
+    "category": "Consumables",
+    "description": "Flat, optically clear microscope cover slips supplied in plastic boxes.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Packaging": "100 per plastic box; 10 boxes in a vacuum-sealed liner"
+    },
+    "variants": [
+      "18 × 18 mm",
+      "22 × 22 mm",
+      "22 × 40 mm",
+      "24 × 24 mm",
+      "24 × 40 mm",
+      "24 × 50 mm"
+    ],
+    "variantLabel": "Size",
+    "pack": "100 per box",
+    "quoteUnit": "box",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_02-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_02-refined-v3.png",
+        "alt": "Microscope cover slips"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 4",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 4,
+    "reviewIds": [
+      "B01-09"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P04-I03",
+    "reference": "CAT-P04-I03",
+    "name": "Cardboard slide mailer, 20 place",
+    "sourceName": "Cardboard slide mailer, 20 place",
+    "category": "Consumables",
+    "description": "Book-style cardboard slide mailer with a protective flap.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Capacity": "20 slides",
+      "Material": "Cardboard",
+      "Style": "Book style with flap"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_03-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_03-refined-v3.png",
+        "alt": "Cardboard slide mailer, 20 place"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 4",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 4,
+    "reviewIds": [
+      "B01-10"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P04-I04",
+    "reference": "CAT-P04-I04",
+    "name": "Cardboard slide mailer, double",
+    "sourceName": "Cardboard slide mailer, double",
+    "category": "Consumables",
+    "description": "Book-style cardboard slide mailer for two slides, with a protective flap.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Capacity": "2 slides",
+      "Material": "Cardboard",
+      "Style": "Book style with flap"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_04-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_04-refined-v3.png",
+        "alt": "Cardboard slide mailer, double"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 4",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 4,
+    "reviewIds": [
+      "B01-11"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P04-I05",
+    "reference": "CAT-P04-I05",
+    "name": "Slide storage box",
+    "sourceName": "Slide storage box",
+    "category": "Consumables",
+    "description": "Cork-based slide storage box with numbered slots, an indexed lid and a snap lock.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Base": "Cork",
+      "Index": "Numbered slots correspond to the index card inside the lid",
+      "Closure": "Snap lock"
+    },
+    "variants": [
+      "50 slides",
+      "100 slides"
+    ],
+    "variantLabel": "Capacity",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_05-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_04_Image_05-refined-v3.png",
+        "alt": "Slide storage box"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 4",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 4,
+    "reviewIds": [
+      "B01-12"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P05-I01",
+    "reference": "CAT-P05-I01",
+    "name": "Sterile disposable Petri dishes",
+    "sourceName": "Sterile disposable Petri dishes",
+    "category": "Consumables",
+    "description": "Disposable crystal polystyrene Petri dishes in the catalogue sizes and formats.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Material": "Crystal polystyrene",
+      "Sterility": "Sterile",
+      "90 × 15 mm, 3 vents": "500 per carton (50 tubes of 10)",
+      "50 × 15 mm": "1,000 per carton (100 tubes of 10)",
+      "90 × 15 mm, half plate": "500 per carton (50 tubes of 10)",
+      "65 × 15 mm, gridded": "700 per carton (70 tubes of 10)"
+    },
+    "variants": [
+      "90 × 15 mm, 3 vents",
+      "50 × 15 mm",
+      "90 × 15 mm, half plate",
+      "65 × 15 mm, gridded"
+    ],
+    "variantLabel": "Size / format",
+    "pack": "Carton quantity depends on selected format",
+    "quoteUnit": "carton",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_01-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_01-refined-v3.png",
+        "alt": "Sterile disposable Petri dishes"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 5",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 5,
+    "reviewIds": [
+      "B01-13"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P05-I02",
+    "reference": "CAT-P05-I02",
+    "name": "Sterile labelled collection swabs",
+    "sourceName": "Sterile labelled collection swabs",
+    "category": "Consumables",
+    "description": "Sterile labelled swab sticks for specimen collection.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Sterility": "Sterile",
+      "Packaging": "100 or 250 per polybag"
+    },
+    "variants": [
+      "100 per polybag",
+      "250 per polybag"
+    ],
+    "variantLabel": "Pack size",
+    "pack": "100 or 250 per polybag",
+    "quoteUnit": "polybag",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_02-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_02-refined-v3.png",
+        "alt": "Sterile labelled collection swabs"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 5",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 5,
+    "reviewIds": [
+      "B01-14"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P05-I03",
+    "reference": "CAT-P05-I03",
+    "name": "Amies transport swabs",
+    "sourceName": "Amies transport swabs",
+    "category": "Consumables",
+    "description": "Sterile swab sticks with Amies transport medium, individually wrapped in peel packs.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Sterility": "Sterile",
+      "Transport medium": "Amies",
+      "Packaging": "Individual peel packs"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "50 per polybag",
+    "quoteUnit": "polybag",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_03-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_05_Image_03-refined-v3.png",
+        "alt": "Amies transport swabs"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 5",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 5,
+    "reviewIds": [
+      "B01-15"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P06-I01",
+    "reference": "CAT-P06-I01",
+    "name": "Sharps container",
+    "sourceName": "Sharps container",
+    "category": "Lab essentials",
+    "description": "Puncture-resistant polypropylene sharps containers with a transparent cap, maximum fill line and locking lid.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Material": "Polypropylene",
+      "Cap": "Transparent; permanently locks to base",
+      "Lid": "Irreversible lock",
+      "Opening": "Wide aperture with integrated needle extractor"
+    },
+    "variants": [
+      "500 ml",
+      "1 litre",
+      "5 litres",
+      "7 litres",
+      "10 litres",
+      "13 litres",
+      "20 litres"
+    ],
+    "variantLabel": "Capacity",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_01-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_01-refined-v3.png",
+        "alt": "Sharps container"
+      },
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_02-refined-v3.png",
+        "alt": "Sharps container — additional catalogue view"
+      },
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_03-refined-v3.png",
+        "alt": "Sharps container — additional catalogue view"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 6",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 6,
+    "reviewIds": [
+      "B01-16",
+      "B01-17",
+      "B01-18"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P06-I04",
+    "reference": "CAT-P06-I04",
+    "name": "Sharps safety box, 5 litres",
+    "sourceName": "Sharps safety box, 5 litres",
+    "category": "Lab essentials",
+    "description": "Water-resistant, three-layer cardboard safety box with a wide sharps port and carry handle.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Capacity": "5 litres",
+      "Construction": "Plastic-film-coated cardboard; heavy-grade cardboard; puncture-resistant inner paper",
+      "Use": "Syringes, needles and biohazardous waste"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_04-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_04-refined-v3.png",
+        "alt": "Sharps safety box, 5 litres"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 6",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 6,
+    "reviewIds": [
+      "B01-19"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P06-I05",
+    "reference": "CAT-P06-I05",
+    "name": "Biohazard waste bags",
+    "sourceName": "Biohazard waste bags",
+    "category": "Lab essentials",
+    "description": "Red heavyweight polyethylene bags with black biohazard printing and heavy-duty seams.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Material": "Flexible polyethylene",
+      "Use": "Non-sharps biohazardous waste",
+      "Colour": "Red with black printing",
+      "Options": "Various sizes, with or without gussets; confirm requirements"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_05-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-01/PDF_Page_06_Image_05-refined-v3.png",
+        "alt": "Biohazard waste bags"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 6",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 6,
+    "reviewIds": [
+      "B01-20"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P07-I01",
+    "reference": "CAT-P07-I01",
+    "name": "Automatic micropipettes",
+    "sourceName": "Automatic micropipettes",
+    "category": "Liquid handling",
+    "description": "Single-channel and multichannel micropipettes with fixed- or variable-volume configurations.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Operating types": "Mechanical or digital-electronic",
+      "Variable-volume feature": "Volume lock",
+      "Tip ejection": "Soft touch",
+      "Seal": "PTFE",
+      "Accessories": "Calibration tools included"
+    },
+    "variants": [
+      "Single channel, fixed volume",
+      "Single channel, variable volume",
+      "8 channel, variable volume",
+      "12 channel, variable volume"
+    ],
+    "variantLabel": "Configuration",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_01-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_01-refined-v3.png",
+        "alt": "Automatic micropipettes"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 7",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 7,
+    "reviewIds": [
+      "B02-01"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P07-I02",
+    "reference": "CAT-P07-I02",
+    "name": "LABOCARE universal yellow pipette tips, 200 µl",
+    "sourceName": "LABOCARE universal yellow pipette tips, 200 µl",
+    "category": "Liquid handling",
+    "description": "Yellow universal pipette tips made from virgin low-adhesion polypropylene.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Capacity": "200 µl",
+      "Material": "Virgin low-adhesion polypropylene",
+      "Packaging": "96-tip rack or 1,000-tip bulk polybag"
+    },
+    "variants": [
+      "Rack of 96 tips",
+      "Bulk polybag of 1,000 tips"
+    ],
+    "variantLabel": "Pack format",
+    "pack": "96 per rack or 1,000 per polybag",
+    "quoteUnit": "pack",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_02-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_02-refined-v3.png",
+        "alt": "LABOCARE universal yellow pipette tips, 200 µl"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 7",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 7,
+    "reviewIds": [
+      "B02-02"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P07-I03",
+    "reference": "CAT-P07-I03",
+    "name": "LABOCARE universal blue pipette tips, 1,000 µl",
+    "sourceName": "LABOCARE universal blue pipette tips, 1,000 µl",
+    "category": "Liquid handling",
+    "description": "Blue universal pipette tips made from virgin low-adhesion polypropylene.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Capacity": "1,000 µl",
+      "Material": "Virgin low-adhesion polypropylene",
+      "Packaging": "100-tip rack or 500-tip bulk polybag"
+    },
+    "variants": [
+      "Rack of 100 tips",
+      "Bulk polybag of 500 tips"
+    ],
+    "variantLabel": "Pack format",
+    "pack": "100 per rack or 500 per polybag",
+    "quoteUnit": "pack",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_03-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_03-refined-v3.png",
+        "alt": "LABOCARE universal blue pipette tips, 1,000 µl"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 7",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 7,
+    "reviewIds": [
+      "B02-03"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P07-I04",
+    "reference": "CAT-P07-I04",
+    "name": "Sterile clear filter pipette tips",
+    "sourceName": "Sterile clear filter pipette tips",
+    "category": "Liquid handling",
+    "description": "Clear filter tips made from virgin low-adhesion polypropylene, supplied sterile in racks.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Sterility": "Sterile",
+      "Material": "Virgin low-adhesion polypropylene",
+      "Rack quantity": "96 tips",
+      "Case quantity": "10 racks (960 tips)"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "10 racks of 96 tips per case (960 tips)",
+    "quoteUnit": "case",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_04-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_07_Image_04-refined-v3.png",
+        "alt": "Sterile clear filter pipette tips"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 7",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 7,
+    "reviewIds": [
+      "B02-04"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P08-I01",
+    "reference": "CAT-P08-I01",
+    "name": "Electronic pipette controller",
+    "sourceName": "Electronic pipette controller",
+    "category": "Liquid handling",
+    "description": "Battery-powered controller for glass or plastic pipettes, with high and low speed modes and gravity drain.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Pipette volume range": "0.1–200 ml",
+      "Power": "2 × 1.2 V, 1,000 mAh NiMH batteries",
+      "Battery service life": "8 hours continuous use",
+      "Charge time": "2–3 hours",
+      "Safety system": "Replaceable hydrophobic 0.45 µm PTFE filter and safety check valve",
+      "Included": "Battery charger; 0.45 µm and 0.20 µm hydrophobic PTFE filters; wall mount"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_01-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_01-refined-v3.png",
+        "alt": "Electronic pipette controller"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 8",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 8,
+    "reviewIds": [
+      "B02-05"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P08-I02",
+    "reference": "CAT-P08-I02",
+    "name": "Sterile serological pipettes",
+    "sourceName": "Sterile serological pipettes",
+    "category": "Liquid handling",
+    "description": "Colour-coded polystyrene serological pipettes with negative graduations and a cellulose acetate fibre plug.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Material": "Optically polished virgin polystyrene",
+      "Sterility": "Sterile",
+      "Packaging": "Individual peel-packs"
+    },
+    "variants": [
+      "1 ml",
+      "2 ml",
+      "5 ml",
+      "10 ml",
+      "25 ml",
+      "50 ml"
+    ],
+    "variantLabel": "Capacity",
+    "pack": "Individually peel-packed",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_02-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_02-refined-v3.png",
+        "alt": "Sterile serological pipettes"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 8",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 8,
+    "reviewIds": [
+      "B02-06"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P08-I03",
+    "reference": "CAT-P08-I03",
+    "name": "LABOCARE Pasteur transfer pipettes",
+    "sourceName": "LABOCARE Pasteur transfer pipettes",
+    "category": "Liquid handling",
+    "description": "Disposable graduated transfer pipettes in 1 ml and 3 ml sizes, with sterile and non-sterile packaging options.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Capacities": "1 ml or 3 ml",
+      "Sterile packaging": "Individually wrapped; 100 per polybag",
+      "Non-sterile packaging": "Bulk; 250 per polybag"
+    },
+    "variants": [
+      "1 ml, sterile — 100 per polybag",
+      "3 ml, sterile — 100 per polybag",
+      "1 ml, non-sterile — 250 per polybag",
+      "3 ml, non-sterile — 250 per polybag"
+    ],
+    "variantLabel": "Capacity and sterility",
+    "pack": "100 sterile or 250 non-sterile per polybag",
+    "quoteUnit": "polybag",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_03-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_08_Image_03-refined-v3.png",
+        "alt": "LABOCARE Pasteur transfer pipettes"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 8",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 8,
+    "reviewIds": [
+      "B02-07"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P09-I01",
+    "reference": "CAT-P09-I01",
+    "name": "VACUCARE blood collection micro tubes",
+    "sourceName": "VACUCARE blood collection micro tubes",
+    "category": "Consumables",
+    "description": "Blood collection micro tubes with the additive options identified in the catalogue.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Lavender top": "EDTA-K3 (liquid)",
+      "Red top, clot activator": "Silica",
+      "Grey top": "Fl Oxalate",
+      "Green top": "Li Heparin",
+      "Yellow top SST": "Gel/Silica"
+    },
+    "variants": [
+      "Lavender — EDTA-K3 (liquid)",
+      "Red — clot activator (silica)",
+      "Grey — Fl Oxalate",
+      "Green — Li Heparin",
+      "Yellow SST — Gel/Silica"
+    ],
+    "variantLabel": "Additive / cap colour",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_09_Image_01-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_09_Image_01-refined-v3.png",
+        "alt": "VACUCARE blood collection micro tubes"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 9",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 9,
+    "reviewIds": [
+      "B02-08"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P09-I02",
+    "reference": "CAT-P09-I02",
+    "name": "VACUCARE blood collection tubes",
+    "sourceName": "VACUCARE blood collection tubes",
+    "category": "Consumables",
+    "description": "Blood collection tubes with plain, anticoagulant, clot-activator and gel options.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Lavender top": "EDTA-K2 (powder) or EDTA-K3 (liquid)",
+      "Red top": "Plain (no additive) or silica clot activator",
+      "Light blue top": "Na Citrate",
+      "Grey top": "Fl Oxalate",
+      "Green top": "Li Heparin",
+      "Silver top PPT": "Gel/EDTA-K2",
+      "Yellow top SST": "Gel/Silica"
+    },
+    "variants": [
+      "Lavender — EDTA-K2 (powder)",
+      "Lavender — EDTA-K3 (liquid)",
+      "Red — clot activator (silica)",
+      "Red — plain (no additive)",
+      "Light blue — Na Citrate",
+      "Grey — Fl Oxalate",
+      "Green — Li Heparin",
+      "Silver PPT — Gel/EDTA-K2",
+      "Yellow SST — Gel/Silica"
+    ],
+    "variantLabel": "Additive / cap colour",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_09_Image_02-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_09_Image_02-refined-v3.png",
+        "alt": "VACUCARE blood collection tubes"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 9",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 9,
+    "reviewIds": [
+      "B02-09"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P10-I01",
+    "reference": "CAT-P10-I01",
+    "name": "VACUCARE twist-off tip lancet",
+    "sourceName": "VACUCARE twist-off tip lancet",
+    "category": "Consumables",
+    "description": "Single-use lancet with a twist-off tip.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Tip": "Twist-off",
+      "Use": "Single use"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_01-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_01-refined-v3.png",
+        "alt": "VACUCARE twist-off tip lancet"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 10",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 10,
+    "reviewIds": [
+      "B02-10"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P10-I02",
+    "reference": "CAT-P10-I02",
+    "name": "VACUCARE automatic safety lancet",
+    "sourceName": "VACUCARE automatic safety lancet",
+    "category": "Consumables",
+    "description": "Automatic pre-loaded single-use lancet.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Operation": "Automatic, pre-loaded",
+      "Use": "Single use"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_02-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_02-refined-v3.png",
+        "alt": "VACUCARE automatic safety lancet"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 10",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 10,
+    "reviewIds": [
+      "B02-11"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P10-I03",
+    "reference": "CAT-P10-I03",
+    "name": "VACUCARE safety lock multisample needles",
+    "sourceName": "VACUCARE safety lock multisample needles",
+    "category": "Consumables",
+    "description": "Safety lock multisample needles in the catalogue-listed green and blue gauge options.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Gauge options": "21G (green); 23G (blue)"
+    },
+    "variants": [
+      "21G — green",
+      "23G — blue"
+    ],
+    "variantLabel": "Gauge / colour",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_03-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_03-refined-v3.png",
+        "alt": "VACUCARE safety lock multisample needles"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 10",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 10,
+    "reviewIds": [
+      "B02-12"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P10-I04",
+    "reference": "CAT-P10-I04",
+    "name": "VACUCARE multisample needles",
+    "sourceName": "VACUCARE multisample needles",
+    "category": "Consumables",
+    "description": "Multisample needles in four colour-coded gauge options.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Gauge options": "18G (pink); 21G (green); 22G (black); 23G (blue)"
+    },
+    "variants": [
+      "18G — pink",
+      "21G — green",
+      "22G — black",
+      "23G — blue"
+    ],
+    "variantLabel": "Gauge / colour",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_04-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_04-refined-v3.png",
+        "alt": "VACUCARE multisample needles"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 10",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 10,
+    "reviewIds": [
+      "B02-13"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P10-I05",
+    "reference": "CAT-P10-I05",
+    "name": "VACUCARE tourniquet",
+    "sourceName": "VACUCARE tourniquet",
+    "category": "Consumables",
+    "description": "Tourniquet from the VACUCARE blood collection accessories range.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Product type": "Tourniquet"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_05-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_10_Image_05-refined-v3.png",
+        "alt": "VACUCARE tourniquet"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 10",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 10,
+    "reviewIds": [
+      "B02-14"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P11-I01",
+    "reference": "CAT-P11-I01",
+    "name": "Sanguilon Westergren ESR test system",
+    "sourceName": "Sanguilon Westergren ESR test system",
+    "category": "Consumables",
+    "description": "Two-part closed ESR test system comprising a Westergren pipette and reservoir tube.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Pipette material": "Crystal polystyrene",
+      "Pipette length": "220 mm",
+      "Graduations": "1 mm increments over 150 mm",
+      "Reservoir material": "Polypropylene",
+      "Anticoagulant": "200 µl of 3.8% sodium citrate per reservoir tube",
+      "Bag contents": "250 pipettes and 250 reservoir tubes",
+      "Carton contents": "4 bags"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "4 bags per carton; 250 pipettes + 250 reservoir tubes per bag",
+    "quoteUnit": "carton",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_11_Image_01-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_11_Image_01-refined-v3.png",
+        "alt": "Sanguilon Westergren ESR test system"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 11",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 11,
+    "reviewIds": [
+      "B02-15"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P11-I02",
+    "reference": "CAT-P11-I02",
+    "name": "Westergren ESR rack, 10 place",
+    "sourceName": "Westergren ESR rack, 10 place",
+    "category": "Lab essentials",
+    "description": "Extra polystyrene rack for the Westergren ESR test system.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Positions": "10",
+      "Material": "Polystyrene"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_11_Image_02-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_11_Image_02-refined-v3.png",
+        "alt": "Westergren ESR rack, 10 place"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 11",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 11,
+    "reviewIds": [
+      "B02-16"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P12-I01",
+    "reference": "CAT-P12-I01",
+    "name": "Urine test strips",
+    "sourceName": "Urine test strips",
+    "category": "Diagnostics",
+    "description": "Urine test strips offered in 2-, 5- and 10-parameter options.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Parameter options": "2, 5 or 10"
+    },
+    "variants": [
+      "2 parameter",
+      "5 parameter",
+      "10 parameter"
+    ],
+    "variantLabel": "Parameters",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_01-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_01-refined-v3.png",
+        "alt": "Urine test strips"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 12",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 12,
+    "reviewIds": [
+      "B02-17"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P12-I02",
+    "reference": "CAT-P12-I02",
+    "name": "Pregnancy tests",
+    "sourceName": "Pregnancy tests",
+    "category": "Diagnostics",
+    "description": "Pregnancy tests available as strips or cassettes.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Available formats": "Strips or cassettes"
+    },
+    "variants": [
+      "Strips",
+      "Cassettes"
+    ],
+    "variantLabel": "Format",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_02-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_02-refined-v3.png",
+        "alt": "Pregnancy tests"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 12",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 12,
+    "reviewIds": [
+      "B02-18"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P12-I03",
+    "reference": "CAT-P12-I03",
+    "name": "HBsAg hepatitis B rapid test cassette",
+    "sourceName": "HBsAg hepatitis B rapid test cassette",
+    "category": "Diagnostics",
+    "description": "Hepatitis B surface antigen (HBsAg) rapid test in cassette format.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Target": "Hepatitis B surface antigen (HBsAg)",
+      "Format": "Cassette"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "",
+    "quoteUnit": "item",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_03-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_03-refined-v3.png",
+        "alt": "HBsAg hepatitis B rapid test cassette"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 12",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 12,
+    "reviewIds": [
+      "B02-19"
+    ],
+    "supplierSku": null
+  },
+  {
+    "id": "CAT-P12-I04",
+    "reference": "CAT-P12-I04",
+    "name": "FORTRESS DIAGNOSTICS RPR Carbon Kit",
+    "sourceName": "FORTRESS DIAGNOSTICS RPR Carbon Kit",
+    "category": "Diagnostics",
+    "description": "RPR Carbon Kit from the FORTRESS DIAGNOSTICS serology range.",
+    "sourceListingType": "Catalogue product",
+    "kind": "product",
+    "specs": {
+      "Kit size": "100 tests"
+    },
+    "variants": [],
+    "variantLabel": "Option",
+    "pack": "100 tests per kit",
+    "quoteUnit": "kit",
+    "availability": "On request",
+    "priceBasis": "Request quote",
+    "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_04-refined-v3.png",
+    "gallery": [
+      {
+        "image": "assets/products/catalogue/batch-02/PDF_Page_12_Image_04-refined-v3.png",
+        "alt": "FORTRESS DIAGNOSTICS RPR Carbon Kit"
+      }
+    ],
+    "imageSource": "Comeiin Updated Catalogue.pdf, page 12",
+    "imageOrigin": "AI-refined catalogue photograph",
+    "imageStatus": "Image approved by client, 15 November 2026",
+    "sourcePdfPage": 12,
+    "reviewIds": [
+      "B02-20"
+    ],
+    "supplierSku": null
+  }
+]
